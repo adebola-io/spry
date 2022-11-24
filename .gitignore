@@ -1,0 +1,12 @@
+data
+design
+node_modules
+package-lock.json
+pnpm-lock.yaml
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist

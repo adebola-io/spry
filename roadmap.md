@@ -1,0 +1,41 @@
+# Spry Commit Roadmap
+This file is subject to change whenever necessary.
+
+## Frontend
+- [ ] add: Header
+- [ ] add: Footer
+- [ ] add: Home Page
+- [ ] add: About Us Page
+- [ ] add: Privacy Policy Page.
+- [ ] add: Not Found Error Page
+- [ ] add: Cart Page.
+- [ ] add: Search Page.
+- [ ] add: Search Results Page.
+- [ ] add: Login Page
+- [ ] add: Sign In page.
+- [ ] add: Item page.
+- [ ] add: Empty Wishlist View
+- [ ] add: User Profile Page
+- [ ] add: Wishlists Page.
+- [ ] add: Checkout Page
+- [ ] add: Collections Page.
+- [ ] add: Featured Collection Page.
+
+- [ ] add: User Profile pic upload process.
+- [ ] add: Placeholder Item Loader.
+
+- [ ] Create Item Schema.
+- [ ] Create User Schema.
+- [ ] add: Related items logic.
+- [ ] add: Item reviews
+- [ ] add: Item Quantity counter.
+- [ ] add: Bottom Alert.
+- [ ] add: Popup modal.
+
+- [ ] add: currency switcher
+- [ ] add: search Prediction
+- [ ] Setup user authentication
+- [ ] add: User verification
+- [ ] add: product search logic.
+- [ ] add: multiple wishlists
+- [ ] add: Featured sections on backend.
