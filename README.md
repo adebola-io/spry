@@ -17,7 +17,7 @@ The live version of this project is hosted by Vercel here.
 1. A large portion of the project is written in **Typescript**.
 2. The project depends on version 3 of the **Nuxt.js** framework, which in turn depends on the **Vue** Javascript library.
 3. This project makes use of the **Tailwind CSS** framework and preprocessor.
-4. The tests in this project use **Jest** and **Cypress**.
+4. The testing framework used in this project is **Cypress**.
 5. The backend for this project is hosted in **Google Firebase**.
 
 ## 🎨 Design
