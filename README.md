@@ -10,7 +10,7 @@ Spry is an online clothing store located in Lagos, Nigera. We provide our custom
 
 ## 🚀 Production
 
-The live version of this project is hosted by Vercel here.
+The live version of this project is hosted by Vercel [here](http://spry-store.vercel.app). Any push to the production branch will automatically be deployed.
 
 ## 🤖 Tech Stack
 
@@ -32,7 +32,7 @@ The user interface design for the website can be found on Figma at [this link](h
 
 ## 🤍 Development and Contribution
 
-This project is `0%` complete. The commit roadmap can be seen [here](roadmap.md).
+The commit roadmap can be seen [here](roadmap.md).
 
 To contribute to this project, first clone the repository, then run `npm install`, followed by `npm run dev`. The second command should start up a local development server at http://localhost:3000.
 

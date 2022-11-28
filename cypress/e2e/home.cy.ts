@@ -1,5 +1,9 @@
 describe("The Home Page", () => {
    it("successfully loads", () => {
-      cy.visit("/"); // change URL to match your dev URL
+      cy.visit("/");
+   });
+
+   it("shows collections", () => {
+      expect(cy.get(".collection")).to.be.visible();
    });
 });

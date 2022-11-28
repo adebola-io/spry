@@ -5,6 +5,7 @@
       "dev": "nuxt dev",
       "generate": "nuxt generate",
       "preview": "nuxt preview",
+      "test": "cypress run",
       "cypress:open": "cypress open",
       "postinstall": "nuxt prepare"
    },
