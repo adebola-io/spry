@@ -36,7 +36,8 @@ This file is subject to change whenever necessary.
 -  [ ] add: User Profile pic upload process.
 -  [ ] add: Placeholder Item Loader.
 
--  [ ] Create Item Schema.
+-  [x] types: Item Schema.
+-  [x] types: Collection Schema.
 -  [ ] Create User Schema.
 -  [ ] add: Related items logic.
 -  [ ] add: Item reviews
