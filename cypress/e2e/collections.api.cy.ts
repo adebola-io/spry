@@ -18,14 +18,22 @@ describe("Collections API Testing", () => {
    });
 
    it("gets a collection from the API", () => {
-      cy.request<Collection>("/api/collections/0001")
+      cy.request<CollectionSummary[]>("/api/collections")
          .its("body")
-         .then((collection) => {
-            expect(collection)
-               .to.have.property("name")
-               .and("description")
-               .and("items");
-            expect(collection.items).to.be.an("array");
+         .then((collections) => {
+            cy.request(`/api/collections/${collections[0].id}`)
+               .its("body")
+               .then((collection) => {
+                  assert.hasAllKeys(collection, [
+                     "id",
+                     "items",
+                     "name",
+                     "description",
+                     "banner",
+                     "isFeatured",
+                  ]);
+                  expect(collection.items).to.be.an("array");
+               });
          });
    });
 });

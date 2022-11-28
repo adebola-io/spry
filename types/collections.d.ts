@@ -1,8 +1,10 @@
 declare interface Collection {
+   id: string;
    name: string;
    description: string;
    banner: string;
    items: Item.Unit[];
+   isFeatured: boolean;
 }
 
 /**
