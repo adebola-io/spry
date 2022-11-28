@@ -4,6 +4,14 @@ This file is subject to change whenever necessary.
 
 ## Tests
 
+-  [x] test: items API
+-  [x] test: collections API
+-  [ ] test: user Authentication
+-  [ ] test: verification email API
+-  [ ] test: user login API
+-  [ ] test: item search API
+-  [ ] test: user wishlist and cart API
+
 -  [ ] test: home page loads
 -  [ ] test: user can login in
 -  [ ] test: user can log out
@@ -36,9 +44,6 @@ This file is subject to change whenever necessary.
 -  [ ] add: User Profile pic upload process.
 -  [ ] add: Placeholder Item Loader.
 
--  [x] types: Item Schema.
--  [x] types: Collection Schema.
--  [ ] Create User Schema.
 -  [ ] add: Related items logic.
 -  [ ] add: Item reviews
 -  [ ] add: Item Quantity counter.
@@ -52,3 +57,7 @@ This file is subject to change whenever necessary.
 -  [ ] add: product search logic.
 -  [ ] add: multiple wishlists
 -  [ ] add: Featured sections on backend.
+
+## Backend
+
+-  [ ] add: integrate firebase.
