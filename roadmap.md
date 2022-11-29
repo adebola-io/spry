@@ -22,7 +22,7 @@ This file is subject to change whenever necessary.
 
 ## Frontend
 
--  [ ] add: Header
+-  [x] add: Header
 -  [ ] add: Footer
 -  [ ] add: Home Page
 -  [ ] add: About Us Page

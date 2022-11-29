@@ -35,6 +35,24 @@ describe("The Home Page", () => {
       cy.url().should("include", "/collections/new");
    });
 
+   it("shows footer", () => {
+      const footer = cy.get("footer");
+      footer.scrollIntoView().should("be.visible");
+      footer.should(
+         "contain.text",
+         "Chose Style. Choose comfort. Choose Spry."
+      );
+      footer.get("button").should("have.text", "Get Started");
+      footer.get(".footer-links").should("have.length", 4);
+   });
+
+   it("shows mobile footer", () => {
+      cy.viewport("iphone-xr");
+      const footer = cy.get("footer");
+      footer.get("#footer-tagline").should("be.hidden");
+      footer.get(".footer-links").should("be.visible");
+   });
+
    // it("shows collections", () => {
    //    cy.get(".collection").should("be.visible");
    // });
