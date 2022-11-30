@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@font-face {
+   font-family: "Oceanwide";
+   src: url(../fonts/oceanwide-pro/Oceanwide-Semibold.otf);
+}
+
+@layer base {
+   body {
+      @apply bg-cream-pink text-fandago;
+      font-family: "Nunito Sans", "sans-serif";
+   }
+   main {
+      @apply mt-[calc(131px+85px)] max-md:mt-[calc(88px+85px)];
+   }
+}
