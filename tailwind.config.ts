@@ -2,6 +2,7 @@ export default {
    theme: {
       fontFamily: {
          nunito: ["Nunito Sans", "sans-serif", "ui-sans-serif"],
+         oceanwide: ["Oceanwide", "sans-serif", "monospace"],
       },
       extend: {
          colors: {

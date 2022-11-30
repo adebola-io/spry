@@ -30,19 +30,15 @@ describe("The Home Page", () => {
       searchbar.should("have.text", "");
    });
 
-   it("navigates to different collection from header", () => {
-      cy.get("header").get("nav").contains("New").click();
-      cy.url().should("include", "/collections/new");
-   });
-
    it("shows footer", () => {
+      cy.viewport("macbook-13");
       const footer = cy.get("footer");
       footer.scrollIntoView().should("be.visible");
       footer.should(
-         "contain.text",
-         "Chose Style. Choose comfort. Choose Spry."
+         "include.text",
+         "Choose style. Choose comfort. Choose Spry."
       );
-      footer.get("button").should("have.text", "Get Started");
+      footer.get("button").should("have.text", " Get Started ");
       footer.get(".footer-links").should("have.length", 4);
    });
 
@@ -51,6 +47,11 @@ describe("The Home Page", () => {
       const footer = cy.get("footer");
       footer.get("#footer-tagline").should("be.hidden");
       footer.get(".footer-links").should("be.visible");
+   });
+
+   it("navigates to different collection from header", () => {
+      cy.get("header").get("nav").contains("New").click();
+      cy.url().should("include", "/collections/new");
    });
 
    // it("shows collections", () => {

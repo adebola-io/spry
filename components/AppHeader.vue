@@ -1,5 +1,5 @@
 <template>
-   <header class="fixed top-0 w-full">
+   <header class="fixed top-0 w-full bg-cream-pink">
       <div
          :class="[
             'h-[131px] max-md:h-[88px] px-[2vw] flex items-center justify-between relative max-md:justify-center',
