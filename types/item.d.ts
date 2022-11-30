@@ -37,6 +37,7 @@ declare namespace Item {
       /** The date this product was added to the database. */
       added: string;
       category: Category;
+      description: string;
       theme: RGBColor;
       imageId: string;
       /** The number of units sold in the last month. */
@@ -45,6 +46,6 @@ declare namespace Item {
       quantity: number;
       tags: string[];
       reviews: Review[];
-      price: Price[];
+      price: Price;
    }
 }

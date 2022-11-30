@@ -49,12 +49,12 @@ describe("The Home Page", () => {
       footer.get(".footer-links").should("be.visible");
    });
 
-   it("navigates to different collection from header", () => {
-      cy.get("header").get("nav").contains("New").click();
-      cy.url().should("include", "/collections/new");
+   it("shows collections", () => {
+      const collection = cy.get(".collection");
+      collection.should("have.length", 3);
    });
 
-   // it("shows collections", () => {
-   //    cy.get(".collection").should("be.visible");
-   // });
+   it("shows deals of the day", () => {
+      cy.get("section#deals-of-the-day").scrollIntoView().should("be.visible");
+   });
 });

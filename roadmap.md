@@ -6,6 +6,7 @@ This file is subject to change whenever necessary.
 
 -  [x] test: items API
 -  [x] test: collections API
+-  [ ] test: home page sections API
 -  [ ] test: user Authentication
 -  [ ] test: verification email API
 -  [ ] test: user login API
@@ -23,7 +24,7 @@ This file is subject to change whenever necessary.
 ## Frontend
 
 -  [x] add: Header
--  [ ] add: Footer
+-  [x] add: Footer
 -  [ ] add: Home Page
 -  [ ] add: About Us Page
 -  [ ] add: Privacy Policy Page.
