@@ -32,7 +32,7 @@
             class="flex max-w-[45vw] font-nunito list-inside list-none max-md:mb-[20px] max-md:justify-center"
          >
             <li
-               class="footer-links ml-[2vw] text-[20px] max-md:whitespace-nowrap"
+               class="footer-links ml-[2vw] text-[20px] max-md:whitespace-nowrap max-md:text-[4vw]"
                v-for="link in footerLinks"
             >
                {{ link }}
