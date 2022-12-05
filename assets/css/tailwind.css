@@ -11,8 +11,7 @@
 
 @layer base {
    body {
-      @apply bg-cream-pink text-fandago;
-      font-family: "Nunito Sans", "sans-serif";
+      @apply bg-cream-pink text-fandago font-nunito;
    }
    main {
       @apply mt-[calc(131px+85px)] max-md:mt-[calc(88px+85px)];
