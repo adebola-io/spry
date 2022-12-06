@@ -4,7 +4,8 @@ export const collections: Collection[] = [
       name: "Comfort & Style",
       description:
          "Looking for clothing that is both comfortable and stylish? Our Comfort & Style collection is perfect for you! Our pieces are designed to keep you feeling comfortable all day long, while still looking fashionable and put-together. From cozy sweatpants to trendy tops, this collection has it all.",
-      banner: "https://i.imgur.com/F74Ed6U.jpg",
+      banner:
+         "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
       items: [],
       isFeatured: true,
    },
@@ -13,7 +14,8 @@ export const collections: Collection[] = [
       name: "The Chic & Comfortable Edit",
       description:
          "Fashion shouldn't have to come at the expense of comfort! Our Chic & Comfortable Edit is full of pieces that will have you looking and feeling your best. From flowy dresses to soft sweaters, this collection has everything you need to create stylish and comfortable outfits for any occasion.",
-      banner: "https://i.imgur.com/eJH2iA5.jpg",
+      banner:
+         "https://c4.wallpaperflare.com/wallpaper/951/999/714/beautiful-woman-vintage-fashion-photography-wallpaper-preview.jpg",
       items: [],
       isFeatured: true,
    },
@@ -22,9 +24,10 @@ export const collections: Collection[] = [
       name: "Effortlessly Stylish",
       description:
          "Effortlessly stylish? That's what you'll be with our latest collection! Our pieces are designed to be both comfortable and chic, allowing you to look put-together without any effort. From comfy leggings to stylish tops, this collection has everything you need to create effortless and stylish outfits.",
-      banner: "https://i.imgur.com/bzNVT3x.jpg",
+      banner:
+         "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       items: [],
-      isFeatured: false,
+      isFeatured: true,
    },
    {
       id: "4",
