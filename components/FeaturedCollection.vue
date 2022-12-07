@@ -8,7 +8,7 @@ defineProps<{
 <template>
    <div
       :style="{ backgroundImage: `url(${data.banner})` }"
-      class="relative animate-[feature-expand_900ms] text-white cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between rounded-[15px]"
+      class="featured-collection relative animate-[feature-expand_900ms] text-white cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between rounded-[15px]"
    >
       <div
          class="w-full h-full flex flex-col justify-end pl-[var(--half-distance)] pr-[20%] pb-[var(--distance)]"
@@ -40,5 +40,16 @@ p {
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
    overflow: hidden;
+}
+@media (max-width: 600px) {
+   .featured-collection {
+      @apply w-[100vw] min-w-[100vw] rounded-none border-none;
+   }
+   .featured-collection:hover {
+      --arrow-opacity: 0;
+   }
+   .featured-collection > div:nth-child(1) {
+      @apply pb-[var(--twice-distance)];
+   }
 }
 </style>

@@ -4,12 +4,13 @@
          v-if="data"
          class="featured-grid-container grid mx-[2vw] h-[60vw] max-h-[80vh] [grid:_auto_/_repeat(2,_calc(50%-var(--half-distance)))] justify-center gap-[var(--distance)] mb-[var(--distance)]"
       >
-         <FeaturedCollection large :data="data[0]" />
+         <FeaturedCollection class="featured-item" large :data="data[0]" />
          <div
             class="featured-grid-sub-container grid [grid:auto_auto/auto] gap-[var(--distance)]"
          >
             <FeaturedCollection
                v-for="(item, index) in data.slice(1, 3)"
+               class="featured-item"
                :key="index"
                :data="item"
             />
@@ -32,10 +33,13 @@ const { data } = await useFetch("/api/collections/featured");
       padding-top: 0;
    }
    .featured-grid-container {
-      @apply bg-black block overflow-x-scroll w-full mx-0;
+      @apply flex justify-start overflow-x-scroll w-full mx-0 gap-0;
+   }
+   .featured-grid-container::-webkit-scrollbar {
+      display: none;
    }
    .featured-grid-sub-container {
-      @apply flex;
+      @apply flex gap-0;
    }
 }
 </style>

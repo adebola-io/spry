@@ -15,6 +15,7 @@
       --distance: 32px;
       --half-distance: calc(var(--distance) / 2);
       --quarter-distance: calc(var(--distance) / 4);
+      --twice-distance: calc(var(--distance) * 2);
    }
    .heading-text {
       font-size: 2rem;
@@ -44,5 +45,11 @@
    }
    50% {
       transform: scale(1.05);
+   }
+}
+
+@keyframes feature-slide-first-item {
+   100% {
+      transform: translate(-100%);
    }
 }
