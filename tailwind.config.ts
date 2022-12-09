@@ -5,6 +5,9 @@ export default {
          oceanwide: ["Oceanwide", "sans-serif", "monospace"],
       },
       extend: {
+         screens: {
+            md: "912px",
+         },
          colors: {
             fandago: "#b0228cff",
             "dark-purple": "#361134ff",

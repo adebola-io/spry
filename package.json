@@ -1,4 +1,5 @@
 {
+   "name": "spry-store",
    "private": true,
    "scripts": {
       "build": "nuxt build",

@@ -11,10 +11,45 @@
 
 @layer base {
    body {
-      @apply bg-cream-pink text-fandago;
-      font-family: "Nunito Sans", "sans-serif";
+      @apply bg-cream-pink text-fandago font-nunito;
+      --distance: 32px;
+      --half-distance: calc(var(--distance) / 2);
+      --quarter-distance: calc(var(--distance) / 4);
+      --twice-distance: calc(var(--distance) * 2);
+   }
+   .heading-text {
+      font-size: 2rem;
+   }
+   .summary-text {
+      font-size: 1rem;
+   }
+   @media (max-width: 768px) {
+      body {
+         --distance: 16px;
+      }
+      .heading-text {
+         font-size: 1.4rem;
+      }
+      .summary-text {
+         font-size: 9.5pt;
+      }
    }
    main {
       @apply mt-[calc(131px+85px)] max-md:mt-[calc(88px+85px)];
+   }
+}
+
+@keyframes feature-expand {
+   0% {
+      transform: scale(0.9);
+   }
+   50% {
+      transform: scale(1.05);
+   }
+}
+
+@keyframes feature-slide-first-item {
+   100% {
+      transform: translate(-100%);
    }
 }

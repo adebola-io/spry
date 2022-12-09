@@ -10,3 +10,5 @@ pnpm-lock.yaml
 .output
 .env
 dist
+
+cypress/videos
