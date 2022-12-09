@@ -4,21 +4,20 @@ describe("Home Page", () => {
    });
 
    it("should have the correct page title", () => {
-      expect(cy.title()).to.eq(
+      cy.title().should(
+         "equal",
          "Spry Clothing Store | Comfort and Style for Affordable Prices"
       );
    });
 
    it("should have a feature section with links to popular collections", () => {
-      cy.get(".feature-section")
+      cy.get(".featured-section")
          .should("be.visible")
          .within(() => {
-            cy.get(".feature-item")
+            cy.get(".featured-item")
                .should("be.visible")
                .and("have.length.greaterThan", 0)
-               .each(($el) => {
-                  expect($el).to.have.descendants("a");
-               });
+               .each(($el) => $el.is("a"));
          });
    });
 

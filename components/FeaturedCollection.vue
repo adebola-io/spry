@@ -6,7 +6,8 @@ defineProps<{
 </script>
 
 <template>
-   <div
+   <NuxtLink
+      :to="`/featured/${data.id}`"
       :style="{ backgroundImage: `url(${data.banner})` }"
       class="featured-collection relative animate-[feature-expand_900ms] text-white cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between rounded-[15px]"
    >
@@ -31,7 +32,7 @@ defineProps<{
       >
          <img class="scale-[.8]" src="~~/assets/svg/Arrow.svg" alt="->" />
       </div>
-   </div>
+   </NuxtLink>
 </template>
 
 <style scoped>
