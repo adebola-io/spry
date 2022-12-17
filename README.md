@@ -1,5 +1,5 @@
 <h1 align=center>
-   <img src="./static/logo.svg" height=95/>
+   <img src=./public/logo.svg" height=95/>
 </h1>
 
 <h5 align=center>Start Date: 11th November, 2022.</h5><br/>

@@ -6,7 +6,7 @@ This file is subject to change whenever necessary.
 
 -  [x] test: items API
 -  [x] test: collections API
--  [ ] test: home page sections API
+-  [x] test: home page sections API
 -  [ ] test: user Authentication
 -  [ ] test: verification email API
 -  [ ] test: user login API

@@ -5,6 +5,12 @@ export default {
          oceanwide: ["Oceanwide", "sans-serif", "monospace"],
       },
       extend: {
+         spacing: {
+            distance: "var(--distance)",
+            "half-distance": "var(--half-distance)",
+            "quarter-distance": "var(--quarter-distance)",
+            "third-distance": "var(--third-distance)",
+         },
          screens: {
             md: "912px",
          },

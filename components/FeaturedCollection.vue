@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CollectionSummary } from "~~/types";
+
 defineProps<{
    large?: boolean;
    data: CollectionSummary;
@@ -9,7 +11,7 @@ defineProps<{
    <NuxtLink
       :to="`/featured/${data.id}`"
       :style="{ backgroundImage: `url(${data.banner})` }"
-      class="featured-collection relative animate-[feature-expand_900ms] text-white cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between rounded-[15px]"
+      class="featured-collection relative -animate-[feature-expand_900ms] text-white cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between rounded-[15px]"
    >
       <div
          class="w-full h-full flex flex-col justify-end pl-[var(--half-distance)] pr-[20%] pb-[var(--distance)]"

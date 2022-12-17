@@ -1,8 +1,8 @@
 <template>
-   <main class="w-full min-h-[80vh] pt-[var(--distance)]">
+   <main class="w-full min-h-[80vh] pt-distance">
       <section
          v-if="featureddata"
-         class="featured-section grid mx-[2vw] h-[60vw] max-h-[80vh] [grid:_auto_/_repeat(2,_calc(50%-var(--half-distance)))] justify-center gap-[var(--distance)] mb-[var(--distance)]"
+         class="featured-section grid mx-[2vw] h-[60vw] max-h-[80vh] [grid:_auto_/_repeat(2,_calc(50%-var(--half-distance)))] justify-center gap-distance mb-distance"
       >
          <FeaturedCollection
             class="featured-item"
@@ -10,7 +10,7 @@
             :data="featureddata[0]"
          />
          <div
-            class="featured-grid-sub-container grid [grid:auto_auto/auto] gap-[var(--distance)]"
+            class="featured-grid-sub-container grid [grid:auto_auto/auto] gap-distance"
          >
             <FeaturedCollection
                v-for="(item, index) in featureddata.slice(1, 3)"
@@ -31,7 +31,7 @@
          /> -->
          <section
             id="deals-of-the-day"
-            class="relative bg-cover ml-[2vw] bg-center h-[500px] rounded-l-[15px] mb-[var(--distance)]"
+            class="relative bg-cover ml-[2vw] bg-center h-[500px] rounded-l-[15px] overflow-hidden mb-distance"
          >
             <div class="absolute h-full w-full bg-black opacity-50"></div>
             <div class="relative h-full flex">
@@ -40,6 +40,9 @@
                >
                   <h1 class="text-6xl">Deals of the Day</h1>
                   <span class="text-4xl mt-[25px]"> {{ time }} </span>
+               </div>
+               <div class="flex items-center gap-distance h-full" v-if="deals">
+                  <ProductItem v-for="deal in deals.items" :item="deal" />
                </div>
             </div>
          </section>
@@ -51,10 +54,9 @@
 useHead({
    title: "Spry Clothing Store | Comfort and Style for Affordable Prices",
 });
-
-const { data: featureddata } = await useFetch("/api/collections/featured");
-const { data: homesections } = await useFetch("/api/homesections");
-const date = new Date();
+const { data: featureddata } = await useFetch("/api/collections/featured"),
+   { data: homesections } = await useFetch("/api/homesections"),
+   { data: deals } = useFetch("/api/homesections/deals");
 const time = useTimeLeftInDay();
 </script>
 

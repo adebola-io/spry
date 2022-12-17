@@ -13,7 +13,7 @@ defineProps<{
       </h1>
       <div class="overflow-x-scroll w-full">
          <div class="flex w-fit">
-            <ProductItem v-for="item in items" v-bind="item" />
+            <ProductItem v-for="item in items" :item="item" />
          </div>
       </div>
    </section>
