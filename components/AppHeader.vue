@@ -55,6 +55,7 @@
 
          <div
             id="sidebar-btn"
+            @click="sidebarIsOpen = !sidebarIsOpen"
             class="md:hidden flex flex-col cursor-pointer justify-center h-[50%] aspect-square absolute left-[2vw]"
          >
             <div
@@ -97,6 +98,9 @@
             />
          </form>
       </div>
+      <Transition name="sidebar">
+         <AppSidebar v-if="sidebarIsOpen" />
+      </Transition>
       <nav
          class="h-[85px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-md:pl-[2vw] max-md:justify-start max-md:overflow-x-scroll max-md:text-[18px]"
       >
@@ -111,7 +115,7 @@
 const searchIsFocused = ref(false);
 const searchIsOpen = ref(false);
 const searchText = ref("");
-
+const sidebarIsOpen = ref(false);
 const navlinks = [
    {
       to: "/",

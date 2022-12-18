@@ -24,6 +24,17 @@
    .summary-text {
       font-size: 1rem;
    }
+   @media (max-width: 912px) {
+      body {
+         --distance: 20px;
+      }
+      .heading-text {
+         font-size: 1.6rem;
+      }
+      .summary-text {
+         font-size: 9pt;
+      }
+   }
    @media (max-width: 768px) {
       body {
          --distance: 16px;
@@ -53,6 +64,16 @@
    100% {
       transform: translate(-100%);
    }
+}
+
+.sidebar-enter-active,
+.sidebar-leave-active {
+   transition-duration: 500ms;
+}
+
+.sidebar-enter-from,
+.sidebar-leave-to {
+   transform: translate(-100%);
 }
 
 .scroll-hidden::-webkit-scrollbar {
