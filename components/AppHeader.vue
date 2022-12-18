@@ -7,7 +7,7 @@
       >
          <img
             id="header-logo"
-            src="logo.svg"
+            src="~~/public/logo.svg"
             alt="Spry"
             class="h-[54.29px] max-md:absolute"
          />
