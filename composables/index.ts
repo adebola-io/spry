@@ -1,3 +1,6 @@
+/**
+ * Nuxt composable that creates an `HH:MM:SS` countdown to the end of the day.
+ */
 export function useTimeLeftInDay() {
    // Define a reactive variable to store the number of hours left in the day
    const hoursLeft = ref(0),

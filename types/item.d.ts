@@ -33,18 +33,23 @@ declare namespace Item {
    /** A single product item. */
    export interface Unit {
       id: string;
+      /** Very detailed identifier for the item, e.g. 'Men's Pink Floral Beach Shirt' */
       name: string;
-      /** The date this product was added to the database. */
+      /** The date this product was added to the database, in the format of an ISO string. The date should be any day between June and December 2022. */
       added: string;
       category: Category;
+      /** More detail about the item, should be at least 100 words long. */
       description: string;
+      /** A light version of the color of the item. */
       theme: RGBColor;
       imageId: string;
       /** The number of units sold in the last month. */
       sales: number;
       /** The number of units left. */
       quantity: number;
+      /** At least 5 tags. */
       tags: string[];
+      /** At least 3 reviews. */
       reviews: Review[];
       price: Price;
    }

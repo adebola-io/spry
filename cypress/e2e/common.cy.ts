@@ -1,5 +1,5 @@
 describe("Test the Header", () => {
-   before(() => {
+   beforeEach(() => {
       cy.visit("/");
    });
 
@@ -29,10 +29,18 @@ describe("Test the Header", () => {
       cy.get("#mobile-search-form img[alt='X']").click();
       searchbar.should("have.text", "");
    });
+
+   it("should open sidebar", () => {
+      cy.viewport("iphone-xr");
+      cy.get("#sidebar-btn").click();
+      const sidebar = cy.get("aside#sidebar");
+      sidebar.should("be.visible");
+      sidebar.get("a").should("be.visible");
+   });
 });
 
 describe("Test the footer", () => {
-   before(() => {
+   beforeEach(() => {
       cy.visit("/");
    });
    it("shows footer", () => {
