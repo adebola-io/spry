@@ -3,6 +3,7 @@
       :to="`/products/${item.id}`"
       :style="{
          backgroundColor: `rgb(${item.theme.join(' ')})`,
+         '--hoverColor': hoverColor,
          color: `rgb(${item.theme.join(' ')})`,
       }"
       class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[15px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px]"
@@ -53,6 +54,12 @@
             class="absolute h-[23px] max-md:scale-[.6] text-flickr-pink top-[40%] right-half-distance"
          />
       </div>
+      <div
+         v-if="isNewItem"
+         class="top-[3%] left-[5%] absolute text-white bg-salmon-pink text-[8pt] px-3 py-1 rounded-[7px]"
+      >
+         NEW
+      </div>
    </NuxtLink>
 </template>
 
@@ -72,6 +79,7 @@ function toggleWishList(item: Item.Unit) {
 const itemRating = computed(() => {
    return 5;
 });
+const isNewItem = new Date(item.added).getMonth() === new Date().getMonth();
 const itemPrice = computed(() => {
    const currency = item.price.currency === "NGN" ? "N" : "$";
    if (item.price.discount) {
@@ -86,11 +94,15 @@ const itemPrice = computed(() => {
       );
    } else return currency + item.price.value.toString();
 });
+const hoverColor = `rgb(${item.theme
+   .map((unit) => (unit - 20 > 0 ? unit - 20 : 0))
+   .join(" ")})`;
 </script>
 
 <style scoped>
 .product-item:hover {
    @apply scale-95;
    box-shadow: 0 0 15px 0;
+   background-color: var(--hoverColor) !important;
 }
 </style>
