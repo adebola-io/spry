@@ -10,6 +10,8 @@ export default {
             "half-distance": "var(--half-distance)",
             "quarter-distance": "var(--quarter-distance)",
             "third-distance": "var(--third-distance)",
+            "double-distance": "var(--double-distance)",
+            "triple-distance": "var(--triple-distance)",
          },
          screens: {
             md: "912px",

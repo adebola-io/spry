@@ -4,7 +4,6 @@
       :style="{
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
-         color: `rgb(${item.theme.join(' ')})`,
       }"
       class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[15px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px]"
    >
@@ -56,7 +55,7 @@
       </div>
       <div
          v-if="isNewItem"
-         class="top-[3%] left-[5%] absolute text-white bg-salmon-pink text-[8pt] px-3 py-1 rounded-[7px]"
+         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1 rounded-[7px]"
       >
          NEW
       </div>
@@ -95,14 +94,14 @@ const itemPrice = computed(() => {
    } else return currency + item.price.value.toString();
 });
 const hoverColor = `rgb(${item.theme
-   .map((unit) => (unit - 20 > 0 ? unit - 20 : 0))
+   .map((unit) => (unit + 20 < 255 ? unit + 20 : 255))
    .join(" ")})`;
 </script>
 
 <style scoped>
 .product-item:hover {
-   @apply scale-95;
-   box-shadow: 0 0 15px 0;
+   @apply scale-[.97] text-dark-purple;
+   box-shadow: -3px 5px 2px 0;
    background-color: var(--hoverColor) !important;
 }
 </style>

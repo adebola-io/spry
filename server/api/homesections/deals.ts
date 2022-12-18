@@ -6,7 +6,7 @@ export default defineEventHandler((event) => {
       return <HomeSection>{
          heading: "Deals of the Day",
          subHeading: "Get the best deals for the day.",
-         items: items,
+         items: items.slice(-6).reverse(),
       };
    }
 });

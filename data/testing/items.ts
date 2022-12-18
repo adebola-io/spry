@@ -1,7 +1,7 @@
 export const items: Item.Unit[] = [
    {
       id: "1",
-      name: "Men's Denim Jean Blue",
+      name: "Denim Jean Blue",
       added: new Date(2022, 8, 6).toString(),
       category: "shirts & trousers",
       description:
@@ -37,7 +37,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "2",
-      name: "Women's Red Evening Gown",
+      name: "Red Female Evening Gown",
       added: new Date(2022, 12, 6).toString(),
       category: "dresses & gowns",
       description:
@@ -74,7 +74,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "3",
-      name: "Men's Black Leather Oxford Shoes",
+      name: "Black Leather Oxford Male Shoes",
       added: new Date(2022, 12, 13).toString(),
       category: "shoes",
       description:
@@ -111,7 +111,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "4",
-      name: "Women's Pink Hooded Jacket",
+      name: "Pink Hooded Jacket",
       added: new Date(2022, 12, 13).toString(),
       category: "jackets & hoodies",
       description:
@@ -181,7 +181,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "6",
-      name: "Women's Beige Flat Shoes",
+      name: "Beige Flat Shoes Female",
       added: new Date(2022, 12, 9).toString(),
       category: "shoes",
       description:
@@ -280,7 +280,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "1",
-      name: "Women's Stylish and Comfortable High Heel Pumps",
+      name: "Women's Stylish High Heel Pumps",
       added: "2022-06-01T00:00:00.000Z",
       category: "shoes",
       description:
@@ -299,7 +299,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "2",
-      name: "Men's Premium Quality Leather Dress Shoes",
+      name: "Premium Quality Leather Dress Shoes",
       added: "2022-07-01T00:00:00.000Z",
       category: "shoes",
       description:
@@ -318,7 +318,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "3",
-      name: "Women's Flowy Maxi Dress with Floral Print",
+      name: "Flowy Maxi Dress with Floral Print for Women",
       added: "2022-08-01T00:00:00.000Z",
       category: "dresses & gowns",
       description:
@@ -337,7 +337,7 @@ export const items: Item.Unit[] = [
    },
    {
       id: "4",
-      name: "Men's Suit Jacket Beige Brown Slim Fit ",
+      name: "Suit Jacket Beige Brown Slim Fit Male",
       added: "2022-09-01T00:00:00.000Z",
       category: "formal wear",
       description:
@@ -360,12 +360,12 @@ export const items: Item.Unit[] = [
    {
       id: "6",
       name: "Men's Cotton T-Shirt with Graphic Print",
-      added: "2022-11-01T00:00:00.000Z",
+      added: "2022-12-01T00:00:00.000Z",
       category: "shirts & trousers",
       description:
          "This t-shirt is the perfect addition to any casual wardrobe. The soft, breathable cotton fabric keeps you comfortable, while the graphic print adds a touch of personality and style. The t-shirt features a crew neck, short sleeves, and a relaxed fit, making it suitable for a range of body types and comfortable to wear. The t-shirt is available in a range of sizes, so you can find the perfect fit. The bold and vibrant print is suitable for both day and night, making this t-shirt a versatile and essential piece. Overall, this t-shirt is a must-have for any man looking to make a statement with his casual wear.",
-      theme: [250, 250, 250],
-      imageId: "6",
+      theme: [221, 257, 157],
+      imageId: "0000M",
       sales: 0,
       quantity: 30,
       tags: ["men", "t-shirt", "graphic print", "cotton"],
@@ -379,12 +379,12 @@ export const items: Item.Unit[] = [
    {
       id: "7",
       name: "Women's Faux Leather Mini Skirt",
-      added: "2022-12-01T00:00:00.000Z",
+      added: "2022-12-11T00:00:00.000Z",
       category: "shirts & trousers",
       description:
          "This mini skirt is the perfect addition to any edgy and stylish wardrobe. The faux leather fabric gives it a cool and rebellious vibe, while the sleek and fitted design creates a flattering silhouette. The skirt features a high waist and a zip-up back closure, making it easy to wear and take off. The mini length makes it suitable for both day and night, making it a versatile and essential piece. The skirt is available in a range of sizes, so you can find the perfect fit. Overall, this mini skirt is a must-have for any woman looking to make a statement with her style.",
-      theme: [245, 245, 245],
-      imageId: "7",
+      theme: [170, 170, 170],
+      imageId: "0000N",
       sales: 0,
       quantity: 10,
       tags: ["women", "mini skirt", "faux leather"],
@@ -397,13 +397,13 @@ export const items: Item.Unit[] = [
    },
    {
       id: "8",
-      name: "Men's Knit Sweater with Striped Pattern",
+      name: "Knit Sweater Male with Striped Pattern",
       added: "2022-12-15T00:00:00.000Z",
       category: "shirts & trousers",
       description:
          "This knit sweater is the perfect addition to any man's winter wardrobe. The soft and cozy fabric keeps you warm and comfortable, while the striped pattern adds a touch of style and personality. The sweater features a crew neck, long sleeves, and a relaxed fit, making it suitable for a range of body types and comfortable to wear. The sweater is available in a range of sizes, so you can find the perfect fit. The classic black and white color scheme makes it versatile and suitable for any outfit. The sweater can be dressed up with a pair of trousers and dress shoes, or dressed down with a pair of jeans and sneakers. Overall, this knit sweater is a must-have for any man looking to stay warm and stylish this winter.",
-      theme: [250, 250, 250],
-      imageId: "8",
+      theme: [225, 174, 178],
+      imageId: "0000O",
       sales: 0,
       quantity: 20,
       tags: ["men", "sweater", "striped pattern", "knit"],
@@ -416,19 +416,337 @@ export const items: Item.Unit[] = [
    },
    {
       id: "5",
-      name: "Women's Cropped Denim Jacket",
+      name: "Female Cropped Denim Jacket",
       added: "2022-10-01T00:00:00.000Z",
       category: "jackets & hoodies",
       description:
          "This cropped denim jacket is the perfect layering piece for the transitional seasons. The cropped fit and distressed details give it a trendy and edgy look, while the classic blue color makes it versatile and suitable for any outfit. The jacket features a button-up front, long sleeves, and chest pockets, giving it a timeless and practical design. The jacket is made with high-quality denim, making it durable and long-lasting. The jacket comes in a range of sizes, so you can find the perfect fit. Overall, this cropped denim jacket is a must-have for any woman looking to add a stylish and practical piece to her wardrobe.",
-      theme: [245, 245, 245],
-      imageId: "5",
+      theme: [183, 213, 245],
+      imageId: "0000P",
       sales: 0,
       quantity: 15,
       tags: ["women", "cropped denim jacket"],
       reviews: [],
       price: {
          value: 69.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "123456",
+      name: "Pink Floral Beach Shirt",
+      added: "2022-06-01T00:00:00.000Z",
+      category: "shirts & trousers",
+      description:
+         "This men's beach shirt is made of a lightweight, breathable material that is perfect for hot summer days. The pink floral pattern adds a fun and stylish touch. It has a regular fit with a collar and short sleeves. The shirt is machine washable and easy to care for. Wear it with shorts or jeans for a casual, relaxed look.",
+      theme: [255, 192, 203],
+      imageId: "0000Q",
+      sales: 100,
+      quantity: 50,
+      tags: ["beach", "summer", "casual", "men"],
+      reviews: [
+         {
+            userId: "abcdef",
+            content:
+               "I love this shirt! It is so comfortable and the color is great. I will definitely be buying more in different colors.",
+            rating: 5,
+            date: "2022-07-01T00:00:00.000Z",
+         },
+         {
+            userId: "ghijkl",
+            content:
+               "I was a bit skeptical about the color, but it looks great in person. The material is also very soft and comfortable. Overall, I am happy with my purchase.",
+            rating: 4,
+            date: "2022-07-15T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 25.99,
+         currency: "USD",
+         discount: {
+            name: "Summer Sale",
+            percent: 10,
+         },
+      },
+   },
+   {
+      id: "789012",
+      name: "Red Female High Heel Shoes",
+      added: "2022-06-15T00:00:00.000Z",
+      category: "shoes",
+      description:
+         "These women's high heel shoes are a classic and stylish choice for any occasion. The red color adds a bold and confident touch. The shoes have a pointed toe and a stiletto heel, and they are made of a durable, high-quality material. They have a comfortable fit and are easy to walk in. Pair them with a dress or suit for a chic and sophisticated look.",
+      theme: [255, 135, 135],
+      imageId: "0000R",
+      sales: 50,
+      quantity: 25,
+      tags: ["heels", "women", "dress", "occasion"],
+      reviews: [
+         {
+            userId: "mnopqr",
+            content:
+               "I love these shoes! They are so comfortable and the red color is beautiful. I have received so many compliments on them. I will definitely be buying more in different colors.",
+            rating: 5,
+            date: "2022-07-01T00:00:00.000Z",
+         },
+         {
+            userId: "stuvwx",
+            content:
+               "I was a bit worried about the height of the heel, but they are surprisingly easy to walk in. The fit is also true to size. Overall, I am very happy with my purchase.",
+            rating: 4,
+            date: "2022-07-15T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 75.0,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "135791",
+      name: "Men's Lemon Yellow Suit",
+      added: "2022-06-30T00:00:00.000Z",
+      category: "formal wear",
+      description:
+         "This men's lemon yellow suit is a bold and stylish choice for any formal occasion. The bright yellow color is eye-catching and will definitely turn heads. The suit is made of a high-quality, wrinkle-resistant material that is easy to care for. It includes a jacket with a single-breasted front and a pair of trousers with a regular fit. The suit is fully lined and has a modern, slim fit. Wear it with a white dress shirt and black dress shoes for a sharp and sophisticated look.",
+      theme: [219, 219, 141],
+      imageId: "0000S",
+      sales: 20,
+      quantity: 10,
+      tags: ["suit", "formal", "men", "yellow"],
+      reviews: [
+         {
+            userId: "yza",
+            content:
+               "I love this suit! The yellow color is so vibrant and the fit is perfect. I received so many compliments at my wedding. I will definitely be wearing it again for other formal occasions.",
+            rating: 5,
+            date: "2022-07-01T00:00:00.000Z",
+         },
+         {
+            userId: "bcd",
+            content:
+               "The color of this suit is definitely unique and I received a lot of attention at my job interview. The fit is also good, although the jacket sleeves could be a bit longer. Overall, I am happy with my purchase.",
+            rating: 4,
+            date: "2022-07-15T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 250.0,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "135791",
+      name: "Blue Hoodie Jacket with Double Pockets",
+      added: "2022-07-01T00:00:00.000Z",
+      category: "jackets & hoodies",
+      description:
+         "This men's blue hoodie jacket is a practical and stylish choice for cooler weather. The jacket has a d two front pockets, making it easy to wear and carry essentials. It is made of a soft and comfortable material that is perfect for layering. The blue color is a classic and versatile choice that goes well with many different outfits. Wear it over a t-shirt and jeans for a casual and relaxed look.",
+      theme: [169, 203, 215],
+      imageId: "0000T",
+      sales: 30,
+      quantity: 15,
+      tags: [
+         "hoodie",
+         "jacket",
+         "men",
+         "lace",
+         "pockets",
+         "blue",
+         "casual",
+         "layering",
+      ],
+      reviews: [
+         {
+            userId: "yzaefg",
+            content:
+               "I really like this hoodie jacket! It is comfortable and fits well. The blue color is also really nice. I will definitely be wearing it a lot.",
+            rating: 4,
+            date: "2022-07-15T00:00:00.000Z",
+         },
+         {
+            userId: "hijklm",
+            content:
+               "This jacket is exactly what I was looking for. It is warm and comfortable, and the lace front and pockets are convenient. I am very happy with my purchase.",
+            rating: 5,
+            date: "2022-08-01T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 45.0,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "abc123",
+      name: "Elegant Lace Dress with 3/4 Sleeves and a High-Low Hem",
+      added: "2022-06-01T00:00:00.000Z",
+      category: "dresses & gowns",
+      description:
+         "This stunning lace dress is perfect for any formal occasion. The 3/4 sleeves and high-low hem add a unique touch to the classic silhouette. The dress is made with high-quality lace fabric and has a lined bodice for added comfort. It also has a hidden zipper closure at the back. Pair it with heels and statement earrings for a chic, sophisticated look.",
+      theme: [169, 129, 135],
+      imageId: "0000U",
+      sales: 50,
+      quantity: 25,
+      tags: ["lace", "dress", "formal", "3/4 sleeves", "high-low hem"],
+      reviews: [
+         {
+            userId: "ghi789",
+            content:
+               "I absolutely love this dress! The lace is so intricate and the high-low hem is so unique. The fit was perfect and I received so many compliments at the event I wore it to. Highly recommend!",
+            rating: 5,
+            date: "2022-06-15T00:00:00.000Z",
+         },
+         {
+            userId: "jkl012",
+            content:
+               "I was a little hesitant to purchase this dress because of the high-low hem, but I'm so glad I did! It's such a beautiful and unique piece. The lace is high-quality and the fit was spot on. I'll definitely be wearing this dress to future events.",
+            rating: 4,
+            date: "2022-06-20T00:00:00.000Z",
+         },
+         {
+            userId: "mno345",
+            content:
+               "I was really disappointed with this dress. The lace was scratchy and the fit was off. I ended up returning it.",
+            rating: 2,
+            date: "2022-06-25T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 119.99,
+         currency: "USD",
+         discount: {
+            name: "Summer Sale",
+            percent: 20,
+         },
+      },
+   },
+   {
+      id: "pqr678",
+      name: "Vintage Washed Denim Jacket with Embroidered Flowers",
+      added: "2022-07-01T00:00:00.000Z",
+      category: "jackets & hoodies",
+      description:
+         "This vintage denim jacket is the perfect addition to any casual outfit. The washed denim and embroidered flowers add a touch of personality to the classic silhouette. The jacket features a front button closure, two chest pockets, and two side pockets. Pair it with a t-shirt and jeans for a laid-back, stylish look. Made with high-quality denim for a durable and comfortable fit.",
+      theme: [125, 161, 161],
+      imageId: "0000V",
+      sales: 75,
+      quantity: 15,
+      tags: ["denim", "jacket", "vintage", "washed", "embroidered flowers"],
+      reviews: [
+         {
+            userId: "vwx234",
+            content:
+               "I love this jacket! The embroidered flowers add a cool touch to the vintage wash. It's a little big on me, but I love the oversized fit. Highly recommend!",
+            rating: 5,
+            date: "2022-07-15T00:00:00.000Z",
+         },
+         {
+            userId: "yz567",
+            content:
+               "This jacket is awesome! The vintage wash and embroidered flowers give it such a unique look. It fits true to size and is very comfortable. I've received so many compliments on it already.",
+            rating: 4,
+            date: "2022-07-20T00:00:00.000Z",
+         },
+         {
+            userId: "abc890",
+            content:
+               "I was really disappointed with this jacket. The denim was thin and the embroidery was poorly done. I ended up returning it.",
+            rating: 2,
+            date: "2022-07-25T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 69.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "def456",
+      name: "Women's Comfortable Running Shoes with Breathable Mesh Upper",
+      added: "2022-08-01T00:00:00.000Z",
+      category: "shoes",
+      description:
+         "These running shoes are perfect for any active lifestyle. The breathable mesh upper and padded tongue and collar provide maximum comfort and support during your workouts. The shoes also feature a durable rubber outsole for traction and a lace-up closure for a secure fit. Pair them with your favorite workout clothes for a stylish and functional look.",
+      theme: [188, 195, 152],
+      imageId: "0000W",
+      sales: 100,
+      quantity: 10,
+      tags: ["running shoes", "breathable", "mesh", "comfortable", "durable"],
+      reviews: [
+         {
+            userId: "jkl012",
+            content:
+               "I absolutely love these shoes! They are so comfortable and the breathable mesh upper is a game-changer. I've worn them for long runs and my feet never get hot or sweaty. The fit is also true to size. Highly recommend!",
+            rating: 5,
+            date: "2022-08-15T00:00:00.000Z",
+         },
+         {
+            userId: "mno345",
+            content:
+               "These shoes are great! They are comfortable and the breathable mesh upper is a plus. The fit is true to size and the shoes have held up well during my runs. I'll definitely be purchasing another pair in the future.",
+            rating: 4,
+            date: "2022-08-20T00:00:00.000Z",
+         },
+         {
+            userId: "pqr678",
+            content:
+               "I was really disappointed with these shoes. They were uncomfortable and the breathable mesh upper didn't seem to make a difference. I ended up returning them.",
+            rating: 2,
+            date: "2022-08-25T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 99.99,
+         currency: "USD",
+         discount: {
+            name: "Summer Sale",
+            percent: 15,
+         },
+      },
+   },
+   {
+      id: "stu901",
+      name: "Men's Slim-Fit Black Suit Jacket with Peak Lapels",
+      added: "2022-09-01T00:00:00.000Z",
+      category: "formal wear",
+      description:
+         "This slim-fit black suit jacket is perfect for any formal occasion. The peak lapels and single-button closure add a touch of sophistication to the classic silhouette. The jacket is made with high-quality wool fabric and has a lined interior for added comfort. Pair it with dress pants and a dress shirt for a sharp, professional look.",
+      theme: [157, 157, 157],
+      imageId: "0000X",
+      sales: 25,
+      quantity: 5,
+      tags: ["suit jacket", "black", "slim-fit", "peak lapels", "formal"],
+      reviews: [
+         {
+            userId: "yz567",
+            content:
+               "I absolutely love this suit jacket! The peak lapels and slim-fit cut give it such a sharp look. The fit was perfect and I received so many compliments at the event I wore it to. Highly recommend!",
+            rating: 5,
+            date: "2022-09-15T00:00:00.000Z",
+         },
+         {
+            userId: "abc890",
+            content:
+               "I was a little hesitant to purchase this suit jacket because of the slim-fit cut, but I'm so glad I did! It's such a stylish and professional piece. The fit was spot on and the wool fabric is high-quality. I'll definitely be wearing this jacket to future formal events.",
+            rating: 4,
+            date: "2022-09-20T00:00:00.000Z",
+         },
+         {
+            userId: "def456",
+            content:
+               "I was really disappointed with this suit jacket. The wool was scratchy and the fit was off. I ended up returning it.",
+            rating: 2,
+            date: "2022-09-25T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 199.99,
          currency: "USD",
          discount: null,
       },
