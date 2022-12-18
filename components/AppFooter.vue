@@ -24,7 +24,7 @@
          class="flex py-[60px] mb-[30px] items-center justify-center relative max-md:flex-col"
       >
          <img
-            src="logo.svg"
+            src="~~/public/logo.svg"
             class="h-[57.72px] md:absolute md:left-0 max-md:mb-[20px]"
             alt="Spry"
          />
