@@ -31,20 +31,22 @@
          />
          <section
             id="deals-of-the-day"
-            class="relative bg-cover ml-[2vw] bg-center h-[500px] rounded-l-[15px] overflow-hidden mb-distance"
+            class="relative bg-cover ml-[2vw] bg-center h-[500px] max-sm:h-[320px] rounded-l-[15px] overflow-hidden mb-distance"
          >
             <div class="absolute h-full w-full bg-black opacity-50"></div>
             <div
-               class="relative h-full grid [grid:100%/25%_auto] gap-distance overflow-scroll scroll-hidden"
+               class="relative h-full grid [grid:100%/25%_auto] max-sm:[grid:100%/40%_auto] gap-distance overflow-scroll scroll-hidden"
             >
                <div
-                  class="flex flex-col justify-center text-white h-full pl-[2vw] font-oceanwide"
+                  class="flex flex-col justify-center text-white h-full pl-distance font-oceanwide"
                >
-                  <h1 class="text-6xl">Deals of the Day</h1>
-                  <span class="text-4xl mt-[25px]"> {{ time }} </span>
+                  <h1 class="text-6xl max-sm:text-3xl">Deals of the Day</h1>
+                  <span class="text-4xl max-sm:text-2xl mt-[25px]">
+                     {{ time }}
+                  </span>
                </div>
                <div
-                  class="h-full flex items-center gap-distance w-max"
+                  class="h-full flex items-center gap-distance pr-distance w-max"
                   v-if="deals"
                >
                   <ProductItem v-for="deal in deals.items" :item="deal" />
