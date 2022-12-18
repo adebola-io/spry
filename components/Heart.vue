@@ -23,8 +23,9 @@ function selectHeart() {
 </script>
 
 <template>
-   <div ref="container" @click.prevent="selectHeart">
+   <div @click.prevent="selectHeart">
       <svg
+         ref="container"
          width="33"
          height="31"
          viewBox="0 0 33 31"

@@ -36,7 +36,7 @@
       }
    }
    main {
-      @apply mt-[calc(131px+85px)] max-md:mt-[calc(88px+85px)];
+      @apply mt-[calc(120px+85px)] max-md:mt-[calc(88px+85px)];
    }
 }
 
@@ -53,4 +53,8 @@
    100% {
       transform: translate(-100%);
    }
+}
+
+.scroll-hidden::-webkit-scrollbar {
+   display: none;
 }

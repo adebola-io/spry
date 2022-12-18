@@ -22,30 +22,41 @@
       </section>
       <template v-if="homesections">
          <!-- First Half of Home Sections -->
-         <!-- <HomeSection
+         <HomeSection
             v-for="homesection in homesections.slice(
                0,
                Math.floor(homesections.length / 2)
             )"
             v-bind="homesection"
-         /> -->
+         />
          <section
             id="deals-of-the-day"
             class="relative bg-cover ml-[2vw] bg-center h-[500px] rounded-l-[15px] overflow-hidden mb-distance"
          >
             <div class="absolute h-full w-full bg-black opacity-50"></div>
-            <div class="relative h-full flex">
+            <div
+               class="relative h-full grid [grid:100%/25%_auto] gap-distance overflow-scroll scroll-hidden"
+            >
                <div
-                  class="flex flex-col justify-center w-[25%] text-white h-full pl-[2vw] font-oceanwide"
+                  class="flex flex-col justify-center text-white h-full pl-[2vw] font-oceanwide"
                >
                   <h1 class="text-6xl">Deals of the Day</h1>
                   <span class="text-4xl mt-[25px]"> {{ time }} </span>
                </div>
-               <div class="flex items-center gap-distance h-full" v-if="deals">
+               <div
+                  class="h-full flex items-center gap-distance w-max"
+                  v-if="deals"
+               >
                   <ProductItem v-for="deal in deals.items" :item="deal" />
                </div>
             </div>
          </section>
+         <HomeSection
+            v-for="homesection in homesections.slice(
+               Math.floor(homesections.length / 2)
+            )"
+            v-bind="homesection"
+         />
       </template>
    </main>
 </template>
