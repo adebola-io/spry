@@ -20,6 +20,7 @@
             />
          </div>
       </section>
+      <HomeBanner />
       <template v-if="homesections">
          <!-- First Half of Home Sections -->
          <HomeSection
@@ -59,7 +60,7 @@ const secondSectionList = computed(() =>
       padding-top: 0;
    }
    .featured-section {
-      @apply flex justify-start overflow-x-scroll w-full mx-0 gap-0;
+      @apply flex justify-start overflow-x-scroll w-full mx-0 gap-0 mb-0;
    }
    .featured-section::-webkit-scrollbar {
       display: none;

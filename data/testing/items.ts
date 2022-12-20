@@ -751,4 +751,48 @@ export const items: Item.Unit[] = [
          discount: null,
       },
    },
+   {
+      id: "bh-123",
+      name: "Blue Leather Handbag",
+      added: "2022-06-01T00:00:00.000Z",
+      category: "bags",
+      description:
+         "This elegant blue leather handbag is the perfect accessory for any outfit. With a spacious interior and multiple pockets, it's both stylish and practical. The bag features gold-tone hardware and a detachable shoulder strap, giving you versatility in how you wear it. Made with high-quality materials, this handbag is sure to become a go-to in your wardrobe.",
+      theme: [101, 124, 149],
+      imageId: "0000Y",
+      sales: 32,
+      quantity: 15,
+      tags: ["leather", "blue", "handbag", "women's", "elegant"],
+      reviews: [
+         {
+            userId: "abc123",
+            content:
+               "I absolutely love this handbag! The color is so vibrant and the leather is so soft. It's the perfect size for all my essentials and the gold hardware adds a touch of sophistication. Definitely recommend!",
+            rating: 5,
+            date: "2022-06-15T00:00:00.000Z",
+         },
+         {
+            userId: "def456",
+            content:
+               "This handbag is exactly what I was looking for. The color is beautiful and the quality is top-notch. It's the perfect size for everyday use and the shoulder strap is a nice touch. I'm very happy with my purchase.",
+            rating: 4,
+            date: "2022-06-20T00:00:00.000Z",
+         },
+         {
+            userId: "ghi789",
+            content:
+               "I love the color of this handbag, but I'm not a fan of the shoulder strap. It feels a little flimsy and I'm not sure how well it will hold up over time. Otherwise, the bag itself is great and I'm happy with my purchase.",
+            rating: 3,
+            date: "2022-06-25T00:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 150,
+         currency: "USD",
+         discount: {
+            name: "Summer Sale",
+            percent: 15,
+         },
+      },
+   },
 ];

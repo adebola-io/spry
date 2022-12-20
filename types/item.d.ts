@@ -3,6 +3,7 @@ declare namespace Item {
    export type Category =
       | "shirts & trousers"
       | "shoes"
+      | "bags"
       | "formal wear"
       | "dresses & gowns"
       | "jackets & hoodies";
@@ -25,6 +26,7 @@ declare namespace Item {
    }
 
    export interface Price {
+      /** Never integers, always decimals. */
       value: number;
       currency: "USD" | "NGN" | "CAD";
       discount: Discount | null;

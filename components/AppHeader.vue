@@ -2,14 +2,14 @@
    <header class="fixed top-0 w-full z-[99] bg-cream-pink">
       <div
          :class="[
-            'h-[120px] max-md:h-[88px] max-sm:h-[60px] px-[2vw] max-sm:px-[3vw] flex items-center justify-between relative max-md:justify-center',
+            'h-[120px] max-md:h-[88px] max-sm:h-[70px] px-[2vw] max-sm:px-[3vw] flex items-center justify-between relative max-md:justify-center',
          ]"
       >
          <img
             id="header-logo"
             src="~~/public/logo.svg"
             alt="Spry"
-            class="h-[54.29px] max-sm:h-[60%] max-md:absolute"
+            class="h-[54.29px] max-sm:h-[50%] max-md:absolute"
          />
          <div
             id="header-controls"
@@ -102,7 +102,7 @@
          <AppSidebar v-if="sidebarIsOpen" />
       </Transition>
       <nav
-         class="h-[85px] max-sm:h-[70px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
+         class="h-[85px] max-sm:h-[60px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
       >
          <NuxtLink v-for="link in navlinks" v-bind="link">
             <div class="list-none mr-distance">
