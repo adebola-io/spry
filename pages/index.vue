@@ -23,40 +23,12 @@
       <template v-if="homesections">
          <!-- First Half of Home Sections -->
          <HomeSection
-            v-for="homesection in homesections.slice(
-               0,
-               Math.floor(homesections.length / 2)
-            )"
+            v-for="homesection in firstSectionList"
             v-bind="homesection"
          />
-         <section
-            id="deals-of-the-day"
-            class="relative bg-cover ml-[2vw] bg-center h-[500px] max-sm:h-[320px] rounded-l-[15px] overflow-hidden mb-distance"
-         >
-            <div class="absolute h-full w-full bg-black opacity-50"></div>
-            <div
-               class="relative h-full grid [grid:100%/25%_auto] max-sm:[grid:100%/40%_auto] gap-distance overflow-scroll scroll-hidden"
-            >
-               <div
-                  class="flex flex-col justify-center text-white h-full pl-distance font-oceanwide"
-               >
-                  <h1 class="text-6xl max-sm:text-3xl">Deals of the Day</h1>
-                  <span class="text-4xl max-sm:text-2xl mt-[25px]">
-                     {{ time }}
-                  </span>
-               </div>
-               <div
-                  class="h-full flex items-center gap-distance pr-distance w-max"
-                  v-if="deals"
-               >
-                  <ProductItem v-for="deal in deals.items" :item="deal" />
-               </div>
-            </div>
-         </section>
+         <DealsOfTheDay />
          <HomeSection
-            v-for="homesection in homesections.slice(
-               Math.floor(homesections.length / 2)
-            )"
+            v-for="homesection in secondSectionList"
             v-bind="homesection"
          />
       </template>
@@ -68,9 +40,14 @@ useHead({
    title: "Spry Clothing Store | Comfort and Style for Affordable Prices",
 });
 const { data: featureddata } = await useFetch("/api/collections/featured"),
-   { data: homesections } = await useFetch("/api/homesections"),
-   { data: deals } = useFetch("/api/homesections/deals");
-const time = useTimeLeftInDay();
+   { data: homesections } = await useFetch("/api/homesections");
+
+const firstSectionList = computed(() =>
+   homesections.value?.slice(0, homesections.value.length / 2)
+);
+const secondSectionList = computed(() =>
+   homesections.value?.slice(homesections.value.length / 2)
+);
 </script>
 
 <style scoped>

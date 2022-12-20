@@ -12,7 +12,7 @@ defineProps<{
       class="featured-collection relative duration-500 animate-[feature-expand_900ms] cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between rounded-[15px]"
    >
       <div
-         class="w-full h-full text-white flex flex-col justify-end pl-half-distance pr-[20%] pb-distance"
+         class="w-full h-full text-white flex flex-col justify-end pl-[2vw] max-sm:pl-[3vw] pr-[20%] pb-distance"
          :style="{
             backgroundImage:
                'linear-gradient(180deg, rgba(21, 21, 21, 0) 0%, rgba(21, 21, 21, 0.6) 69.48%, #151515 100%)',

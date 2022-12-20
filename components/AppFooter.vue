@@ -1,5 +1,7 @@
 <template>
-   <footer class="w-full md:pt-[76.88px] px-[2vw] bg-ballet-pink">
+   <footer
+      class="w-full md:pt-[76.88px] px-[2vw] max-sm:px-[3vw] bg-ballet-pink"
+   >
       <div
          id="footer-tagline"
          class="w-full font-oceanwide flex items-center flex-col max-md:hidden"
@@ -21,7 +23,7 @@
       </div>
 
       <div
-         class="flex py-[60px] mb-[30px] items-center justify-center relative max-md:flex-col"
+         class="flex py-[60px] items-center justify-center relative max-md:flex-col"
       >
          <img
             src="~~/public/logo.svg"
@@ -32,7 +34,7 @@
             class="flex max-w-[45vw] font-nunito list-inside list-none max-md:mb-[20px] max-md:justify-center"
          >
             <li
-               class="footer-links ml-[2vw] text-[20px] max-md:whitespace-nowrap max-md:text-[4vw]"
+               class="footer-links ml-[2vw] max-sm:ml-[3vw] text-[20px] max-md:whitespace-nowrap max-md:text-[4vw]"
                v-for="link in footerLinks"
             >
                {{ link }}

@@ -7,9 +7,11 @@ defineProps<{
 </script>
 
 <template>
-   <section class="home-section h-fit w-full pt-[2vw] pb-[2vw] my-distance">
+   <section
+      class="home-section h-fit w-full pt-[2vw] pb-[2vw] max-sm:pb-[3vw] max-sm:pt-[3vw] my-distance"
+   >
       <h1
-         class="text-4xl max-md:text-2xl ml-[2vw] mb-half-distance font-bold font-oceanwide text-dark-purple"
+         class="text-4xl max-md:text-2xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance font-bold font-oceanwide text-dark-purple"
       >
          {{ heading }}
       </h1>
@@ -17,7 +19,7 @@ defineProps<{
          <div class="flex w-fit gap-half-distance mr-double-distance">
             <ProductItem
                v-for="(item, index) in items.slice(0, 8)"
-               :class="[{ 'ml-[2vw]': index === 0 }]"
+               :class="[{ 'ml-[2vw] max-sm:ml-[3vw]': index === 0 }]"
                :item="item"
             />
          </div>
