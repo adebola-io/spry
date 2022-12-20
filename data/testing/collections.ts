@@ -2,8 +2,13 @@ export const collections: Collection[] = [
    {
       id: "1",
       name: "Serenity & Style",
-      description:
-         "Looking for clothing that can keep you cozy and stylish? Our Serenity & Style collection is perfect for you! Explore pieces designed to keep you feeling comfortable all day long, while still looking fashionable and put-together. From comfortable sweatpants to trendy tops, this collection has it all.",
+      description: `Featuring Serenity & Style - where sophistication and tranquility meet. Our line is designed to bring both peace and panache to your wardrobe, with pieces crafted from the finest materials for ultimate comfort and style.
+
+In this collection, you'll find a range of colors and prints inspired by the natural world, including soothing blues, earthy greens, and delicate florals. These subtle hues are paired with clean lines and classic silhouettes, creating a sense of calm and polish.
+
+But we didn't stop at just clothing - we also have a selection of stunning accessories, such as scarves, bags, and jewelry, to complete any outfit.
+
+Elevate your style and find inner peace with the Serenity & Style collection. Shop now and add a touch of sophistication and serenity to your wardrobe.`,
       banner:
          "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
       items: [],
@@ -12,8 +17,11 @@ export const collections: Collection[] = [
    {
       id: "2",
       name: "The Chic & Comfortable Edit",
-      description:
-         "Fashion shouldn't have to constrain comfort. Our Chic & Comfortable Edit is full of pieces that will have you looking and feeling like a true darling. Check out flowy dresses, soft sweaters and audacious heels. This collection has everything you need to dazzle and turn heads at any occasion.",
+      description: `Fashion shouldn't have to constrain comfort - and that's exactly what the Chic and Comfortable Edit is all about. We designed this with the modern woman in mind, offering stylish pieces that are also luxurious and comfortable to wear.
+
+From crisp blouses to cozy sweaters, our line has something for every occasion and every season. And to complete your look, we also have a range of chic accessories, including scarves, bags, and jewelry.
+
+So why sacrifice comfort for style? With this collection, you don't have to. Shop now and experience the best of both worlds.`,
       banner:
          "https://c4.wallpaperflare.com/wallpaper/951/999/714/beautiful-woman-vintage-fashion-photography-wallpaper-preview.jpg",
       items: [],
@@ -21,7 +29,7 @@ export const collections: Collection[] = [
    },
    {
       id: "3",
-      name: "Effortless",
+      name: "Elegance, Effortlessly",
       description:
          "Effortlessly stylish? That's what you'll be with our latest collection! Our pieces are designed to be simple yet bold, allowing you to look put-together without any effort. Explore comfy leggings to stylish tops, this collection has everything you need to create effortless and stylish outfits.",
       banner:

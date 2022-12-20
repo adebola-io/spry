@@ -2,14 +2,14 @@
    <header class="fixed top-0 w-full z-[99] bg-cream-pink">
       <div
          :class="[
-            'h-[120px] max-md:h-[88px] px-[2vw] flex items-center justify-between relative max-md:justify-center',
+            'h-[120px] max-md:h-[88px] max-sm:h-[70px] px-[2vw] max-sm:px-[3vw] flex items-center justify-between relative max-md:justify-center',
          ]"
       >
          <img
             id="header-logo"
             src="~~/public/logo.svg"
             alt="Spry"
-            class="h-[54.29px] max-md:absolute"
+            class="h-[54.29px] max-sm:h-[50%] max-md:absolute"
          />
          <div
             id="header-controls"
@@ -56,7 +56,7 @@
          <div
             id="sidebar-btn"
             @click="sidebarIsOpen = !sidebarIsOpen"
-            class="md:hidden flex flex-col cursor-pointer justify-center h-[50%] aspect-square absolute left-[2vw]"
+            class="md:hidden flex flex-col cursor-pointer justify-center h-[50%] aspect-square absolute left-[2vw] max-sm:left-[3vw]"
          >
             <div
                v-for="index in 3"
@@ -76,13 +76,13 @@
          />
          <form
             id="mobile-search-form"
-            class="md:hidden absolute flex items-center px-[2vw] bg-pale-pink w-full h-full"
+            class="md:hidden absolute flex items-center px-[2vw] max-sm:px-[3vw] bg-pale-pink w-full h-full"
             v-if="searchIsOpen"
          >
             <img
                @click="searchIsOpen = false"
                src="~~/assets/svg/Arrow_Up.svg"
-               class="h-[25px] cursor-pointer mr-[45px]"
+               class="h-[35%] cursor-pointer mr-[45px]"
                alt="Back"
             />
             <input
@@ -93,7 +93,7 @@
             <img
                @click="searchText = ''"
                src="~~/assets/svg/Cancel.svg"
-               class="h-[25px] cursor-pointer"
+               class="h-[35%] cursor-pointer"
                alt="X"
             />
          </form>
@@ -102,10 +102,12 @@
          <AppSidebar v-if="sidebarIsOpen" />
       </Transition>
       <nav
-         class="h-[85px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-md:pl-[2vw] max-md:justify-start max-md:overflow-x-scroll max-md:text-[18px]"
+         class="h-[85px] max-sm:h-[60px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
       >
          <NuxtLink v-for="link in navlinks" v-bind="link">
-            <div class="list-none mr-[30px]">{{ link.name }}</div>
+            <div class="list-none mr-distance">
+               {{ link.name }}
+            </div>
          </NuxtLink>
       </nav>
    </header>

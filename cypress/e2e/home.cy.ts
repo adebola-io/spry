@@ -10,6 +10,10 @@ describe("Home Page", () => {
       );
    });
 
+   it("should have banner", () => {
+      cy.get("#banner").should("be.visible");
+   });
+
    it("should have a feature section with links to popular collections", () => {
       cy.get(".featured-section")
          .should("be.visible")

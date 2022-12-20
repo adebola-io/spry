@@ -8,10 +8,13 @@ export default {
          spacing: {
             distance: "var(--distance)",
             "half-distance": "var(--half-distance)",
-            "quarter-distance": "var(--quarter-distance)",
             "third-distance": "var(--third-distance)",
+            "quarter-distance": "var(--quarter-distance)",
+            "fifth-distance": "var(--fifth-distance)",
+            "sixth-distance": "var(--sixth-distance)",
             "double-distance": "var(--double-distance)",
             "triple-distance": "var(--triple-distance)",
+            "quadruple-distance": "var(--quadruple-distance)",
          },
          screens: {
             md: "912px",
