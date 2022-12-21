@@ -78,7 +78,7 @@
 
 .sidebar-enter-active,
 .sidebar-leave-active {
-   transition-duration: 500ms;
+   transition-duration: 400ms;
 }
 
 .sidebar-enter-from,
