@@ -8,10 +8,10 @@ defineProps<{
 
 <template>
    <section
-      class="home-section h-fit w-full pt-[2vw] pb-[2vw] max-sm:pb-[3vw] max-sm:pt-[3vw] my-distance"
+      class="home-section h-fit w-full pt-[2vw] pb-[2vw] max-sm:pb-fifth-distance max-sm:pt-[3vw] my-distance"
    >
       <h1
-         class="text-4xl max-md:text-2xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance font-bold font-oceanwide text-dark-purple"
+         class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-dark-purple"
       >
          {{ heading }}
       </h1>
