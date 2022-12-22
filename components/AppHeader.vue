@@ -68,7 +68,7 @@
             ></div>
          </div>
          <img
-            @click="searchIsOpen = true"
+            @click="(searchIsOpen = true), (sidebarIsOpen = false)"
             src="~~/assets/svg/Search.svg"
             class="absolute right-[2vw] h-[30%] md:hidden"
             alt="Search"
@@ -100,6 +100,12 @@
       </div>
       <Transition name="sidebar">
          <AppSidebar v-if="sidebarIsOpen" />
+      </Transition>
+      <Transition name="overlay">
+         <div
+            v-if="sidebarIsOpen || searchIsOpen"
+            class="fixed w-full h-full bg-black opacity-40"
+         ></div>
       </Transition>
       <nav
          class="h-[85px] max-sm:h-[60px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"

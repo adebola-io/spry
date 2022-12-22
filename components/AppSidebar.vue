@@ -3,7 +3,7 @@
 <template>
    <aside
       id="sidebar"
-      class="fixed z-[99] h-full w-[80vw] max-w-[400px] min-w-[200px] md:hidden bg-dark-purple text-white flex flex-col justify-center"
+      class="fixed z-[99] h-full w-[70vw] max-w-[400px] min-w-[200px] md:hidden bg-dark-purple text-white flex flex-col justify-center"
    >
       <NuxtLink class="sidebar-link" to="/user/cart">
          <img
@@ -34,12 +34,12 @@
 
 <style scoped>
 #sidebar {
-   @apply pl-double-distance pb-[80px] text-[17pt] font-oceanwide gap-double-distance;
+   @apply pl-double-distance pb-[80px] text-[15pt] font-oceanwide gap-double-distance;
 }
 .sidebar-link {
    @apply flex items-center gap-half-distance;
 }
 .sidebar-link img {
-   @apply w-[50px];
+   @apply w-[40px];
 }
 </style>

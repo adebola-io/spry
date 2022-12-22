@@ -77,13 +77,20 @@
 }
 
 .sidebar-enter-active,
-.sidebar-leave-active {
+.sidebar-leave-active,
+.overlay-enter-active,
+.overlay-leave-active {
    transition-duration: 400ms;
 }
 
 .sidebar-enter-from,
 .sidebar-leave-to {
    transform: translate(-100%);
+}
+
+.overlay-enter-from,
+.overlay-leave-to {
+   opacity: 0;
 }
 
 .scroll-hidden::-webkit-scrollbar {
