@@ -755,7 +755,7 @@ export const items: Item.Unit[] = [
       id: "bh-123",
       name: "Blue Leather Handbag",
       added: "2022-06-01T00:00:00.000Z",
-      category: "bags",
+      category: "accessories",
       description:
          "This elegant blue leather handbag is the perfect accessory for any outfit. With a spacious interior and multiple pockets, it's both stylish and practical. The bag features gold-tone hardware and a detachable shoulder strap, giving you versatility in how you wear it. Made with high-quality materials, this handbag is sure to become a go-to in your wardrobe.",
       theme: [101, 124, 149],

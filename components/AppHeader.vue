@@ -2,7 +2,7 @@
    <header class="fixed top-0 w-full z-[99] bg-cream-pink">
       <div
          :class="[
-            'h-[120px] max-md:h-[88px] max-sm:h-[70px] px-[2vw] max-sm:px-[3vw] flex items-center justify-between relative max-md:justify-center',
+            'h-[120px] max-md:h-[88px] max-sm:h-[70px] px-[2vw] max-sm:px-[3vw] flex items-center justify-between relative max-md:justify-center ',
          ]"
       >
          <img

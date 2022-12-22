@@ -3,7 +3,7 @@ declare namespace Item {
    export type Category =
       | "shirts & trousers"
       | "shoes"
-      | "bags"
+      | "accessories"
       | "formal wear"
       | "dresses & gowns"
       | "jackets & hoodies";
