@@ -3,7 +3,7 @@
 <template>
    <aside
       id="sidebar"
-      class="fixed z-[99] h-full w-[70vw] max-w-[400px] min-w-[200px] md:hidden bg-dark-purple text-white flex flex-col justify-center"
+      class="fixed z-[99] h-full w-[70vw] max-w-[400px] min-w-[200px] md:hidden bg-dark-purple text-white flex flex-col justify-center opacity-[.95]"
    >
       <NuxtLink class="sidebar-link" to="/user/cart">
          <img

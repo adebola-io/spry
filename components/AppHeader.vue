@@ -62,8 +62,8 @@
                v-for="index in 3"
                :key="index"
                :class="[
-                  { 'w-[50%]': index === 2 },
-                  'h-[3.5px] w-[75%] rounded-[1px] bg-fandago  my-[7%]',
+                  { 'w-[40%]': index === 2, 'bg-dark-purple': sidebarIsOpen },
+                  'h-[3px] w-[75%] duration-300 bg-fandago my-[9%] rounded-[2px]',
                ]"
             ></div>
          </div>
