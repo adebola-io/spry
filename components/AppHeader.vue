@@ -5,12 +5,15 @@
             'h-[120px] max-md:h-[88px] max-sm:h-[70px] px-[2vw] max-sm:px-[3vw] flex items-center justify-between relative max-md:justify-center ',
          ]"
       >
-         <img
-            id="header-logo"
-            src="~~/public/logo.svg"
-            alt="Spry"
-            class="h-[54.29px] max-sm:h-[50%] max-md:absolute"
-         />
+         <NuxtLink to="/" class="h-full flex items-center max-md:absolute">
+            <img
+               id="header-logo"
+               src="~~/public/logo.svg"
+               alt="Spry"
+               class="h-[54.29px] max-sm:h-[50%]"
+            />
+         </NuxtLink>
+
          <div
             id="header-controls"
             class="flex justify-between items-center w-[33vw] max-w-[800px] min-w-[600px] max-md:hidden"
@@ -68,12 +71,13 @@
             ></div>
          </div>
          <img
-            @click="(searchIsOpen = true), (sidebarIsOpen = false)"
+            @click="triggerSearch().then(() => searchBar?.focus())"
             src="~~/assets/svg/Search.svg"
-            class="absolute right-[2vw] h-[30%] md:hidden"
+            class="absolute right-[2vw] max-sm:right-[3vw] h-[34%] md:hidden"
             alt="Search"
             id="search-icon"
          />
+
          <form
             id="mobile-search-form"
             class="md:hidden absolute flex items-center px-[2vw] max-sm:px-[3vw] bg-pale-pink w-full h-full"
@@ -86,12 +90,15 @@
                alt="Back"
             />
             <input
+               ref="searchBar"
                type="text"
                v-model="searchText"
                class="w-full h-full bg-transparent focus-visible:outline-0 font-bold text-[14.08pt] text-fandago"
             />
             <img
-               @click="searchText = ''"
+               @click="
+                  searchText === '' ? (searchIsOpen = false) : (searchText = '')
+               "
                src="~~/assets/svg/Cancel.svg"
                class="h-[35%] cursor-pointer"
                alt="X"
@@ -104,6 +111,7 @@
       <Transition name="overlay">
          <div
             v-if="sidebarIsOpen || searchIsOpen"
+            @click="sidebarIsOpen = false"
             class="fixed w-full h-full bg-black opacity-40"
          ></div>
       </Transition>
@@ -124,6 +132,7 @@ const searchIsFocused = ref(false);
 const searchIsOpen = ref(false);
 const searchText = ref("");
 const sidebarIsOpen = ref(false);
+const searchBar = ref<HTMLInputElement | null>(null);
 const navlinks = [
    {
       to: "/",
@@ -150,6 +159,11 @@ const navlinks = [
       name: "Children",
    },
 ];
+
+async function triggerSearch() {
+   searchIsOpen.value = true;
+   sidebarIsOpen.value = false;
+}
 </script>
 
 <style scoped>
