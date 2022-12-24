@@ -25,7 +25,7 @@ This file is subject to change whenever necessary.
 
 -  [x] add: Header
 -  [x] add: Footer
--  [ ] add: Home Page
+-  [x] add: Home Page
 -  [ ] add: About Us Page
 -  [ ] add: Privacy Policy Page.
 -  [ ] add: Not Found Error Page

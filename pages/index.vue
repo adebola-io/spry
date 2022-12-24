@@ -28,10 +28,14 @@
             v-bind="homesection"
          />
          <DealsOfTheDay />
+         <HomeSection v-bind="homesections[2]" />
          <HomeSection
-            v-for="homesection in secondSectionList"
-            v-bind="homesection"
+            v-if="categories"
+            heading="Categories"
+            :categories="categories"
+            sub-heading=""
          />
+         <HomeSection v-bind="homesections[3]" />
       </template>
    </main>
 </template>
@@ -41,14 +45,10 @@ useHead({
    title: "Spry Clothing Store | Comfort and Style for Affordable Prices",
 });
 const { data: featureddata } = await useFetch("/api/collections/featured"),
-   { data: homesections } = await useFetch("/api/homesections");
+   { data: homesections } = await useFetch("/api/homesections"),
+   { data: categories } = await useFetch("/api/categories");
 
-const firstSectionList = computed(() =>
-   homesections.value?.slice(0, homesections.value.length / 2)
-);
-const secondSectionList = computed(() =>
-   homesections.value?.slice(homesections.value.length / 2)
-);
+const firstSectionList = computed(() => homesections.value?.slice(0, 2));
 </script>
 
 <style scoped>

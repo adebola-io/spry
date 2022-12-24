@@ -5,7 +5,7 @@
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
       }"
-      class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[15px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px]"
+      class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[10px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px]"
    >
       <!-- Pic -->
       <div

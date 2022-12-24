@@ -6,7 +6,7 @@ const time = useTimeLeftInDay();
 <template>
    <section
       id="deals-of-the-day"
-      class="relative bg-cover ml-[2vw] max-sm:ml-[3vw] bg-center h-[500px] max-sm:h-[270px] rounded-l-[15px] overflow-hidden mb-distance"
+      class="relative bg-cover ml-[2vw] max-sm:ml-0 max-sm:rounded-none bg-center h-[500px] max-md:h-[400px] max-sm:h-[250px] rounded-l-[15px] overflow-hidden mb-distance"
    >
       <div class="absolute h-full w-full bg-black opacity-50"></div>
       <div
@@ -15,8 +15,10 @@ const time = useTimeLeftInDay();
          <div
             class="flex flex-col justify-center text-white h-full pl-distance font-oceanwide"
          >
-            <h1 class="text-6xl max-sm:text-3xl">Deals of the Day</h1>
-            <span class="text-4xl max-sm:text-2xl mt-[25px]">
+            <h1 class="text-6xl max-md:text-4xl max-sm:text-2xl">
+               Deals of the Day
+            </h1>
+            <span class="text-4xl max-md:text-2xl max-sm:text-xl mt-distance">
                {{ time }}
             </span>
          </div>
