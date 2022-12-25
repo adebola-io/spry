@@ -51,7 +51,8 @@
       }
    }
    main {
-      @apply mt-[calc(120px+85px)] max-md:mt-[calc(88px+85px)] max-sm:mt-[calc(60px+70px)];
+      animation: slide-in 700ms;
+      @apply mt-[calc(120px+80px)] max-md:mt-[calc(88px+80px)] max-sm:mt-[calc(55px+70px)];
    }
 }
 
@@ -70,9 +71,16 @@
    }
 }
 
-@keyframes item-photo-fade-in {
+@keyframes fade-in {
    0% {
-      opacity: 0;
+      opacity: 0.5;
+   }
+}
+
+@keyframes slide-in {
+   0% {
+      transform: translate(-10%);
+      opacity: 0.4;
    }
 }
 
@@ -90,6 +98,16 @@
 
 .overlay-enter-from,
 .overlay-leave-to {
+   opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+   transition-duration: 600ms;
+}
+
+.page-enter-from,
+.page-leave-to {
    opacity: 0;
 }
 

@@ -116,7 +116,7 @@
          ></div>
       </Transition>
       <nav
-         class="h-[85px] max-sm:h-[60px] w-full border-fandago text-fandago [font-weight:700] text-[22px] border-y-[3px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
+         class="h-[80px] max-sm:h-[55px] w-full text-pale-pink bg-dark-purple [font-weight:700] text-[22px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
       >
          <NuxtLink v-for="link in navlinks" v-bind="link">
             <div class="list-none mr-distance">
@@ -168,7 +168,7 @@ async function triggerSearch() {
 
 <style scoped>
 nav .router-link-active > div::after {
-   @apply h-[4px] [content:""] block bg-fandago rounded-[3px];
+   @apply h-[4px] [content:""] block bg-pale-pink rounded-[3px];
 }
 nav::-webkit-scrollbar {
    display: none;

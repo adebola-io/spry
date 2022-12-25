@@ -6,7 +6,7 @@ const time = useTimeLeftInDay();
 <template>
    <section
       id="deals-of-the-day"
-      class="relative bg-cover ml-[2vw] max-sm:ml-0 max-sm:rounded-none bg-center h-[500px] max-md:h-[400px] max-sm:h-[250px] rounded-l-[15px] overflow-hidden mb-distance"
+      class="relative bg-cover ml-[2vw] max-sm:ml-0 max-sm:rounded-none bg-center h-[500px] max-md:h-[400px] max-sm:h-[250px] rounded-l-[15px] overflow-hidden mb-distance max-sm:mt-distance"
    >
       <div class="absolute h-full w-full bg-black opacity-50"></div>
       <div

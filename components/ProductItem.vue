@@ -5,7 +5,7 @@
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
       }"
-      class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[10px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px]"
+      class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[10px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px] max-xs:h-[180px]"
    >
       <!-- Pic -->
       <div
@@ -23,7 +23,7 @@
          <!-- Name -->
          <h3
             :title="item.name"
-            class="font-bold text-[15pt] max-md:text-[11pt] max-sm:text-[9.5pt] whitespace-nowrap text-ellipsis overflow-hidden w-[83%]"
+            class="font-bold text-[15pt] max-md:text-[11pt] max-sm:text-[9.5pt] max-xs:text-[8pt] whitespace-nowrap text-ellipsis overflow-hidden w-[83%]"
          >
             {{ item.name }}
          </h3>
@@ -35,7 +35,9 @@
          <div
             class="flex items-center gap-quarter-distance my-quarter-distance max-md:my-0"
          >
-            <span class="text-[20pt] max-md:text-[14pt] max-sm:text-[10pt]">
+            <span
+               class="text-[20pt] max-md:text-[14pt] max-sm:text-[10pt] max-xs:text-[9pt]"
+            >
                {{ itemPrice }}
             </span>
             <span

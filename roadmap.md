@@ -40,7 +40,7 @@ This file is subject to change whenever necessary.
 -  [ ] add: Wishlists Page.
 -  [ ] add: Checkout Page
 -  [ ] add: Collections Page.
--  [ ] add: Featured Collection Page.
+-  [x] add: Featured Collection Page.
 
 -  [ ] add: User Profile pic upload process.
 -  [ ] add: Placeholder Item Loader.
