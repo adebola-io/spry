@@ -5,11 +5,11 @@
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
       }"
-      class="product-item duration-300 relative border-[3.74088px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px] max-xs:h-[180px]"
+      class="product-item duration-300 relative border-[3.74088px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
       <!-- Pic -->
       <div
-         class="w-full relative border-b-[3.74088px] border-dark-purple h-[67%] flex items-center justify-center"
+         class="w-full relative border-b-[3.74088px] border-dark-purple h-[60%] flex items-center justify-center"
       >
          <AppLoader
             v-if="!imageLoaded"
@@ -29,12 +29,12 @@
          />
       </div>
       <div
-         class="relative max-md:flex max-md:flex-col max-md:justify-center p-quarter-distance max-md:pt-half-distance text-dark-purple font-oceanwide bg-white h-[33%]"
+         class="relative justify-center p-quarter-distance text-dark-purple font-oceanwide bg-white h-[40%]"
       >
          <!-- Name -->
          <h3
             :title="item.name"
-            class="font-bold text-[15pt] max-md:text-[11pt] max-sm:text-[9.5pt] max-xs:text-[8pt] whitespace-nowrap text-ellipsis overflow-hidden w-[83%]"
+            class="product-item-heading font-bold text-[15pt] max-md:text-[11pt] max-sm:text-[10pt] max-xs:text-[9pt] text-ellipsis overflow-hidden w-[83%]"
          >
             {{ item.name }}
          </h3>
@@ -47,7 +47,7 @@
             class="flex items-center gap-quarter-distance my-quarter-distance max-md:my-0"
          >
             <span
-               class="text-[20pt] max-md:text-[14pt] max-sm:text-[10pt] max-xs:text-[9pt]"
+               class="text-[20pt] max-md:text-[14pt] max-sm:text-[11pt] max-xs:text-[9.5pt]"
             >
                {{ itemPrice }}
             </span>
@@ -62,7 +62,7 @@
          <Heart
             @select="toggleWishList(item)"
             :selected="addedToWishList"
-            class="absolute h-[23px] max-md:scale-[.6] text-flickr-pink top-[40%] right-half-distance"
+            class="absolute h-[23px] max-md:scale-[.5] text-flickr-pink top-[40%] right-half-distance"
          />
       </div>
       <div
@@ -123,7 +123,13 @@ watchEffect(() => {
 <style scoped>
 .product-item:hover {
    @apply scale-[.97] text-dark-purple;
-   box-shadow: -3px 5px 2px 0;
+   box-shadow: -3px 5px 0px 0;
    background-color: var(--hoverColor) !important;
+}
+.product-item-heading {
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
 }
 </style>

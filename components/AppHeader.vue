@@ -169,6 +169,7 @@ async function triggerSearch() {
 <style scoped>
 nav .router-link-active > div::after {
    @apply h-[4px] [content:""] block bg-pale-pink;
+   animation: stretch_ 300ms;
 }
 nav::-webkit-scrollbar {
    display: none;

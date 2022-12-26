@@ -85,6 +85,12 @@
    }
 }
 
+@keyframes stretch_ {
+   0% {
+      transform: scaleX(0);
+   }
+}
+
 .sidebar-enter-active,
 .sidebar-leave-active,
 .overlay-enter-active,
