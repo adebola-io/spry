@@ -5,11 +5,11 @@
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
       }"
-      class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[10px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px] max-xs:h-[180px]"
+      class="product-item duration-300 relative border-[3.74088px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px] max-xs:h-[180px]"
    >
       <!-- Pic -->
       <div
-         class="w-full border-b-[2.74088px] border-dark-purple h-[67%] flex items-center justify-center"
+         class="w-full border-b-[3.74088px] border-dark-purple h-[67%] flex items-center justify-center"
       >
          <img
             class="h-[75%] duration-300 animate-[item-photo-fade-in_300ms]"
@@ -56,7 +56,7 @@
       </div>
       <div
          v-if="isNewItem"
-         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1 rounded-[7px]"
+         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1"
       >
          NEW
       </div>

@@ -23,7 +23,7 @@
                @focusout="searchIsFocused = false"
                :class="[
                   { 'bg-pale-pink': searchIsFocused },
-                  'flex items-center pr-5 border-[3px] rounded-[15px] border-fandago overflow-hidden w-[80%]',
+                  'flex items-center pr-5 border-[3px] border-fandago overflow-hidden w-[80%]',
                ]"
             >
                <input
@@ -66,7 +66,7 @@
                :key="index"
                :class="[
                   { 'w-[40%]': index === 2, 'bg-dark-purple': sidebarIsOpen },
-                  'h-[3px] w-[75%] duration-300 bg-fandago my-[9%] rounded-[2px]',
+                  'h-[3px] w-[75%] duration-300 bg-fandago my-[9%]',
                ]"
             ></div>
          </div>
@@ -168,7 +168,7 @@ async function triggerSearch() {
 
 <style scoped>
 nav .router-link-active > div::after {
-   @apply h-[4px] [content:""] block bg-pale-pink rounded-[3px];
+   @apply h-[4px] [content:""] block bg-pale-pink;
 }
 nav::-webkit-scrollbar {
    display: none;

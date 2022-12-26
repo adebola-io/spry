@@ -4,7 +4,7 @@
       :to="`/categories/${category.name.toLowerCase()}`"
    >
       <div
-         class="product-category-banner-container border-[3px] duration-300 overflow-hidden border-dark-purple h-[300px] max-md:h-[200px] max-sm:h-[150px] aspect-[1.5] rounded-[10px]"
+         class="product-category-banner-container border-[3px] duration-300 overflow-hidden border-dark-purple h-[300px] max-md:h-[200px] max-sm:h-[150px] aspect-[1.5]"
       >
          <div
             :style="{ backgroundImage: `url(${category.banner})` }"
