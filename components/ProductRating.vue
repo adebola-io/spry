@@ -1,7 +1,7 @@
 <template>
    <div
       v-for="_ in value"
-      class="mr-[2px] max-md:w-[12px] max-sm:w-[8.5px] max-sm:h-[13px] max-md:scale-[.6] max-sm:scale-[.4] max-md:mr-0"
+      class="mr-[3px] max-md:w-[12px] max-sm:w-[9px] max-sm:h-[13px] translate-y-[-3px] translate-x-[-2px] max-md:scale-[.6] max-sm:scale-[.5] max-md:mr-0"
    >
       <svg
          width="18"

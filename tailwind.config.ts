@@ -18,6 +18,8 @@ export default {
          },
          screens: {
             md: "912px",
+            nml: "1024px",
+            xs: "375px",
          },
          colors: {
             fandago: "#b0228cff",

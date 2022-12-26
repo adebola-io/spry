@@ -15,7 +15,7 @@
             or comfort, when you sign up and shop on Spry.
          </p>
          <button
-            class="bg-fandago text-ballet-pink text-[26.1px] px-[59px] py-[16.12px] rounded-[13.3733px]"
+            class="bg-fandago text-ballet-pink text-[26.1px] px-[59px] py-[16.12px]"
             type="button"
          >
             Get Started

@@ -5,25 +5,36 @@
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
       }"
-      class="product-item duration-300 relative border-[2.74088px] border-solid rounded-[10px] overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[325px] max-md:h-[240px] max-sm:h-[190px]"
+      class="product-item duration-300 relative border-[3.74088px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
       <!-- Pic -->
       <div
-         class="w-full border-b-[2.74088px] border-dark-purple h-[67%] flex items-center justify-center"
+         class="w-full relative border-b-[3.74088px] border-dark-purple h-[60%] flex items-center justify-center"
       >
+         <AppLoader
+            v-if="!imageLoaded && !imageError"
+            class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
+            :size="25"
+            :color="hoverColor"
+         />
          <img
-            class="h-[75%] duration-300 animate-[item-photo-fade-in_300ms]"
-            :src="image"
+            ref="productImage"
+            @load="imageLoaded = true"
+            :class="[
+               { 'opacity-0': !imageLoaded },
+               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms]',
+            ]"
+            :lazy-src="image"
             :alt="item.name"
          />
       </div>
       <div
-         class="relative max-md:flex max-md:flex-col max-md:justify-center p-quarter-distance max-md:pt-half-distance text-dark-purple font-oceanwide bg-white h-[33%]"
+         class="relative justify-center p-quarter-distance text-dark-purple font-oceanwide bg-white h-[40%]"
       >
          <!-- Name -->
          <h3
             :title="item.name"
-            class="font-bold text-[15pt] max-md:text-[11pt] max-sm:text-[9.5pt] whitespace-nowrap text-ellipsis overflow-hidden w-[83%]"
+            class="product-item-heading font-bold text-[15pt] max-md:text-[11pt] max-sm:text-[10pt] max-xs:text-[9pt] text-ellipsis overflow-hidden w-[83%]"
          >
             {{ item.name }}
          </h3>
@@ -35,12 +46,14 @@
          <div
             class="flex items-center gap-quarter-distance my-quarter-distance max-md:my-0"
          >
-            <span class="text-[20pt] max-md:text-[14pt] max-sm:text-[10pt]">
+            <span
+               class="text-[20pt] max-md:text-[14pt] max-sm:text-[11pt] max-xs:text-[9.5pt]"
+            >
                {{ itemPrice }}
             </span>
             <span
                v-if="item.price.discount"
-               class="text-[12pt] max-md:text-[9.5pt] line-through text-salmon-pink opacity-75"
+               class="text-[12pt] max-md:text-[9.5pt] line-through text-candy-pink opacity-75"
             >
                {{ item.price.value }}
             </span>
@@ -49,12 +62,12 @@
          <Heart
             @select="toggleWishList(item)"
             :selected="addedToWishList"
-            class="absolute h-[23px] max-md:scale-[.6] text-flickr-pink top-[40%] right-half-distance"
+            class="absolute h-[23px] max-md:scale-[.5] text-flickr-pink top-[40%] right-half-distance"
          />
       </div>
       <div
          v-if="isNewItem"
-         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1 rounded-[7px]"
+         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1"
       >
          NEW
       </div>
@@ -62,15 +75,20 @@
 </template>
 
 <script setup lang="ts">
-const { item } = defineProps<{
+const { item, wishlist } = defineProps<{
    item: Item.Unit;
+   wishlist?: boolean;
 }>();
+const productImage = ref<HTMLInputElement | null>(null);
+const imageLoaded = ref(false);
+const imageError = ref(false);
 const image = (
-   await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(
-      () => ({ default: "" })
-   )
+   await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(() => {
+      imageError.value = true;
+      return { default: "" };
+   })
 ).default;
-const addedToWishList = ref(false);
+const addedToWishList = ref(wishlist ?? false);
 
 function toggleWishList(item: Item.Unit) {
    addedToWishList.value = !addedToWishList.value;
@@ -79,7 +97,7 @@ function toggleWishList(item: Item.Unit) {
 const itemRating = computed(() => {
    return 5;
 });
-const isNewItem = new Date(item.added).getMonth() === new Date().getMonth();
+const isNewItem = new Date(item.added).getMonth() > 9;
 const itemPrice = computed(() => {
    const currency = item.price.currency === "NGN" ? "N" : "$";
    if (item.price.discount) {
@@ -97,12 +115,24 @@ const itemPrice = computed(() => {
 const hoverColor = `rgb(${item.theme
    .map((unit) => (unit + 20 < 255 ? unit + 20 : 255))
    .join(" ")})`;
+
+watchEffect(() => {
+   productImage.value &&
+      (productImage.value.src =
+         productImage.value.getAttribute("lazy-src") ?? "");
+});
 </script>
 
 <style scoped>
 .product-item:hover {
    @apply scale-[.97] text-dark-purple;
-   box-shadow: -3px 5px 2px 0;
+   box-shadow: -3px 5px 0px 0;
    background-color: var(--hoverColor) !important;
+}
+.product-item-heading {
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
 }
 </style>

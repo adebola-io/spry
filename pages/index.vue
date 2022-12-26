@@ -1,5 +1,5 @@
 <template>
-   <main class="w-full min-h-[80vh] pt-distance">
+   <main class="animated w-full min-h-[80vh] pt-distance">
       <section
          v-if="featureddata"
          class="featured-section grid mx-[2vw] h-[60vw] max-h-[80vh] [grid:_auto_/_repeat(2,_calc(50%-var(--half-distance)))] justify-center gap-distance mb-distance"
