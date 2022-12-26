@@ -1,5 +1,293 @@
 export const items: Item.Unit[] = [
    {
+      id: "wj1",
+      name: "Black Puffer Jacket",
+      added: "2022-10-01T09:00:00.000Z",
+      category: "jackets & hoodies",
+      description:
+         "Stay warm and stylish in this black puffer jacket. Made with high-quality materials, this jacket will keep you warm and comfortable in the colder months. The jacket features a hood, zipper front, and pockets for your convenience. Perfect for everyday wear or a night out on the town. Available in sizes S-XL.",
+      theme: [159, 152, 152],
+      imageId: "0000Z",
+      sales: 50,
+      quantity: 100,
+      tags: [
+         "winter",
+         "jacket",
+         "puffer",
+         "black",
+         "women",
+         "s-xl",
+         "warm",
+         "hoodie",
+         "zipper",
+         "casual",
+      ],
+      reviews: [
+         {
+            userId: "user1",
+            content:
+               "Love this jacket! It's warm and stylish and fits true to size. Can't wait to wear it all winter long.",
+            rating: 5,
+            date: "2022-10-15T09:00:00.000Z",
+         },
+         {
+            userId: "user2",
+            content:
+               "I got this jacket as a gift and I'm so glad I did. It's really comfortable and keeps me warm in the cold weather. The black color is also very versatile and goes with everything. Definitely recommend!",
+            rating: 4,
+            date: "2022-10-17T09:00:00.000Z",
+         },
+         {
+            userId: "user3",
+            content:
+               "I bought this jacket for my daughter and she loves it. It fits her well and the material seems to be of good quality. We'll see how it holds up in the long run, but so far so good.",
+            rating: 3,
+            date: "2022-10-20T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 79.99,
+         currency: "USD",
+         discount: {
+            name: "Winter Sale",
+            percent: 20,
+         },
+      },
+   },
+   {
+      id: "wb1",
+      name: "Men's Brown Waterproof Boots",
+      added: "2022-11-01T09:00:00.000Z",
+      category: "shoes",
+      description:
+         "Stay dry and comfortable in these men's brown waterproof boots. Made with high-quality materials and a durable sole, these boots are perfect for the colder months. The boots feature a lace-up design and a padded insole for added comfort. Available in sizes 7-13.",
+      theme: [231, 187, 156],
+      imageId: "000AA",
+      sales: 30,
+      quantity: 75,
+      tags: [
+         "winter",
+         "boots",
+         "waterproof",
+         "brown",
+         "men",
+         "7-13",
+         "lace-up",
+         "comfortable",
+         "durable",
+         "casual",
+      ],
+      reviews: [
+         {
+            userId: "user4",
+            content:
+               "Bought these boots for my husband and he loves them. They fit true to size and are very comfortable. The waterproof feature is a major plusn the wet winter months. Definitely recommend!",
+            rating: 5,
+            date: "2022-11-05T09:00:00.000Z",
+         },
+         {
+            userId: "user5",
+            content:
+               "I've been wearing these boots for a few weeks now and they're holding up really well. The waterproof feature is definitely a plus and they're really comfortable to wear all day. I'm really happy with my purchase.",
+            rating: 4,
+            date: "2022-11-12T09:00:00.000Z",
+         },
+         {
+            userId: "user6",
+            content:
+               "Bought these boots for my son and he loves them. They fit true to size and are very comfortable. The waterproof feature is also a great added bonus. Overall, a great purchase.",
+            rating: 3,
+            date: "2022-11-17T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 89.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "ws1",
+      name: "Wool Scarf Red Knitted",
+      added: "2022-10-01T09:00:00.000Z",
+      category: "accessories",
+      description:
+         "Stay warm and stylish in this red knitted scarf. Made with high-quality materials, this scarf is perfect for the colder months. The scarf features a soft and comfortable knit and is long enough to wrap around your neck multiple times. Available in one size fits all.",
+      theme: [221, 149, 149],
+      imageId: "000AB",
+      sales: 20,
+      quantity: 50,
+      tags: ["winter", "scarf", "knitted", "red", "women", "one size"],
+      reviews: [
+         {
+            userId: "user7",
+            content:
+               "Love this scarf! It's warm and stylish and fits great. Can't wait to wear it all winter long.",
+            rating: 5,
+            date: "2022-10-15T09:00:00.000Z",
+         },
+         {
+            userId: "user8",
+            content:
+               "I got this scarf as a gift and I'm so glad I did. It's really comfortable and keeps me warm in the cold weather. The red color is also very pretty and goes with a lot of different outfits. Definitely recommend!",
+            rating: 4,
+            date: "2022-10-17T09:00:00.000Z",
+         },
+         {
+            userId: "user9",
+            content:
+               "I bought this scarf for my sister and she loves it. The knit is really soft and it's long enough to wrap around her neck multiple times. Great purchase!",
+            rating: 3,
+            date: "2022-10-20T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 29.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "wh1",
+      name: "Men's Black Knitted Beanie",
+      added: "2022-11-01T09:00:00.000Z",
+      category: "accessories",
+      description:
+         "Stay warm and stylish in this black knitted beanie. Made with high-quality materials, this hat is perfect for the colder months. The beanie features a soft and comfortable knit and a ribbed design. Available in one size fits all.",
+      theme: [155, 155, 155],
+      imageId: "000AC",
+      sales: 15,
+      quantity: 30,
+      tags: ["winter", "hat", "beanie", "knitted", "black", "men", "one size"],
+      reviews: [
+         {
+            userId: "user10",
+            content:
+               "Bought this beanie for my husband and he loves it. It fits great and is really comfortable. The black color is also very versatile and goes with a lot of different outfits. Definitely recommend!",
+            rating: 5,
+            date: "2022-11-05T09:00:00.000Z",
+         },
+         {
+            userId: "user11",
+            content:
+               "I've been wearing this beanie for a few weeks now and it's holdingup really well. The knit is really soft and comfortable and the ribbed design adds some extra style. I'm really happy with my purchase.",
+            rating: 4,
+            date: "2022-11-12T09:00:00.000Z",
+         },
+         {
+            userId: "user12",
+            content:
+               "Bought this beanie for my son and he loves it. It fits him well and the knit is really soft. The black color is also very versatile and goes with a lot of different outfits. Overall, a great purchase.",
+            rating: 3,
+            date: "2022-11-17T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 19.99,
+         currency: "USD",
+         discount: {
+            name: "Winter Sale",
+            percent: 15,
+         },
+      },
+   },
+   {
+      id: "wl1",
+      name: "Women's Black Thermal Leggings",
+      added: "2022-12-01T09:00:00.000Z",
+      category: "shirts & trousers",
+      description:
+         "Stay warm and comfortable in these black thermal leggings. Made with high-quality materials, these leggings are perfect for the colder months. The leggings feature a soft and comfortable knit and a thick, thermal design. Available in sizes XS-XL.",
+      theme: [106, 106, 106],
+      imageId: "000AD",
+      sales: 25,
+      quantity: 50,
+      tags: ["winter", "leggings", "thermal", "black", "women", "xs-xl"],
+      reviews: [
+         {
+            userId: "user13",
+            content:
+               "Love these leggings! They're warm and comfortable and fit true to size. Can't wait to wear them all winter long.",
+            rating: 5,
+            date: "2022-12-01T09:00:00.000Z",
+         },
+         {
+            userId: "user14",
+            content:
+               "I bought these leggings for my daughter and she loves them. They fit her well and are really comfortable. The thermal design is also a major plus in the colder months. Definitely recommend!",
+            rating: 4,
+            date: "2022-12-03T09:00:00.000Z",
+         },
+         {
+            userId: "user15",
+            content:
+               "I've been wearing these leggings for a few weeks now and they're holding up really well. The knit is really soft and comfortable and the thermal design keeps me warm. I'm really happy with my purchase.",
+            rating: 3,
+            date: "2022-12-07T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 39.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "wc1",
+      name: "Grey Shiny Puffer Coat",
+      added: "2022-11-01T09:00:00.000Z",
+      category: "jackets & hoodies",
+      description:
+         "Stay warm and stylish in this grey puffer coat. Made with high-quality materials, this coat is perfect for the colder months. The coat features a hood, zipper front, and pockets for your convenience. Available in sizes S-XL.",
+      theme: [128, 128, 128],
+      imageId: "000AE",
+      sales: 35,
+      quantity: 75,
+      tags: [
+         "winter",
+         "coat",
+         "puffer",
+         "grey",
+         "men",
+         "s-xl",
+         "warm",
+         "hoodie",
+         "zipper",
+         "casual",
+      ],
+      reviews: [
+         {
+            userId: "user16",
+            content:
+               "Bought this coat for my husband and he loves it. It fits true to size and is really warm. The grey color is also very versatile and goes with a lot of different outfits. Definitely recommend!",
+            rating: 5,
+            date: "2022-11-05T09:00:00.000Z",
+         },
+         {
+            userId: "user17",
+            content:
+               "I've been wearing this coat for a few weeks now and it's holding up really well. The puffer design keeps me warm and the hood is a major plus in the wet winter months. I'm really happy with my purchase.",
+            rating: 4,
+            date: "2022-11-12T09:00:00.000Z",
+         },
+         {
+            userId: "user18",
+            content:
+               "Bought this coat for my son and he loves it. It fits him well and is really warm. The grey color is also very versatile and goes with a lot of different outfits. Overall, a great purchase.",
+            rating: 3,
+            date: "2022-11-17T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 99.99,
+         currency: "USD",
+         discount: {
+            name: "Winter Sale",
+            percent: 25,
+         },
+      },
+   },
+   {
       id: "1",
       name: "Denim Jean Blue",
       added: new Date(2022, 8, 6).toString(),
@@ -792,6 +1080,100 @@ export const items: Item.Unit[] = [
          discount: {
             name: "Summer Sale",
             percent: 15,
+         },
+      },
+   },
+   {
+      id: "wg1",
+      name: "Children's Light Green Knitted Gloves",
+      added: "2022-12-01T09:00:00.000Z",
+      category: "accessories",
+      description:
+         "Keep your children's hands warm and stylish in these light green knitted gloves. Made with high-quality materials, these gloves are perfect for the colder months. The gloves feature a soft and comfortable knit and a ribbed design. Available in sizes S-L.",
+      theme: [156, 177, 156],
+      imageId: "000AF",
+      sales: 15,
+      quantity: 30,
+      tags: ["winter", "gloves", "knitted", "light green", "children", "s-l"],
+      reviews: [
+         {
+            userId: "user19",
+            content:
+               "Bought these gloves for my daughter and she loves them. They fit her well and are really comfortable. The light green color is also really pretty and goes with a lot of different outfits. Definitely recommend!",
+            rating: 5,
+            date: "2022-12-01T09:00:00.000Z",
+         },
+         {
+            userId: "user20",
+            content:
+               "I've been wearing these gloves for a few weeks now and they're holding up really well. The knit is really soft and comfortable and the ribbed design adds some extra style. I'm really happy with my purchase.",
+            rating: 4,
+            date: "2022-12-03T09:00:00.000Z",
+         },
+         {
+            userId: "user21",
+            content:
+               "Bought these gloves for my son and he loves them. They fit him well and the knit is really soft. The light green color is also really pretty and goes with a lot of different outfits. Overall, a great purchase.",
+            rating: 3,
+            date: "2022-12-07T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 24.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
+   {
+      id: "wb1",
+      name: "Women's Purple Snow Boots",
+      added: "2022-12-01T09:00:00.000Z",
+      category: "shoes",
+      description:
+         "Stay warm and stylish in these purple snow boots. Made with high-quality materials, these boots are perfect for the colder months. The boots feature a waterproof design and thick, insulated lining to keep your feet warm and dry. Available in sizes 6-10.",
+      theme: [159, 125, 159],
+      imageId: "000AG",
+      sales: 25,
+      quantity: 50,
+      tags: [
+         "winter",
+         "boots",
+         "snow",
+         "purple",
+         "women",
+         "6-10",
+         "warm",
+         "waterproof",
+      ],
+      reviews: [
+         {
+            userId: "user22",
+            content:
+               "Love these boots! They're warm and stylish and fit true to size. Can't wait to wear them all winter long.",
+            rating: 5,
+            date: "2022-12-01T09:00:00.000Z",
+         },
+         {
+            userId: "user23",
+            content:
+               "I bought these boots for my sister and she loves them. They fit her well and are really comfortable. The purple color is also really pretty and goes with a lot of different outfits. Definitely recommend!",
+            rating: 4,
+            date: "2022-12-03T09:00:00.000Z",
+         },
+         {
+            userId: "user24",
+            content:
+               "I've been wearing these boots for a few weeks now and they're holding up really well. The waterproof design is a major plus in the wet winter months and the insulated lining keeps my feet warm. I'm really happy with my purchase.",
+            rating: 3,
+            date: "2022-12-07T09:00:00.000Z",
+         },
+      ],
+      price: {
+         value: 79.99,
+         currency: "USD",
+         discount: {
+            name: "Winter Sale",
+            percent: 20,
          },
       },
    },

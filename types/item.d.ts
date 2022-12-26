@@ -15,6 +15,7 @@ declare namespace Item {
     */
    export interface Review {
       userId: string;
+      /** Content could include emojis and textual abbreviations. Like how the general populace talks on the internet. */
       content: string | null;
       rating: 1 | 2 | 3 | 4 | 5;
       date: string;
@@ -35,21 +36,21 @@ declare namespace Item {
    /** A single product item. */
    export interface Unit {
       id: string;
-      /** Very detailed identifier for the item, e.g. 'Men's Pink Floral Beach Shirt' */
+      /** Very detailed identifier for the item, e.g. 'Men's Pink Floral Beach Shirt' or 'Brown Fostello Leather Bag' or 'Sneakers White Male Size 14' */
       name: string;
-      /** The date this product was added to the database, in the format of an ISO string. The date should be any day between June and December 2022. */
+      /** The date this product was added to the database, in the format of an ISO string. The date should be any day between June and December 2022, preferrably around business hours. */
       added: string;
       category: Category;
       /** More detail about the item, should be at least 100 words long. */
       description: string;
-      /** A light version of the color of the item. */
+      /** A lightened version of the color of the item. */
       theme: RGBColor;
       imageId: string;
       /** The number of units sold in the last month. */
       sales: number;
       /** The number of units left. */
       quantity: number;
-      /** At least 5 tags. */
+      /** At least 10 tags. */
       tags: string[];
       /** At least 3 reviews. */
       reviews: Review[];
