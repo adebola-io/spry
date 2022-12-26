@@ -36,7 +36,7 @@ declare namespace Item {
    /** A single product item. */
    export interface Unit {
       id: string;
-      /** Very detailed identifier for the item, e.g. 'Men's Pink Floral Beach Shirt' or 'Brown Fostello Leather Bag' or 'Sneakers White Male Size 14' */
+      /** Very detailed identifier for the item, e.g. 'Yellow Male Short-Sleeve Linen Shirt with Mandarin Collar' or 'Men's Pink Floral Beach Shirt' or 'Brown Fostello Leather Bag' or 'Sneakers White Male Size 14' */
       name: string;
       /** The date this product was added to the database, in the format of an ISO string. The date should be any day between June and December 2022, preferrably around business hours. */
       added: string;

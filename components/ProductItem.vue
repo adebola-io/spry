@@ -12,7 +12,7 @@
          class="w-full relative border-b-[3.74088px] border-dark-purple h-[60%] flex items-center justify-center"
       >
          <AppLoader
-            v-if="!imageLoaded"
+            v-if="!imageLoaded && !imageError"
             class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
             :size="25"
             :color="hoverColor"
@@ -22,7 +22,7 @@
             @load="imageLoaded = true"
             :class="[
                { 'opacity-0': !imageLoaded },
-               'h-[75%] duration-300 animate-[item-photo-fade-in_300ms]',
+               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms]',
             ]"
             :lazy-src="image"
             :alt="item.name"
@@ -53,7 +53,7 @@
             </span>
             <span
                v-if="item.price.discount"
-               class="text-[12pt] max-md:text-[9.5pt] line-through text-salmon-pink opacity-75"
+               class="text-[12pt] max-md:text-[9.5pt] line-through text-candy-pink opacity-75"
             >
                {{ item.price.value }}
             </span>
@@ -75,17 +75,20 @@
 </template>
 
 <script setup lang="ts">
-const { item } = defineProps<{
+const { item, wishlist } = defineProps<{
    item: Item.Unit;
+   wishlist?: boolean;
 }>();
 const productImage = ref<HTMLInputElement | null>(null);
 const imageLoaded = ref(false);
+const imageError = ref(false);
 const image = (
-   await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(
-      () => ({ default: "" })
-   )
+   await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(() => {
+      imageError.value = true;
+      return { default: "" };
+   })
 ).default;
-const addedToWishList = ref(false);
+const addedToWishList = ref(wishlist ?? false);
 
 function toggleWishList(item: Item.Unit) {
    addedToWishList.value = !addedToWishList.value;
@@ -94,7 +97,7 @@ function toggleWishList(item: Item.Unit) {
 const itemRating = computed(() => {
    return 5;
 });
-const isNewItem = new Date(item.added).getMonth() === new Date().getMonth();
+const isNewItem = new Date(item.added).getMonth() > 9;
 const itemPrice = computed(() => {
    const currency = item.price.currency === "NGN" ? "N" : "$";
    if (item.price.discount) {
