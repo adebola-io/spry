@@ -82,7 +82,6 @@
 @keyframes slide-in {
    0% {
       transform: translate(-10%);
-      opacity: 0.4;
    }
 }
 

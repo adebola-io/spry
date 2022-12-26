@@ -1,12 +1,22 @@
 <template>
    <div class="app-loader-container flex flex-col items-center">
-      <div :style="{ height: size, width: size }" class="app-loader">
+      <div
+         :style="{ height: size, width: size, borderColor: color }"
+         class="app-loader"
+      >
          <div class="app-loader-inner w-full relative h-full">
-            <div class="app-loader-circle top-[20%] left-[20%]"></div>
+            <div
+               :style="{ borderColor: color }"
+               class="app-loader-circle top-[20%] left-[20%]"
+            ></div>
          </div>
-         <div class="app-loader-circle right-0 bottom-[-30%]"></div>
+         <div
+            :style="{ borderColor: color }"
+            class="app-loader-circle right-0 bottom-[-30%]"
+         ></div>
       </div>
       <div
+         :style="{ color }"
          class="mt-[25px] text-fandago font-oceanwide"
          v-if="text !== undefined"
       >
@@ -19,6 +29,7 @@
 defineProps<{
    size?: number;
    text?: string;
+   color?: string;
 }>();
 </script>
 

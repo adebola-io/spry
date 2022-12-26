@@ -9,11 +9,22 @@
    >
       <!-- Pic -->
       <div
-         class="w-full border-b-[3.74088px] border-dark-purple h-[67%] flex items-center justify-center"
+         class="w-full relative border-b-[3.74088px] border-dark-purple h-[67%] flex items-center justify-center"
       >
+         <AppLoader
+            v-if="!imageLoaded"
+            class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
+            :size="25"
+            :color="hoverColor"
+         />
          <img
-            class="h-[75%] duration-300 animate-[item-photo-fade-in_300ms]"
-            :src="image"
+            ref="productImage"
+            @load="imageLoaded = true"
+            :class="[
+               { 'opacity-0': !imageLoaded },
+               'h-[75%] duration-300 animate-[item-photo-fade-in_300ms]',
+            ]"
+            :lazy-src="image"
             :alt="item.name"
          />
       </div>
@@ -67,6 +78,8 @@
 const { item } = defineProps<{
    item: Item.Unit;
 }>();
+const productImage = ref<HTMLInputElement | null>(null);
+const imageLoaded = ref(false);
 const image = (
    await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(
       () => ({ default: "" })
@@ -99,6 +112,12 @@ const itemPrice = computed(() => {
 const hoverColor = `rgb(${item.theme
    .map((unit) => (unit + 20 < 255 ? unit + 20 : 255))
    .join(" ")})`;
+
+watchEffect(() => {
+   productImage.value &&
+      (productImage.value.src =
+         productImage.value.getAttribute("lazy-src") ?? "");
+});
 </script>
 
 <style scoped>
