@@ -5,11 +5,11 @@
          backgroundColor: `rgb(${item.theme.join(' ')})`,
          '--hoverColor': hoverColor,
       }"
-      class="product-item duration-300 relative border-[3.74088px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
+      class="product-item duration-300 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
       <!-- Pic -->
       <div
-         class="w-full relative border-b-[3.74088px] border-dark-purple h-[60%] flex items-center justify-center"
+         class="w-full relative border-b-[3.74088px] max-sm:border-b-[2.3px] border-dark-purple h-[60%] flex items-center justify-center"
       >
          <AppLoader
             v-if="!imageLoaded && !imageError"
@@ -22,7 +22,7 @@
             @load="imageLoaded = true"
             :class="[
                { 'opacity-0': !imageLoaded },
-               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms]',
+               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms] product-item-image',
             ]"
             :lazy-src="image"
             :alt="item.name"
@@ -117,18 +117,21 @@ const hoverColor = `rgb(${item.theme
    .join(" ")})`;
 
 watchEffect(() => {
-   productImage.value &&
-      (productImage.value.src =
-         productImage.value.getAttribute("lazy-src") ?? "");
+   // productImage.value &&
+   //    (productImage.value.src =
+   //       productImage.value.getAttribute("lazy-src") ?? "");
 });
 </script>
 
 <style scoped>
-.product-item:hover {
-   @apply scale-[.97] text-dark-purple;
-   box-shadow: -3px 5px 0px 0;
-   background-color: var(--hoverColor) !important;
+@media (min-width: 600px) {
+   .product-item:hover {
+      @apply scale-[.97] text-dark-purple;
+      box-shadow: -3px 5px 0px 0;
+      background-color: var(--hoverColor) !important;
+   }
 }
+
 .product-item-heading {
    display: -webkit-box;
    -webkit-line-clamp: 2;

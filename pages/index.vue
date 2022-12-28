@@ -49,6 +49,30 @@ const { data: featureddata } = await useFetch("/api/collections/featured"),
    { data: categories } = await useFetch("/api/categories");
 
 const firstSectionList = computed(() => homesections.value?.slice(0, 2));
+
+// Lazy Load product images.
+watchEffect(() => {
+   if (process.client && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(({ isIntersecting, target }) => {
+            if (
+               isIntersecting &&
+               Object.getOwnPropertyDescriptor(target, "__imageIsLoaded")
+                  ?.value !== true
+            ) {
+               (target as HTMLImageElement).src =
+                  target.getAttribute("lazy-src") ?? "";
+               Object.defineProperty(target, "__imageIsLoaded", {
+                  value: true,
+               });
+            }
+         });
+      });
+      document.querySelectorAll("img.product-item-image").forEach((img) => {
+         observer.observe(img);
+      });
+   }
+});
 </script>
 
 <style scoped>

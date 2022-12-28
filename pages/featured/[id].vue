@@ -23,7 +23,7 @@
                {{ collection.name }}.
             </h1>
             <span
-               class="w-[60%] max-md:w-[85%] max-nml:w-[80%] font-thin relative text-center text-[16pt] max-md:text-[13pt] max-sm:text-[10pt]"
+               class="w-[60%] max-md:w-[85%] max-nml:w-[80%] font-thin relative text-center text-[16pt] max-md:text-[13pt] max-sm:text-[8pt]"
             >
                {{ collection.description }}
             </span>
@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, VNodeRef } from "vue";
+import { Ref } from "vue";
 
 const { id } = useRoute().params as { id: string },
    fetch = useFetch(`/api/collections/${id}`),
