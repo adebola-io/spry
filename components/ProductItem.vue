@@ -66,18 +66,25 @@
          />
       </div>
       <div
-         v-if="isNewItem"
-         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1"
+         v-if="isNewItem || isHotItem"
+         :class="[
+            {
+               'bg-salmon-pink': isNewItem,
+               'bg-flickr-pink': isHotItem && !isNewItem,
+            },
+            'top-[3%] font-oceanwide left-[5%] absolute text-pale-pink  text-[8pt] max-sm:text-[6pt] px-3 py-1',
+         ]"
       >
-         NEW
+         {{ isNewItem ? "NEW" : "HOT" }}
       </div>
    </NuxtLink>
 </template>
 
 <script setup lang="ts">
-const { item, wishlist } = defineProps<{
+const { item, wishlist, waitForLazyLoad } = defineProps<{
    item: Item.Unit;
    wishlist?: boolean;
+   waitForLazyLoad?: boolean;
 }>();
 const productImage = ref<HTMLInputElement | null>(null);
 const imageLoaded = ref(false);
@@ -98,6 +105,7 @@ const itemRating = computed(() => {
    return 5;
 });
 const isNewItem = new Date(item.added).getMonth() > 9;
+const isHotItem = item.sales > 20 && item.price.discount;
 const itemPrice = computed(() => {
    const currency = item.price.currency === "NGN" ? "N" : "$";
    if (item.price.discount) {
@@ -117,9 +125,10 @@ const hoverColor = `rgb(${item.theme
    .join(" ")})`;
 
 watchEffect(() => {
-   // productImage.value &&
-   //    (productImage.value.src =
-   //       productImage.value.getAttribute("lazy-src") ?? "");
+   if (!waitForLazyLoad)
+      productImage.value &&
+         (productImage.value.src =
+            productImage.value.getAttribute("lazy-src") ?? "");
 });
 </script>
 

@@ -28,4 +28,9 @@ export const sections: HomeSection[] = [
          .slice(0, 9)
          .reverse(),
    },
+   {
+      heading: "May We Suggest",
+      subHeading: "Items that we know you'll love.",
+      items: randomizer.selectUniquely(9),
+   },
 ];
