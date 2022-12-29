@@ -19,6 +19,7 @@
             class="flex justify-between items-center w-[33vw] max-w-[800px] min-w-[600px] max-md:hidden"
          >
             <form
+               id="spry-search-bar"
                @focusin="searchIsFocused = true"
                @focusout="searchIsFocused = false"
                :class="[
@@ -116,7 +117,7 @@
          ></div>
       </Transition>
       <nav
-         class="h-[80px] max-sm:h-[55px] w-full text-pale-pink bg-dark-purple [font-weight:700] text-[22px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
+         class="h-[80px] max-sm:h-[55px] w-full text-fandago bg-ballet-pink border-y-fandago border-y-4 [font-weight:700] text-[22px] flex items-center justify-center max-sm:pl-[3vw] max-sm:justify-start max-sm:overflow-x-scroll max-md:text-[18px] max-sm:text-[16px]"
       >
          <NuxtLink v-for="link in navlinks" v-bind="link">
             <div class="list-none mr-distance">
@@ -168,10 +169,13 @@ async function triggerSearch() {
 
 <style scoped>
 nav .router-link-active > div::after {
-   @apply h-[4px] [content:""] block bg-pale-pink;
+   @apply h-[4px] [content:""] block bg-fandago;
    animation: stretch_ 300ms;
 }
 nav::-webkit-scrollbar {
    display: none;
+}
+#spry-search-bar {
+   box-shadow: 2px 2px 0 0;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
    <NuxtLink
+      target="__blank"
       :to="`/products/${item.id}`"
       :style="{
          backgroundColor: `rgb(${item.theme.join(' ')})`,
@@ -136,7 +137,7 @@ watchEffect(() => {
 @media (min-width: 600px) {
    .product-item:hover {
       @apply scale-[.97] text-dark-purple;
-      box-shadow: -3px 5px 0px 0;
+      box-shadow: 3px 5px 0px 0;
       background-color: var(--hoverColor) !important;
    }
 }
