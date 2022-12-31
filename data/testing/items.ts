@@ -1,11 +1,14 @@
 export const items: Item.Unit[] = [
    {
-      id: "wj1",
-      name: "Black Puffer Jacket",
+      id: "1",
+      name: "Midnight Shadow Water-Resistant Puffer Jacket with Hood and Zipper Front",
       added: "2022-10-01T09:00:00.000Z",
       category: "jackets & hoodies",
-      description:
-         "Stay warm and stylish in this black puffer jacket. Made with high-quality materials, this jacket will keep you warm and comfortable in the colder months. The jacket features a hood, zipper front, and pockets for your convenience. Perfect for everyday wear or a night out on the town. Available in sizes S-XL.",
+      description: `Stay warm and stylish this winter with this black puffer jacket. Made with high-quality materials, this jacket is designed to keep you warm and comfortable no matter how low the temperature drops. The thick insulation and cozy lining will keep you toasty, while the stylish design will make you look and feel your best.
+
+The jacket features a hood, which is perfect for protecting your head and ears from the cold, as well as a zipper front for easy on and off. The pockets are a convenient addition, providing a safe place to store your phone, keys, or other small items.
+
+Whether you're running errands, commuting to work, or going out on the town, this black puffer jacket is the perfect choice. It's versatile enough to wear every day, but also stylish enough to make a statement. With sizes ranging from small to extra-large, it's suitable for a wide range of body types and sizes. This jacket is sure to become a staple in your winter wardrobe.`,
       theme: [159, 152, 152],
       imageId: "0000Z",
       sales: 50,
@@ -55,12 +58,15 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wb1",
-      name: "Men's Brown Waterproof Boots",
+      id: "2",
+      name: "Men's Classic Brown Waterproof Lace-Up Boots with Breathable Linings",
       added: "2022-11-01T09:00:00.000Z",
       category: "shoes",
-      description:
-         "Stay dry and comfortable in these men's brown waterproof boots. Made with high-quality materials and a durable sole, these boots are perfect for the colder months. The boots feature a lace-up design and a padded insole for added comfort. Available in sizes 7-13.",
+      description: `Stay dry and comfortable this winter with these men's brown waterproof boots. Made with high-quality materials and a durable sole, these boots are designed to withstand the elements and keep your feet warm and dry. The lace-up design allows for a secure fit, while the padded insole adds an extra layer of cushioning and support for all-day comfort.
+
+Whether you're trudging through the snow, navigating wet streets, or just need a reliable pair of boots to wear on a daily basis, these brown waterproof boots are the perfect choice. They're stylish enough to wear with a variety of outfits, but also practical enough to handle any weather conditions.
+
+With sizes ranging from 7 to 13, these boots are suitable for a wide range of foot sizes. Keep your feet dry and comfortable this winter with these men's brown waterproof boots.`,
       theme: [201, 145, 106],
       imageId: "000AA",
       sales: 30,
@@ -76,6 +82,7 @@ export const items: Item.Unit[] = [
          "comfortable",
          "durable",
          "casual",
+         "linings",
       ],
       reviews: [
          {
@@ -107,17 +114,31 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "ws1",
-      name: "Wool Scarf Red Knitted",
+      id: "3",
+      name: "Soft Wool Cable-Knit Pattern Scarlet Knitted Scarf",
       added: "2022-10-01T09:00:00.000Z",
       category: "accessories",
-      description:
-         "Stay warm and stylish in this red knitted scarf. Made with high-quality materials, this scarf is perfect for the colder months. The scarf features a soft and comfortable knit and is long enough to wrap around your neck multiple times. Available in one size fits all.",
+      description: `Stay warm and stylish this winter with this red knitted scarf. Made with high-quality materials, this scarf is designed to keep you comfortable and stylish no matter how low the temperature drops. The soft, comfortable knit is gentle on the skin and provides a cozy layer of insulation to keep you toasty warm.
+
+The scarf is long enough to wrap around your neck multiple times, providing extra warmth and protection from the cold. The bright red color is vibrant and eye-catching, making it a standout accessory that will add a pop of color to any outfit.
+
+Whether you're running errands, commuting to work, or just need an extra layer of warmth, this red knitted scarf is the perfect choice. It's versatile enough to wear every day, but also stylish enough to make a statement. And with a one size fits all design, it's suitable for people of all shapes and sizes.
+
+Stay warm and stylish this winter with this red knitted scarf. It's a must-have accessory for any cold-weather wardrobe, and is sure to become a go-to favorite for seasons to come.`,
       theme: [207, 119, 119],
       imageId: "000AB",
       sales: 20,
       quantity: 50,
-      tags: ["winter", "scarf", "knitted", "red", "women", "one size"],
+      tags: [
+         "winter",
+         "scarf",
+         "knitted",
+         "red",
+         "wool",
+         "scarlet",
+         "unisex",
+         "one size",
+      ],
       reviews: [
          {
             userId: "user7",
@@ -148,7 +169,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wh1",
+      id: "4",
       name: "Men's Black Knitted Beanie",
       added: "2022-11-01T09:00:00.000Z",
       category: "accessories",
@@ -192,7 +213,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wl1",
+      id: "5",
       name: "Women's Black Thermal Leggings",
       added: "2022-12-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -233,7 +254,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wc1",
+      id: "6",
       name: "Grey Shiny Puffer Coat",
       added: "2022-11-01T09:00:00.000Z",
       category: "jackets & hoodies",
@@ -288,7 +309,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "1",
+      id: "7",
       name: "Denim Jean Blue",
       added: new Date(2022, 8, 6).toString(),
       category: "shirts & trousers",
@@ -324,7 +345,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "2",
+      id: "8",
       name: "Red Female Evening Gown",
       added: new Date(2022, 12, 6).toString(),
       category: "dresses & gowns",
@@ -361,7 +382,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "3",
+      id: "9",
       name: "Black Leather Oxford Male Shoes",
       added: new Date(2022, 12, 13).toString(),
       category: "shoes",
@@ -398,7 +419,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "4",
+      id: "10",
       name: "Pink Hooded Jacket",
       added: new Date(2022, 12, 13).toString(),
       category: "jackets & hoodies",
@@ -431,7 +452,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "5",
+      id: "11",
       name: "Men's Grey Formal Suit",
       added: new Date(2022, 11, 11).toString(),
       category: "formal wear",
@@ -468,7 +489,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "6",
+      id: "12",
       name: "Beige Flat Shoes Female",
       added: new Date(2022, 12, 9).toString(),
       category: "shoes",
@@ -505,7 +526,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "0000A",
+      id: "13",
       name: "3-Piece Suit Mens Formal Dark Blue",
       added: "2022-06-09T09:15:54.000Z",
       category: "formal wear",
@@ -548,7 +569,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "0000A",
+      id: "14",
       name: "Fostello Bag Leather Brown",
       added: "2022-06-09T09:15:54.000Z",
       category: "formal wear",
@@ -567,7 +588,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "1",
+      id: "15",
       name: "Women's Stylish High Heel Pumps",
       added: "2022-06-01T00:00:00.000Z",
       category: "shoes",
@@ -586,7 +607,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "2",
+      id: "16",
       name: "Premium Quality Leather Dress Shoes",
       added: "2022-07-01T00:00:00.000Z",
       category: "shoes",
@@ -605,7 +626,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "3",
+      id: "17",
       name: "Flowy Maxi Dress with Floral Print for Women",
       added: "2022-08-01T00:00:00.000Z",
       category: "dresses & gowns",
@@ -624,7 +645,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "4",
+      id: "18",
       name: "Suit Jacket Beige Brown Slim Fit Male",
       added: "2022-09-01T00:00:00.000Z",
       category: "formal wear",
@@ -646,7 +667,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "6",
+      id: "19",
       name: "Men's Cotton T-Shirt with Graphic Print",
       added: "2022-12-01T00:00:00.000Z",
       category: "shirts & trousers",
@@ -665,7 +686,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "7",
+      id: "20",
       name: "Women's Faux Leather Mini Skirt",
       added: "2022-12-11T00:00:00.000Z",
       category: "shirts & trousers",
@@ -684,7 +705,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "8",
+      id: "21",
       name: "Knit Sweater Male with Striped Pattern",
       added: "2022-12-15T00:00:00.000Z",
       category: "shirts & trousers",
@@ -703,7 +724,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "5",
+      id: "22",
       name: "Female Cropped Denim Jacket",
       added: "2022-10-01T00:00:00.000Z",
       category: "jackets & hoodies",
@@ -722,7 +743,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "123456",
+      id: "23",
       name: "Pink Floral Beach Shirt",
       added: "2022-06-01T00:00:00.000Z",
       category: "shirts & trousers",
@@ -759,7 +780,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "789012",
+      id: "24",
       name: "Red Female High Heel Shoes",
       added: "2022-06-15T00:00:00.000Z",
       category: "shoes",
@@ -793,7 +814,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "135791",
+      id: "25",
       name: "Men's Lemon Yellow Suit",
       added: "2022-06-30T00:00:00.000Z",
       category: "formal wear",
@@ -827,7 +848,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "135791",
+      id: "26",
       name: "Blue Hoodie Jacket with Double Pockets",
       added: "2022-07-01T00:00:00.000Z",
       category: "jackets & hoodies",
@@ -870,7 +891,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "abc123",
+      id: "27",
       name: "Elegant Lace Dress with 3/4 Sleeves and a High-Low Hem",
       added: "2022-06-01T00:00:00.000Z",
       category: "dresses & gowns",
@@ -914,7 +935,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "pqr678",
+      id: "28",
       name: "Vintage Washed Denim Jacket with Embroidered Flowers",
       added: "2022-07-01T00:00:00.000Z",
       category: "jackets & hoodies",
@@ -955,7 +976,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "def456",
+      id: "29",
       name: "Women's Comfortable Running Shoes with Breathable Mesh Upper",
       added: "2022-08-01T00:00:00.000Z",
       category: "shoes",
@@ -999,7 +1020,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "stu901",
+      id: "30",
       name: "Men's Slim-Fit Black Suit Jacket with Peak Lapels",
       added: "2022-09-01T00:00:00.000Z",
       category: "formal wear",
@@ -1040,7 +1061,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "bh-123",
+      id: "31",
       name: "Blue Leather Handbag",
       added: "2022-06-01T00:00:00.000Z",
       category: "accessories",
@@ -1084,7 +1105,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wg1",
+      id: "32",
       name: "Children's Light Green Knitted Gloves",
       added: "2022-12-01T09:00:00.000Z",
       category: "accessories",
@@ -1125,7 +1146,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wb1",
+      id: "33",
       name: "Women's Purple Snow Boots",
       added: "2022-12-01T09:00:00.000Z",
       category: "shoes",
@@ -1178,7 +1199,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "wb2",
+      id: "34",
       name: "Men's Brown Leather Boot",
       added: "2022-12-01T09:00:00.000Z",
       category: "shoes",
@@ -1260,7 +1281,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "ss1",
+      id: "35",
       name: "Men's Yellow Short-Sleeve Linen Shirt with Mandarin Collar",
       added: "2022-06-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -1289,7 +1310,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "bb1",
+      id: "36",
       name: "Brown Leather Female Crossbody Bag with Gold Hardware",
       added: "2022-06-01T09:00:00.000Z",
       category: "accessories",
@@ -1317,7 +1338,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "sd1",
+      id: "37",
       name: "Women's Pink Floral Maxi Dress with Ruffle Hem",
       added: "2022-06-01T09:00:00.000Z",
       category: "dresses & gowns",
@@ -1347,7 +1368,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "ss2",
+      id: "38",
       name: "White Leather Gladiator Sandals with Gold Hardware and Lace-Up Detail",
       added: "2022-06-01T09:00:00.000Z",
       category: "shoes",
@@ -1377,7 +1398,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "sh2",
+      id: "39",
       name: "Women's Beige Wide-Brimmed Sun Hat with Bow Detail",
       added: "2022-06-01T09:00:00.000Z",
       category: "accessories",
@@ -1405,7 +1426,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "sr1",
+      id: "40",
       name: "Blue and White Stripe Romper with Anchor Detail",
       added: "2022-06-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -1435,7 +1456,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "ss4",
+      id: "41",
       name: "Men's Blue and White Striped Shorts with Elastic Waistband",
       added: "2022-06-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -1465,7 +1486,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "st1",
+      id: "42",
       name: "Men's Orange T-Shirt with Crew Neck and Short Sleeves",
       added: "2022-06-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -1496,7 +1517,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "sd1",
+      id: "43",
       name: "Yellow Maxi Dress with Adjustable Straps and Flowy Skirt",
       added: "2022-06-01T09:00:00.000Z",
       category: "dresses & gowns",
@@ -1526,7 +1547,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fs1",
+      id: "44",
       name: "Men's Forest Green Three-Piece Suit with Single Breasted Jacket and Flat Front Pants",
       added: "2022-06-01T09:00:00.000Z",
       category: "formal wear",
@@ -1554,12 +1575,17 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fd1",
+      id: "45",
       name: "Women's Purple Satin Evening Gown with Cap Sleeves and Mermaid Hemline",
       added: "2022-06-01T09:00:00.000Z",
       category: "dresses & gowns",
-      description:
-         "Look elegant and sophisticated in this purple satin evening gown. Made with high-quality materials, this gown is perfect for formal events. The gown features cap sleeves and a mermaid hemline. The gown also has a figure-flattering fit and is machine washable. Available in sizes S-L.",
+      description: `This stunning purple satin evening gown is the epitome of sophistication and elegance. Made with the highest quality materials, this gown is designed to make you look and feel your best at any formal event. The rich, luxurious satin fabric is soft to the touch and drapes beautifully, creating a sleek and slimming silhouette.
+
+The cap sleeves and mermaid hemline add a touch of glamour to the gown, while the figure-flattering fit is designed to enhance your natural curves and contours. Whether you're attending a wedding, prom, or black-tie event, this gown is sure to make a statement.
+
+But it's not just about the looks - this gown is also practical and easy to care for. It is machine washable, so you can keep it looking fresh and clean with minimal effort. And with sizes ranging from small to large, it's suitable for a wide range of body types and sizes.
+
+Make a statement at your next formal event with this gorgeous purple satin evening gown. You'll feel confident and beautiful as you walk into the room, turning heads and commanding attention. Add it to your wardrobe today and elevate your formal wear collection.`,
       theme: [159, 127, 159],
       imageId: "000AT",
       sales: 5,
@@ -1587,7 +1613,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fsh1",
+      id: "46",
       name: "Tuxedo Shirt with Wing Collar and French Cuffs",
       added: "2022-06-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -1616,7 +1642,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fp1",
+      id: "47",
       name: "Men's Burgundy Tuxedo Pants with Flat Front and Satin Stripes",
       added: "2022-06-01T09:00:00.000Z",
       category: "shirts & trousers",
@@ -1645,7 +1671,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fd1",
+      id: "48",
       name: "Girls' Pink Satin Party Dress with Tulle Skirt and Bow Accents",
       added: "2022-06-01T09:00:00.000Z",
       category: "dresses & gowns",
@@ -1674,7 +1700,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fs1",
+      id: "49",
       name: "Boys' Navy Blue Three-Piece Suit with Single Breasted Jacket and Flat Front Pants",
       added: "2022-06-01T09:00:00.000Z",
       category: "formal wear",
@@ -1702,7 +1728,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "fg1",
+      id: "50",
       name: "Women's Emerald Green Ball Gown with Lace Bodice and Tulle Skirt",
       added: "2022-06-01T09:00:00.000Z",
       category: "dresses & gowns",
@@ -1731,7 +1757,7 @@ export const items: Item.Unit[] = [
       },
    },
    {
-      id: "h1",
+      id: "51",
       name: "Unisex Yellow Hoodie with Front Pouch Pocket and Drawstring Hood",
       added: "2022-06-01T09:00:00.000Z",
       category: "jackets & hoodies",

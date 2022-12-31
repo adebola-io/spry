@@ -4,7 +4,7 @@
       :to="`/products/${item.id}`"
       :style="{
          backgroundColor: `rgb(${item.theme.join(' ')})`,
-         '--hoverColor': hoverColor,
+         '--hoverColor': lightenColor(item.theme),
       }"
       class="product-item duration-300 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
@@ -16,7 +16,7 @@
             v-if="!imageLoaded && !imageError"
             class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
             :size="25"
-            :color="hoverColor"
+            :color="lightenColor(item.theme)"
          />
          <img
             ref="productImage"
@@ -50,7 +50,7 @@
             <span
                class="text-[20pt] max-md:text-[14pt] max-sm:text-[11pt] max-xs:text-[9.5pt]"
             >
-               {{ itemPrice }}
+               {{ calculatePrice(item.price) }}
             </span>
             <span
                v-if="item.price.discount"
@@ -107,23 +107,6 @@ const itemRating = computed(() => {
 });
 const isNewItem = new Date(item.added).getMonth() > 9;
 const isHotItem = item.sales > 20 && item.price.discount;
-const itemPrice = computed(() => {
-   const currency = item.price.currency === "NGN" ? "N" : "$";
-   if (item.price.discount) {
-      return (
-         currency +
-         (
-            item.price.value -
-            (item.price.value * item.price.discount.percent) / 100
-         )
-            .toFixed(2)
-            .toString()
-      );
-   } else return currency + item.price.value.toString();
-});
-const hoverColor = `rgb(${item.theme
-   .map((unit) => (unit + 20 < 255 ? unit + 20 : 255))
-   .join(" ")})`;
 
 watchEffect(() => {
    if (!waitForLazyLoad)
