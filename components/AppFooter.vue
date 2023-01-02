@@ -64,4 +64,7 @@ const footerLinks = ["What We Do", "About Us", "Privacy Policy", "Blog"];
 #socials img:hover {
    filter: contrast(0.5);
 }
+button {
+   box-shadow: 3px 3px 0 0 #361134ff;
+}
 </style>

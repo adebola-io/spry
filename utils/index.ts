@@ -45,3 +45,39 @@ export class Randomizer<T> {
       return random;
    }
 }
+
+/**
+ * Change the first letter of each word in a string to uppercase.
+ * @param input The string to capitalize.
+ * @returns
+ */
+export function capitalize(input: string) {
+   return input
+      .split(" ")
+      .map((word) => `${word[0].toUpperCase()}${word.slice(1)}`)
+      .join(" ");
+}
+
+export function lightenColor(theme: Item.RGBColor, units = 20) {
+   return `rgb(${theme
+      .map((point) => (point + units < 255 ? point + units : 255))
+      .join(" ")})`;
+}
+
+export function darkenColor(theme: Item.RGBColor, units = 20) {
+   return `rgb(${theme
+      .map((point) => (point - units > 0 ? point - units : 0))
+      .join(" ")})`;
+}
+
+export function calculatePrice(price: Item.Price) {
+   const currency = price.currency === "NGN" ? "N" : "$";
+   if (price.discount) {
+      return (
+         currency +
+         (price.value - (price.value * price.discount.percent) / 100)
+            .toFixed(2)
+            .toString()
+      );
+   } else return currency + price.value.toString();
+}

@@ -30,6 +30,7 @@ export default {
             "cream-pink": "#EDDCDE",
             "ballet-pink": "#EFC2C8",
             "pale-pink": "#F7F2FD",
+            "forgotten-pink": "#F0CFD7",
          },
       },
    },

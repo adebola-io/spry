@@ -47,8 +47,8 @@ p {
 
 .featured-collection:hover {
    @apply text-dark-purple;
-   box-shadow: -4px 4px 0px 0;
-   transform: translate(4px, -4px);
+   box-shadow: 4px 4px 0px 0;
+   transform: translate(-4px, -4px);
 }
 @media (max-width: 600px) {
    .featured-collection {

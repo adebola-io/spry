@@ -1,28 +1,29 @@
 <template>
    <NuxtLink
+      target="__blank"
       :to="`/products/${item.id}`"
       :style="{
          backgroundColor: `rgb(${item.theme.join(' ')})`,
-         '--hoverColor': hoverColor,
+         '--hoverColor': lightenColor(item.theme),
       }"
-      class="product-item duration-300 relative border-[3.74088px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
+      class="product-item duration-300 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
       <!-- Pic -->
       <div
-         class="w-full relative border-b-[3.74088px] border-dark-purple h-[60%] flex items-center justify-center"
+         class="w-full relative border-b-[3.74088px] max-sm:border-b-[2.3px] border-dark-purple h-[60%] flex items-center justify-center"
       >
          <AppLoader
             v-if="!imageLoaded && !imageError"
             class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
             :size="25"
-            :color="hoverColor"
+            :color="lightenColor(item.theme)"
          />
          <img
             ref="productImage"
             @load="imageLoaded = true"
             :class="[
                { 'opacity-0': !imageLoaded },
-               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms]',
+               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms] product-item-image',
             ]"
             :lazy-src="image"
             :alt="item.name"
@@ -49,7 +50,7 @@
             <span
                class="text-[20pt] max-md:text-[14pt] max-sm:text-[11pt] max-xs:text-[9.5pt]"
             >
-               {{ itemPrice }}
+               {{ calculatePrice(item.price) }}
             </span>
             <span
                v-if="item.price.discount"
@@ -66,18 +67,25 @@
          />
       </div>
       <div
-         v-if="isNewItem"
-         class="top-[3%] font-oceanwide left-[5%] absolute text-pale-pink bg-salmon-pink text-[8pt] max-sm:text-[6pt] px-3 py-1"
+         v-if="isNewItem || isHotItem"
+         :class="[
+            {
+               'bg-salmon-pink': isNewItem,
+               'bg-flickr-pink': isHotItem && !isNewItem,
+            },
+            'top-[3%] font-oceanwide left-[5%] absolute text-pale-pink  text-[8pt] max-sm:text-[6pt] px-3 py-1',
+         ]"
       >
-         NEW
+         {{ isNewItem ? "NEW" : "HOT" }}
       </div>
    </NuxtLink>
 </template>
 
 <script setup lang="ts">
-const { item, wishlist } = defineProps<{
+const { item, wishlist, waitForLazyLoad } = defineProps<{
    item: Item.Unit;
    wishlist?: boolean;
+   waitForLazyLoad?: boolean;
 }>();
 const productImage = ref<HTMLInputElement | null>(null);
 const imageLoaded = ref(false);
@@ -98,37 +106,25 @@ const itemRating = computed(() => {
    return 5;
 });
 const isNewItem = new Date(item.added).getMonth() > 9;
-const itemPrice = computed(() => {
-   const currency = item.price.currency === "NGN" ? "N" : "$";
-   if (item.price.discount) {
-      return (
-         currency +
-         (
-            item.price.value -
-            (item.price.value * item.price.discount.percent) / 100
-         )
-            .toFixed(2)
-            .toString()
-      );
-   } else return currency + item.price.value.toString();
-});
-const hoverColor = `rgb(${item.theme
-   .map((unit) => (unit + 20 < 255 ? unit + 20 : 255))
-   .join(" ")})`;
+const isHotItem = item.sales > 20 && item.price.discount;
 
 watchEffect(() => {
-   productImage.value &&
-      (productImage.value.src =
-         productImage.value.getAttribute("lazy-src") ?? "");
+   if (!waitForLazyLoad)
+      productImage.value &&
+         (productImage.value.src =
+            productImage.value.getAttribute("lazy-src") ?? "");
 });
 </script>
 
 <style scoped>
-.product-item:hover {
-   @apply scale-[.97] text-dark-purple;
-   box-shadow: -3px 5px 0px 0;
-   background-color: var(--hoverColor) !important;
+@media (min-width: 600px) {
+   .product-item:hover {
+      @apply scale-[.97] text-dark-purple;
+      box-shadow: 3px 5px 0px 0;
+      background-color: var(--hoverColor) !important;
+   }
 }
+
 .product-item-heading {
    display: -webkit-box;
    -webkit-line-clamp: 2;
