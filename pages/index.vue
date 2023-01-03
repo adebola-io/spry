@@ -50,8 +50,7 @@ const { data: featureddata } = await useFetch("/api/collections/featured"),
    { data: categories } = await useFetch("/api/categories");
 
 const firstSectionList = computed(() => homesections.value?.slice(0, 2));
-
-// useLazyProductLoading();
+// useImageObserver();
 </script>
 
 <style scoped>

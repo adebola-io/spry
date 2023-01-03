@@ -35,11 +35,12 @@
                class="aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[30vh] max-sm:min-h-[200px] flex justify-center items-center"
             >
                <AppImage
-                  @load="imageLoaded = true"
-                  :src="`/_nuxt/assets/images/items/item-${item.imageId}.png`"
+                  @load="imageLoading = false"
+                  @error="imageLoading = false"
+                  :src="`/api/images/items/item-${item.imageId}.png`"
                   :alt="item.name"
                   :class="[
-                     { 'opacity-0': !imageLoaded },
+                     { 'opacity-0': imageLoading },
                      'duration-300 h-[65%] max-sm:h-[80%]',
                   ]"
                   use-loader
@@ -298,7 +299,7 @@
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
 
-const imageLoaded = ref(false);
+const imageLoading = ref(true);
 
 useHead({
    title: item.value

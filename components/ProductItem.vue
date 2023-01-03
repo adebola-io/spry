@@ -25,7 +25,7 @@
                { 'opacity-0': !imageLoaded },
                'h-[80%] duration-300 animate-[item-photo-fade-in_300ms] product-item-image',
             ]"
-            :lazy-src="image"
+            :data-src="image"
             :alt="item.name"
          />
       </div>
@@ -108,11 +108,11 @@ const itemRating = computed(() => {
 const isNewItem = new Date(item.added).getMonth() > 9;
 const isHotItem = item.sales > 20 && item.price.discount;
 
-watchEffect(() => {
-   if (!waitForLazyLoad)
-      productImage.value &&
-         (productImage.value.src =
-            productImage.value.getAttribute("lazy-src") ?? "");
+onMounted(() => {
+   productImage.value?.setAttribute(
+      "src",
+      productImage.value.dataset.src ?? ""
+   );
 });
 </script>
 

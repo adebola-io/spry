@@ -10,12 +10,12 @@ const { src, alt } = defineProps<{
 
 const emit = defineEmits<{
    (event: "load"): void;
+   (event: "error"): void;
 }>();
-
-const error = ref(false);
 
 const reference = ref<HTMLImageElement | null>(null);
 const success = ref(false);
+const error = ref(false);
 
 watchEffect(() => {
    if (reference.value) {
@@ -34,6 +34,7 @@ watchEffect(() => {
    <img
       ref="reference"
       @load="emit('load'), (success = true)"
+      @error="emit('error'), (error = true)"
       :class="class"
       :lazy-src="src"
       :alt="alt"
