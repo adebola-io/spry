@@ -81,3 +81,43 @@ export function calculatePrice(price: Item.Price) {
       );
    } else return currency + price.value.toString();
 }
+
+export function compareItems(obj1: Item.Unit, obj2: Item.Unit): number {
+   const tags1 = obj1.tags;
+   const tags2 = obj2.tags;
+
+   // Create a set of tags1 to remove items more efficiently
+   const tags1Set = new Set(tags1);
+
+   // Count the number of matching tags
+   let numMatchingTags = 0;
+   for (const tag of tags2) {
+      // Check if the tag is a synonym of a tag in tags1
+      if (
+         tags1Set.has(tag) ||
+         (tag === "male" && tags1Set.has("man")) ||
+         (tag === "man" && tags1Set.has("male")) ||
+         (tag === "female" && tags1Set.has("woman")) ||
+         (tag === "woman" && tags1Set.has("female")) ||
+         (tag === "cold" && tags1Set.has("winter")) ||
+         (tag === "winter" && tags1Set.has("cold"))
+      ) {
+         numMatchingTags++;
+      }
+   }
+
+   // Calculate the percentage of tags that match
+   let similarity = (numMatchingTags / tags1.length) * 100;
+
+   // Increase similarity if the objects have the same category
+   if (obj1.category === obj2.category) {
+      similarity += 25;
+   }
+
+   // Cap similarity at 100%
+   if (similarity > 100) {
+      similarity = 100;
+   }
+
+   return similarity;
+}

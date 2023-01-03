@@ -1784,4 +1784,81 @@ Make a statement at your next formal event with this gorgeous purple satin eveni
          discount: null,
       },
    },
+   {
+      id: "52",
+      name: "Classic Mint Double Breasted Men Suits Shawl Lapel Costome Homme Pattern Prom Party Stage Slim Fit Fashion Blazer Mint Green",
+      added: "2022-06-01T09:00:00.000Z",
+      category: "formal wear",
+      description: `Make a statement at your next formal occasion with this classic mint green suit. Made with high-quality materials, this suit is perfect for prom, parties, and stage performances. The suit includes a double-breasted jacket with shawl lapels, a matching vest, and flat-front pants. The suit also has a slim fit and is machine washable. Available in sizes S-XL.
+
+This suit is made from a soft and comfortable blend of wool and polyester. The jacket has a full lining, two front flap pockets, and one chest pocket. The vest has a full lining and four buttons. The pants have a zipper fly, belt loops, and two side pockets.
+
+The color of this suit is a refreshing and eye-catching shade of mint green. It pairs well with a variety of shirt and tie combinations. You can also mix and match the pieces with other items in your wardrobe for a more casual look.
+
+Stand out in style with this high-quality three-piece suit. Whether you're attending a prom, a party, or a stage performance, this suit is sure to make you look and feel your best.`,
+      theme: [144, 181, 144],
+      imageId: "000BA",
+      sales: 5,
+      quantity: 10,
+      tags: [
+         "suit",
+         "mint green",
+         "men",
+         "s-xl",
+         "three-piece",
+         "double-breasted",
+         "shawl lapels",
+         "costume",
+         "homme",
+         "pattern",
+         "prom",
+         "party",
+         "stage",
+         "slim fit",
+         "fashion",
+         "blazer",
+         "wool",
+         "polyester",
+         "full lining",
+         "four buttons",
+         "zipper fly",
+         "belt loops",
+      ],
+      reviews: [],
+      price: { value: 499.99, currency: "USD", discount: null },
+   },
+   {
+      id: "53",
+      name: "Suit Jacket Casual Men One Button Blazer - Light Blue",
+      added: "2022-06-01T09:00:00.000Z",
+      category: "formal wear",
+      description: `Elevate your casual wardrobe with this light blue blazer. Made with high-quality materials, this blazer is perfect for any semi-formal occasion. The blazer has a single button closure, a notched lapel, and a slim fit. It is machine washable and available in sizes S-XL.
+
+This blazer is made from a soft and comfortable blend of wool and polyester. It has a full lining, two front flap pockets, and one chest pocket. The color of this blazer is a light and crisp shade of blue. It pairs well with a variety of shirt and pants combinations.
+
+Add some style to your casual look with this high-quality blazer. Whether you're attending a business meeting, a dinner party, or a semi-formal event, this blazer is sure to make you look and feel your best.`,
+      theme: [141, 182, 207],
+      imageId: "000BB",
+      sales: 5,
+      quantity: 10,
+      tags: [
+         "blazer",
+         "light blue",
+         "men",
+         "s-xl",
+         "casual",
+         "one button",
+         "notched lapel",
+         "slim fit",
+         "wool",
+         "polyester",
+         "full lining",
+      ],
+      reviews: [],
+      price: {
+         value: 199.99,
+         currency: "USD",
+         discount: null,
+      },
+   },
 ];

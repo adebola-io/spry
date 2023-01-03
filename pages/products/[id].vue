@@ -291,6 +291,11 @@
                </div>
             </aside>
          </div>
+         <HomeSection
+            v-if="relatedItems"
+            heading="Related Items"
+            :items="relatedItems"
+         />
       </template>
    </main>
 </template>
@@ -298,6 +303,11 @@
 <script setup lang="ts">
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
+
+const { data: relatedItems } = await useFetch(`/api/items/${id}/related`);
+if (relatedItems) {
+   console.log(relatedItems.value);
+}
 
 const imageLoading = ref(true);
 
