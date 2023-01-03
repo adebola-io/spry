@@ -3,7 +3,7 @@ export default defineNuxtConfig({
    vite: {
       devBundler: "legacy",
    },
-   modules: ["@nuxtjs/tailwindcss"],
+   modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
    typescript: {
       shim: false,
    },
