@@ -34,10 +34,10 @@
                }"
                class="aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[30vh] max-sm:min-h-[200px] flex justify-center items-center"
             >
-               <AppImage
+               <ProductImage
                   @load="imageLoading = false"
                   @error="imageLoading = false"
-                  :src="`/api/images/items/item-${item.imageId}.png`"
+                  :id="item.imageId"
                   :alt="item.name"
                   :class="[
                      { 'opacity-0': imageLoading },

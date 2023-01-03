@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { src, alt } = defineProps<{
-   src: string;
+const { id, alt } = defineProps<{
+   id: string;
    alt: string;
    class?: any;
    useLoader?: boolean;
@@ -16,11 +16,16 @@ const emit = defineEmits<{
 const reference = ref<HTMLImageElement | null>(null);
 const success = ref(false);
 const error = ref(false);
+const src = (
+   await import(`~~/assets/images/items/item-${id}.png`).catch(() => {
+      error.value = true;
+      return { default: "" };
+   })
+).default;
 
-watchEffect(() => {
-   if (reference.value) {
-      reference.value.src = reference.value?.getAttribute("lazy-src") ?? "";
-   }
+onMounted(() => {
+   const imageElement = reference.value;
+   imageElement?.setAttribute("src", imageElement.dataset.src ?? "");
 });
 </script>
 
@@ -36,7 +41,7 @@ watchEffect(() => {
       @load="emit('load'), (success = true)"
       @error="emit('error'), (error = true)"
       :class="class"
-      :lazy-src="src"
+      :data-src="src"
       :alt="alt"
    />
 </template>
