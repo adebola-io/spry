@@ -121,3 +121,9 @@ export function compareItems(obj1: Item.Unit, obj2: Item.Unit): number {
 
    return similarity;
 }
+
+export function getRelatedItems(reference: Item.Unit, array: Item.Unit[]) {
+   return [...array]
+      .sort((a, b) => compareItems(reference, b) - compareItems(reference, a))
+      .slice(1, 11);
+}

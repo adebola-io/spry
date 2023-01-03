@@ -2,8 +2,10 @@
 defineProps<{
    heading: string;
    items?: Item.Unit[];
+   headingClass?: string;
    categories?: Category[];
    subHeading?: string;
+   product?: boolean;
 }>();
 </script>
 
@@ -12,7 +14,11 @@ defineProps<{
       class="home-section h-fit w-full pt-[2vw] pb-[2vw] max-sm:pb-0 max-sm:pt-[3vw] mb-quarter-distance max-sm:mb-half-distance"
    >
       <h1
-         class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-dark-purple"
+         :class="[
+            'text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-dark-purple ',
+            headingClass,
+            { 'product-section': product },
+         ]"
       >
          {{ heading }}
       </h1>
@@ -38,5 +44,8 @@ defineProps<{
 <style scoped>
 .product-carousel::-webkit-scrollbar {
    display: none;
+}
+.product-section {
+   @apply text-fandago;
 }
 </style>
