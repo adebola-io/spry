@@ -293,10 +293,30 @@
          </div>
          <HomeSection
             product
+            product
             v-if="relatedItems"
             heading="Related Items"
             :items="relatedItems"
          />
+         <HomeSection
+            product
+            v-if="associatedItems && associatedItems.length > 3"
+            heading="People Also Bought"
+            :items="associatedItems"
+         />
+         <div v-if="item.reviews.length > 0">
+            <h1
+               class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-fandago"
+            >
+               Product Rating
+            </h1>
+            <div class="flex">
+               <RatingCircle
+                  :value="4.5"
+                  :no-of-ratings="item.reviews.length"
+               />
+            </div>
+         </div>
          <HomeSection
             product
             v-if="associatedItems && associatedItems.length > 3"
@@ -311,6 +331,8 @@
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
 
+const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
+   { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
 const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
    { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
 
