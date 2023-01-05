@@ -3,8 +3,8 @@
       target="__blank"
       :to="`/products/${item.id}`"
       :style="{
-         backgroundColor: `rgb(${item.theme.join(' ')})`,
-         '--hoverColor': lightenColor(item.theme),
+         backgroundColor: `rgb(${variant.color.join(' ')})`,
+         '--hoverColor': lightenColor(variant.color),
       }"
       class="product-item duration-300 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
@@ -16,7 +16,7 @@
             v-if="!imageLoaded && !imageError"
             class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
             :size="25"
-            :color="lightenColor(item.theme)"
+            :color="lightenColor(variant.color)"
          />
          <img
             ref="productImage"

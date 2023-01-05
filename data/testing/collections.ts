@@ -16,7 +16,7 @@ export const collections: Collection[] = [
       description: `Fashion should never have to constrain comfort. These items were designed with the modern woman in mind, and from crisp blouses to cozy sweaters, our line has something for every occasion and every season.`,
       banner:
          "https://c4.wallpaperflare.com/wallpaper/951/999/714/beautiful-woman-vintage-fashion-photography-wallpaper-preview.jpg",
-      items: items.filter((item) => item.tags.includes("women")),
+      items: [],
       isFeatured: true,
    },
    {
@@ -44,7 +44,7 @@ export const collections: Collection[] = [
       description: `Embrace the season in style. Featuring a range of cozy pieces, this line has everything you need to stay fashionable on even the frostiest nights. Jackets and scarves to sweaters and boots, our collection has got you covered from head to toe.`,
       banner:
          "https://images.pexels.com/photos/16170/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      items: items.filter((item) => item.tags.includes("winter")),
+      items: [],
       isFeatured: true,
    },
    {
