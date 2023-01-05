@@ -18,6 +18,22 @@ describe("Items API testing", () => {
       });
    });
 
+   it("gets related items from the API", () => {
+      cy.request<Item.Unit[]>("/api/items").then((items) => {
+         cy.request<Item.Unit[]>(`/api/items/${items.body[0].id}/related`)
+            .its("body")
+            .should("be.an", "array");
+      });
+   });
+
+   it("gets associated items from the API", () => {
+      cy.request<Item.Unit[]>("/api/items").then((items) => {
+         cy.request<Item.Unit[]>(`/api/items/${items.body[0].id}/associated`)
+            .its("body")
+            .should("be.an", "array");
+      });
+   });
+
    it("rejects invalid item id", () => {
       cy.request({
          url: "/api/items/0000",

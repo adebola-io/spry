@@ -1,5 +1,5 @@
 import { items } from "~~/data/testing";
-import { compareItems } from "~~/utils";
+import { getRelatedItems } from "~~/utils";
 
 export default defineEventHandler((event) => {
    if (event.req.method === "GET") {
@@ -11,10 +11,7 @@ export default defineEventHandler((event) => {
             message: "Could not find item.",
          });
       } else {
-         const relateditems = [...items]
-            .sort((a, b) => compareItems(item, b) - compareItems(item, a))
-            .slice(1, 11);
-         return relateditems;
+         return getRelatedItems(item, items);
       }
    }
 });

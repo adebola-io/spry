@@ -292,9 +292,16 @@
             </aside>
          </div>
          <HomeSection
+            product
             v-if="relatedItems"
             heading="Related Items"
             :items="relatedItems"
+         />
+         <HomeSection
+            product
+            v-if="associatedItems && associatedItems.length > 3"
+            heading="People Also Bought"
+            :items="associatedItems"
          />
       </template>
    </main>
@@ -304,10 +311,8 @@
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
 
-const { data: relatedItems } = await useFetch(`/api/items/${id}/related`);
-if (relatedItems) {
-   console.log(relatedItems.value);
-}
+const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
+   { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
 
 const imageLoading = ref(true);
 
