@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const { id, alt } = defineProps<{
+const { id, alt, variant } = defineProps<{
    id: string;
    alt: string;
    class?: any;
+   variant: Item.Variant;
    useLoader?: boolean;
    loaderColor?: string;
    loaderSize?: number;
@@ -17,7 +18,9 @@ const reference = ref<HTMLImageElement | null>(null);
 const success = ref(false);
 const error = ref(false);
 const src = (
-   await import(`~~/assets/images/items/item-${id}.png`).catch(() => {
+   await import(
+      `~~/assets/images/items/${id}/${getVariantName(variant)}.png`
+   ).catch(() => {
       error.value = true;
       return { default: "" };
    })

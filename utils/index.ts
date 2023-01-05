@@ -122,8 +122,34 @@ export function compareItems(obj1: Item.Unit, obj2: Item.Unit): number {
    return similarity;
 }
 
+/**
+ * Creates an array of 10 items that are similar to the item being compared from an array of all items.
+ */
 export function getRelatedItems(reference: Item.Unit, array: Item.Unit[]) {
    return [...array]
       .sort((a, b) => compareItems(reference, b) - compareItems(reference, a))
       .slice(1, 11);
+}
+
+/**
+ * Returns the name of a variant in lower snake case.
+ * @param variant The variant to get.
+ */
+export function getVariantName(variant: Item.Variant) {
+   return variant.name.toLowerCase().split(" ").join("_");
+}
+
+/**
+ * Converts an Hexadecimal color value to an RGB array.
+ * @param hex the hex to convert starting with a #
+ */
+export function convertToRGB(hex: string): Item.RGBColor {
+   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
+      hex
+   ) as RegExpExecArray;
+   return [
+      parseInt(result[1], 16),
+      parseInt(result[2], 16),
+      parseInt(result[3], 16),
+   ];
 }

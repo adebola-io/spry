@@ -90,8 +90,13 @@ const { item, wishlist, waitForLazyLoad } = defineProps<{
 const productImage = ref<HTMLInputElement | null>(null);
 const imageLoaded = ref(false);
 const imageError = ref(false);
+const variant = computed(() => item.variants[0]);
 const image = (
-   await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(() => {
+   await import(
+      `~~/assets/images/items/${item.images}/${getVariantName(
+         variant.value
+      )}.png`
+   ).catch(() => {
       imageError.value = true;
       return { default: "" };
    })

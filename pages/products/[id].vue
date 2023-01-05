@@ -26,25 +26,27 @@
          >
             <!-- Image -->
             <div
+               v-if="variant"
                id="product-image-container"
                :style="{
-                  backgroundColor: lightenColor(item.theme, 50),
-                  color: darkenColor(item.theme, 60),
-                  borderColor: darkenColor(item.theme, 65),
+                  backgroundColor: lightenColor(variant.color, 50),
+                  color: darkenColor(variant.color, 60),
+                  borderColor: darkenColor(variant.color, 65),
                }"
                class="aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[30vh] max-sm:min-h-[200px] flex justify-center items-center"
             >
                <ProductImage
                   @load="imageLoading = false"
                   @error="imageLoading = false"
-                  :id="item.imageId"
+                  :id="item.images"
+                  :variant="variant"
                   :alt="item.name"
                   :class="[
                      { 'opacity-0': imageLoading },
                      'duration-300 h-[65%] max-sm:h-[80%]',
                   ]"
                   use-loader
-                  :loader-color="darkenColor(item.theme, 20)"
+                  :loader-color="darkenColor(variant.color, 20)"
                />
             </div>
             <!-- Info -->
@@ -329,6 +331,8 @@
 <script setup lang="ts">
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
+
+const variant = computed(() => item.value?.variants[0]);
 
 const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
    { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
