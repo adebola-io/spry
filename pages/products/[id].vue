@@ -29,7 +29,7 @@
                v-if="variant"
                id="product-image-container"
                :style="{
-                  backgroundColor: lightenColor(variant.color, 50),
+                  backgroundColor: lightenColor(variant.color, 120),
                   color: darkenColor(variant.color, 60),
                   borderColor: darkenColor(variant.color, 65),
                }"

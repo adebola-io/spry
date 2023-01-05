@@ -3,8 +3,8 @@
       target="__blank"
       :to="`/products/${item.id}`"
       :style="{
-         backgroundColor: `rgb(${variant.color.join(' ')})`,
-         '--hoverColor': lightenColor(variant.color),
+         backgroundColor: lightenColor(variant.color, 60),
+         '--hoverColor': lightenColor(variant.color, 90),
       }"
       class="product-item duration-300 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
