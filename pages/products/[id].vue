@@ -293,7 +293,6 @@
          </div>
          <HomeSection
             product
-            product
             v-if="relatedItems"
             heading="Related Items"
             :items="relatedItems"
@@ -331,8 +330,6 @@
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
 
-const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
-   { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
 const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
    { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
 
