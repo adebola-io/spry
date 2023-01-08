@@ -24,6 +24,7 @@ export class Randomizer<T> {
    }
    /** Creates a new array with random elements from the initial array. It keeps track of how many times it is called so it can reduce the number of repetitions. */
    selectUniquely(length = 1) {
+      if (length > this.__initArray.length) length = this.__initArray.length;
       const random: T[] = [];
       this.__rounds++;
       while (random.length < length) {
@@ -118,7 +119,6 @@ export function compareItems(obj1: Item.Unit, obj2: Item.Unit): number {
    if (similarity > 100) {
       similarity = 100;
    }
-
    return similarity;
 }
 
@@ -126,9 +126,9 @@ export function compareItems(obj1: Item.Unit, obj2: Item.Unit): number {
  * Creates an array of 10 items that are similar to the item being compared from an array of all items.
  */
 export function getRelatedItems(reference: Item.Unit, array: Item.Unit[]) {
-   return [...array]
-      .sort((a, b) => compareItems(reference, b) - compareItems(reference, a))
-      .slice(1, 11);
+   return array
+      .filter((item) => item !== reference)
+      .sort((a, b) => compareItems(reference, b) - compareItems(reference, a));
 }
 
 /**
@@ -136,7 +136,10 @@ export function getRelatedItems(reference: Item.Unit, array: Item.Unit[]) {
  * @param variant The variant to get.
  */
 export function getVariantName(variant: Item.Variant) {
-   return variant.name.toLowerCase().split(" ").join("_");
+   return variant.name
+      .toLowerCase()
+      .split(/\n|\s|\r|\t|\-/g)
+      .join("_");
 }
 
 /**
@@ -144,9 +147,12 @@ export function getVariantName(variant: Item.Variant) {
  * @param hex the hex to convert starting with a #
  */
 export function convertToRGB(hex: string): Item.RGBColor {
-   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
-      hex
-   ) as RegExpExecArray;
+   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+   if (result === null) {
+      throw new Error(
+         `Error during RGB conversion. ${hex} is not a valid hex color value.`
+      );
+   }
    return [
       parseInt(result[1], 16),
       parseInt(result[2], 16),

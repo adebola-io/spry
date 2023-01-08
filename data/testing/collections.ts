@@ -16,7 +16,7 @@ export const collections: Collection[] = [
       description: `Fashion should never have to constrain comfort. These items were designed with the modern woman in mind, and from crisp blouses to cozy sweaters, our line has something for every occasion and every season.`,
       banner:
          "https://c4.wallpaperflare.com/wallpaper/951/999/714/beautiful-woman-vintage-fashion-photography-wallpaper-preview.jpg",
-      items: [],
+      items: items.filter((item) => item.tags.includes("women")).slice(0, 20),
       isFeatured: true,
    },
    {

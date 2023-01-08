@@ -29,11 +29,11 @@
                v-if="variant"
                id="product-image-container"
                :style="{
-                  backgroundColor: lightenColor(variant.color, 100),
+                  backgroundColor: lightenColor(variant.color, 90),
                   color: darkenColor(variant.color, 60),
                   borderColor: darkenColor(variant.color, 65),
                }"
-               class="relative aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
+               class="relative animate-[slide-in-from-right_500ms] aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
             >
                <ProductImage
                   @load="imageLoading = false"
@@ -51,7 +51,7 @@
                />
                <!-- Variants -->
                <div
-                  class="h-0 w-0 flex justify-center items-center mt-distance max-sm:mt-double-distance max-sm:scale-90"
+                  class="h-0 w-0 flex justify-center items-center mt-double-distance max-sm:mt-quadruple-distance max-sm:scale-90"
                >
                   <div
                      class="flex gap-quarter-distance max-sm:gap-half-distance"
@@ -79,7 +79,7 @@
                   class="mb-quarter-distance max-sm:flex max-sm:justify-between max-sm:gap-half-distance font-oceanwide"
                >
                   <h1
-                     class="text-[24pt] w-[80%] max-2xl:w-[90%] max-lg:w-full max-xl:text-[17pt] max-sm:text-[14pt] max-xs:text-[11pt]"
+                     class="text-[24pt] max-2xl:w-[90%] max-lg:w-full max-xl:text-[17pt] max-sm:text-[14pt] max-xs:text-[11pt]"
                   >
                      {{ item.name }}
                   </h1>
@@ -245,7 +245,7 @@
             </div>
             <!-- Aside -->
             <aside
-               class="border-[3px] border-fandago h-max p-half-distance max-xl:p-third-distance max-xl:border-2 max-lg:hidden"
+               class="border-[3px] animate-[slide-in-from-left_500ms] border-fandago h-max p-half-distance max-xl:p-third-distance max-xl:border-2 max-lg:hidden"
             >
                <h3 class="aside-heading">Shop with confidence.</h3>
                <div class="aside-box">
@@ -377,7 +377,12 @@ const expressDelivery = useDateFromNow(3, 4);
 <style scoped>
 #product-image-container {
    box-shadow: 5px 5px 0 0;
+   transition-duration: 200ms;
    @apply max-sm:[box-shadow:none];
+}
+#product-image-container:hover {
+   box-shadow: none;
+   transform: scale(0.99);
 }
 .paragraph {
    line-height: 30px;
@@ -387,8 +392,16 @@ const expressDelivery = useDateFromNow(3, 4);
 #addtocartbtn,
 #wishlist-box,
 aside {
+   transition-duration: 200ms;
    box-shadow: 2px 2px 0 0;
    @apply max-xl:[box-shadow:1.5px_1.5px_0_0];
+}
+
+#quantity:hover,
+#addtocartbtn:hover,
+#wishlist-box:hover {
+   box-shadow: none;
+   transform: scale(0.95);
 }
 .aside-heading {
    @apply font-oceanwide text-[13pt] max-xl:text-[10pt];
