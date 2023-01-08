@@ -29,25 +29,46 @@
                v-if="variant"
                id="product-image-container"
                :style="{
-                  backgroundColor: lightenColor(variant.color, 120),
+                  backgroundColor: lightenColor(variant.color, 100),
                   color: darkenColor(variant.color, 60),
                   borderColor: darkenColor(variant.color, 65),
                }"
-               class="aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[30vh] max-sm:min-h-[200px] flex justify-center items-center"
+               class="relative aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
             >
                <ProductImage
                   @load="imageLoading = false"
-                  @error="imageLoading = false"
                   :id="item.images"
                   :variant="variant"
+                  :key="variant.name"
                   :alt="item.name"
                   :class="[
                      { 'opacity-0': imageLoading },
-                     'duration-300 h-[65%] max-sm:h-[80%]',
+                     'duration-300 h-[65%]',
                   ]"
                   use-loader
                   :loader-color="darkenColor(variant.color, 20)"
+                  loader-class="max-sm:scale-50"
                />
+               <!-- Variants -->
+               <div
+                  class="h-0 w-0 flex justify-center items-center mt-distance max-sm:mt-double-distance max-sm:scale-90"
+               >
+                  <div
+                     class="flex gap-quarter-distance max-sm:gap-half-distance"
+                  >
+                     <div
+                        class="aspect-square h-[20px] w-[20px] border-2 cursor-pointer"
+                        v-for="(variant, index) in item.variants"
+                        @click="currentVariant = index"
+                        :title="variant.name"
+                        :key="index"
+                        :style="{
+                           backgroundColor: `rgb(${variant.color.join(' ')})`,
+                           borderColor: darkenColor(variant.color, 50),
+                        }"
+                     ></div>
+                  </div>
+               </div>
             </div>
             <!-- Info -->
             <div
@@ -332,7 +353,9 @@
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
 
-const variant = computed(() => item.value?.variants[0]);
+const currentVariant = ref(0);
+
+const variant = computed(() => item.value?.variants[currentVariant.value]);
 
 const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
    { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);

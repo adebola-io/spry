@@ -7,6 +7,7 @@ const { id, alt, variant } = defineProps<{
    useLoader?: boolean;
    loaderColor?: string;
    loaderSize?: number;
+   loaderClass?: string;
 }>();
 
 const emit = defineEmits<{
@@ -37,7 +38,7 @@ onMounted(() => {
       v-if="useLoader && !error && !success"
       :color="loaderColor"
       :size="loaderSize"
-      class="absolute"
+      :class="['absolute', loaderClass]"
    />
    <img
       ref="reference"
