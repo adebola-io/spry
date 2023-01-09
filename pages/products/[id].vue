@@ -326,7 +326,7 @@
             heading="People Also Bought"
             :items="associatedItems"
          />
-         <div v-if="item.reviews.length > 0">
+         <div id="product-review-section" v-if="item.reviews.length > 0">
             <h1
                class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-fandago"
             >
@@ -337,14 +337,24 @@
                   :value="4.5"
                   :no-of-ratings="item.reviews.length"
                />
+               <div>
+                  <h1
+                     class="pl-distance font-bold text-4xl font-oceanwide mb-distance"
+                  >
+                     Top Reviews
+                  </h1>
+                  <div
+                     class="pl-distance pr-[2vw] overflow-y-scroll h-[60vh] max-sm:pr-[3vw]"
+                  >
+                     <ProductReview
+                        v-for="(review, index) in item.reviews"
+                        :key="index"
+                        :review="review"
+                     />
+                  </div>
+               </div>
             </div>
          </div>
-         <HomeSection
-            product
-            v-if="associatedItems && associatedItems.length > 3"
-            heading="People Also Bought"
-            :items="associatedItems"
-         />
       </template>
    </main>
 </template>
@@ -428,5 +438,12 @@ aside {
 }
 .security-link {
    @apply underline text-[9pt] max-xl:text-[7pt] mr-half-distance text-dark-purple;
+}
+#product-review-section {
+   background-image: linear-gradient(
+      180deg,
+      rgba(239, 194, 200, 0) 0%,
+      #efc2c8 100%
+   );
 }
 </style>

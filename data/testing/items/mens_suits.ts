@@ -58,7 +58,7 @@ I know this is easier said than done but it should be an option where you can mi
          },
          {
             userId: "0293",
-            date: "",
+            date: "2022-09-13T00:00:00.000Z",
             content: `Son agreed to go to homecoming at last minute and no time for shopping for suits in stores.
 
 Clearly not tailored but jacket easily could be for a custom fit.
@@ -80,7 +80,7 @@ Very pleased overall!`,
          },
          {
             userId: "0092",
-            date: "",
+            date: "2022-09-13T00:00:00.000Z",
             content: `I’m 5’8 220 and read other reviews and the company suggested to get a XXL, however I ordered an XL and the top fits perfectly. The coat is at the right arm length and fit snug. The pants were long but that should be expected. Overall a really good suit!`,
             rating: 5,
          },
