@@ -1,14 +1,14 @@
 import { items } from "./items";
-import { Randomizer } from "~~/utils";
+import { Randomizer } from "@/utils";
 
-const randomizer = new Randomizer(items);
+const random = new Randomizer(items);
 
 export const sections: HomeSection[] = [
    {
       heading: "Trending Items",
       subHeading:
          "Get the most popular items in the store before they are sold out.",
-      items: randomizer.selectUniquely(9),
+      items: random.selectUniquely(9),
    },
    {
       heading: "New Arrivals",
@@ -18,19 +18,16 @@ export const sections: HomeSection[] = [
    {
       heading: "Best Sellers",
       subHeading: "These are the top-rated and top-selling items in the store!",
-      items: randomizer.selectUniquely(9),
+      items: random.selectUniquely(9),
    },
    {
       heading: "Sale Items",
       subHeading: "Don't miss out on these discounted styles!",
-      items: items
-         .filter((item) => item.price.discount !== null)
-         .slice(0, 9)
-         .reverse(),
+      items: items.filter((item) => item.price.discount !== null),
    },
    {
       heading: "May We Suggest",
       subHeading: "Items that we know you'll love.",
-      items: randomizer.selectUniquely(9),
+      items: random.selectUniquely(9),
    },
 ];

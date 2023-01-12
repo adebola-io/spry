@@ -7,9 +7,10 @@
          >
             <AppLoader v-if="!imageLoaded" />
             <img
-               ref="bannerImage"
+               ref="banner"
+               id="banner-image"
                @load="imageLoaded = true"
-               :lazy-src="collection.banner"
+               :data-src="collection.banner"
                :alt="collection.name"
                :class="[
                   { 'opacity-0': !imageLoaded },
@@ -63,14 +64,14 @@ const { id } = useRoute().params as { id: string },
    { pending, error } = fetch,
    collection = fetch.data as Ref<Collection | null>,
    imageLoaded = ref(false),
-   bannerImage = ref<HTMLImageElement | null>(null);
+   banner = ref<HTMLImageElement | null>(null);
+
 useHead({
    title: `${collection.value?.name ?? "Collection"} - Spry Clothing`,
 });
-watchEffect(() => {
-   bannerImage.value &&
-      (bannerImage.value.src =
-         bannerImage.value?.getAttribute("lazy-src") ?? "");
+// useImageObserver();
+onMounted(() => {
+   banner.value?.setAttribute("src", banner.value.dataset.src ?? "");
 });
 </script>
 

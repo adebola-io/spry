@@ -33,6 +33,11 @@ declare namespace Item {
       discount: Discount | null;
    }
 
+   export interface Variant {
+      name: string;
+      color: Item.RGBColor;
+   }
+
    /** A single product item. */
    export interface Unit {
       id: string;
@@ -43,9 +48,10 @@ declare namespace Item {
       category: Category;
       /** More detail about the item, should be at least 100 words long. */
       description: string;
-      /** A lightened version of the color of the item. */
-      theme: RGBColor;
-      imageId: string;
+      /**An id starting at 0000A representing the folder where images of this item are stored. */
+      images: string;
+      /** The versions of the item. */
+      variants: Variant[];
       /** The number of units sold in the last month. */
       sales: number;
       /** The number of units left. */

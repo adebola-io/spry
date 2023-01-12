@@ -45,32 +45,38 @@ export function useTimeLeftInDay() {
    });
 }
 
-/**
- * Nuxt composable that prevents product images from loading until they are needed.
- */
-export function useLazyProductLoading() {
-   // Lazy Load product images.
-   watchEffect(() => {
-      if (process.client && "IntersectionObserver" in window) {
-         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(({ isIntersecting, target }) => {
-               if (
-                  isIntersecting &&
-                  Object.getOwnPropertyDescriptor(target, "__imageIsLoaded")
-                     ?.value !== true
-               ) {
-                  (target as HTMLImageElement).src =
-                     target.getAttribute("lazy-src") ?? "";
-                  Object.defineProperty(target, "__imageIsLoaded", {
-                     value: true,
-                  });
-               }
+export function useImageObserver() {
+   const observer = ref<IntersectionObserver | null>(null);
+
+   onMounted(async () => {
+      if (process.client && document.readyState === "complete") {
+         const images = document.querySelectorAll(
+            "img[data-src]"
+         ) as NodeListOf<HTMLImageElement>;
+         if ("IntersectionObserver" in window) {
+            observer.value = new IntersectionObserver((entries, observer) => {
+               entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                     const { target }: { target: HTMLImageElement } =
+                        entry as any;
+                     target.src = target.dataset.src ?? "";
+                     observer.unobserve(target);
+                  }
+               });
             });
-         });
-         document.querySelectorAll("img.product-item-image").forEach((img) => {
-            observer.observe(img);
-         });
+            images.forEach((image) => {
+               observer.value?.observe(image);
+            });
+         } else {
+            images.forEach((image) => {
+               image.src = image.dataset.src ?? "";
+            });
+         }
       }
+   });
+   onUnmounted(() => {
+      observer.value?.disconnect();
+      observer.value = null;
    });
 }
 

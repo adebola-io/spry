@@ -1,6 +1,6 @@
 <template>
    <div
-      v-for="_ in value"
+      v-for="_ in Math.floor(value)"
       class="mr-[3px] max-md:w-[12px] max-sm:w-[9px] max-sm:h-[13px] translate-y-[-3px] translate-x-[-2px] max-md:scale-[.6] max-sm:scale-[.5] max-md:mr-0"
    >
       <svg

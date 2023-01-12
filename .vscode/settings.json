@@ -1,5 +1,5 @@
 {
-   "editor.fontFamily": "Roboto Mono, Chivo Mono, Source Code Pro, Consolas, 'Courier New', monospace",
+   "editor.fontFamily": "Cascadia Code, Consolas, 'Courier New', monospace",
    "editor.tabSize": 3,
    "prettier.tabWidth": 3,
    "css.lint.unknownAtRules": "ignore",

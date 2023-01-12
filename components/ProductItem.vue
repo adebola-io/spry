@@ -1,12 +1,11 @@
 <template>
    <NuxtLink
-      target="__blank"
       :to="`/products/${item.id}`"
       :style="{
-         backgroundColor: `rgb(${item.theme.join(' ')})`,
-         '--hoverColor': lightenColor(item.theme),
+         backgroundColor: lightenColor(variant.color, 80),
+         '--hoverColor': lightenColor(variant.color, 90),
       }"
-      class="product-item duration-300 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
+      class="product-item duration-200 relative border-[3.74088px] max-sm:border-[2.3px] border-solid overflow-hidden aspect-[calc(392/481)] isolate border-dark-purple h-[350px] max-md:h-[265px] max-sm:h-[215px] max-xs:h-[205px]"
    >
       <!-- Pic -->
       <div
@@ -16,7 +15,7 @@
             v-if="!imageLoaded && !imageError"
             class="absolute max-md:scale-90 max-sm:scale-75 max-xs:scale-50"
             :size="25"
-            :color="lightenColor(item.theme)"
+            :color="lightenColor(variant.color)"
          />
          <img
             ref="productImage"
@@ -25,7 +24,7 @@
                { 'opacity-0': !imageLoaded },
                'h-[80%] duration-300 animate-[item-photo-fade-in_300ms] product-item-image',
             ]"
-            :lazy-src="image"
+            :data-src="image"
             :alt="item.name"
          />
       </div>
@@ -90,8 +89,13 @@ const { item, wishlist, waitForLazyLoad } = defineProps<{
 const productImage = ref<HTMLInputElement | null>(null);
 const imageLoaded = ref(false);
 const imageError = ref(false);
+const variant = computed(() => item.variants[0]);
 const image = (
-   await import(`~~/assets/images/items/item-${item.imageId}.png`).catch(() => {
+   await import(
+      `~~/assets/images/items/${item.images}/${getVariantName(
+         variant.value
+      )}.min.png`
+   ).catch(() => {
       imageError.value = true;
       return { default: "" };
    })
@@ -108,11 +112,11 @@ const itemRating = computed(() => {
 const isNewItem = new Date(item.added).getMonth() > 9;
 const isHotItem = item.sales > 20 && item.price.discount;
 
-watchEffect(() => {
-   if (!waitForLazyLoad)
-      productImage.value &&
-         (productImage.value.src =
-            productImage.value.getAttribute("lazy-src") ?? "");
+onMounted(() => {
+   productImage.value?.setAttribute(
+      "src",
+      productImage.value.dataset.src ?? ""
+   );
 });
 </script>
 

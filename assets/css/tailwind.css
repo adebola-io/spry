@@ -73,6 +73,20 @@
    }
 }
 
+@keyframes slide-in-from-left {
+   0% {
+      transform: translateX(-30%);
+      opacity: 0;
+   }
+}
+
+@keyframes slide-in-from-right {
+   0% {
+      transform: translateX(30%);
+      opacity: 0;
+   }
+}
+
 @keyframes fade-in {
    0% {
       opacity: 0.5;

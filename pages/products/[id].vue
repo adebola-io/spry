@@ -26,25 +26,49 @@
          >
             <!-- Image -->
             <div
+               v-if="variant"
                id="product-image-container"
                :style="{
-                  backgroundColor: lightenColor(item.theme, 50),
-                  color: darkenColor(item.theme, 60),
-                  borderColor: darkenColor(item.theme, 65),
+                  backgroundColor: lightenColor(variant.color, 90),
+                  color: darkenColor(variant.color, 60),
+                  borderColor: darkenColor(variant.color, 65),
                }"
-               class="aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[30vh] max-sm:min-h-[200px] flex justify-center items-center"
+               class="relative animate-[slide-in-from-right_500ms] aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
             >
-               <AppImage
-                  @load="imageLoaded = true"
-                  :src="`/_nuxt/assets/images/items/item-${item.imageId}.png`"
+               <ProductImage
+                  @load="imageLoading = false"
+                  :id="item.images"
+                  :variant="variant"
+                  :key="variant.name"
                   :alt="item.name"
                   :class="[
-                     { 'opacity-0': !imageLoaded },
-                     'duration-300 h-[65%] max-sm:h-[80%]',
+                     { 'opacity-0': imageLoading },
+                     'duration-300 h-[65%]',
                   ]"
                   use-loader
-                  :loader-color="darkenColor(item.theme, 20)"
+                  :loader-color="darkenColor(variant.color, 20)"
+                  loader-class="max-sm:scale-50"
                />
+               <!-- Variants -->
+               <div
+                  class="h-0 w-0 flex justify-center items-center mt-double-distance max-sm:mt-quadruple-distance max-sm:scale-90"
+               >
+                  <div
+                     class="flex gap-quarter-distance max-sm:gap-half-distance"
+                  >
+                     <div
+                        class="aspect-square h-[20px] w-[20px] border-2 cursor-pointer"
+                        v-for="(variant, index) in item.variants"
+                        @click="currentVariant = index"
+                        :title="variant.name"
+                        :key="index"
+                        :style="{
+                           backgroundColor: `rgb(${variant.color.join(' ')})`,
+                           borderColor: darkenColor(variant.color, 50),
+                        }"
+                     ></div>
+                  </div>
+               </div>
             </div>
             <!-- Info -->
             <div
@@ -55,7 +79,7 @@
                   class="mb-quarter-distance max-sm:flex max-sm:justify-between max-sm:gap-half-distance font-oceanwide"
                >
                   <h1
-                     class="text-[24pt] w-[80%] max-2xl:w-[90%] max-lg:w-full max-xl:text-[17pt] max-sm:text-[14pt] max-xs:text-[11pt]"
+                     class="text-[24pt] max-2xl:w-[90%] max-lg:w-full max-xl:text-[17pt] max-sm:text-[14pt] max-xs:text-[11pt]"
                   >
                      {{ item.name }}
                   </h1>
@@ -221,7 +245,7 @@
             </div>
             <!-- Aside -->
             <aside
-               class="border-[3px] border-fandago h-max p-half-distance max-xl:p-third-distance max-xl:border-2 max-lg:hidden"
+               class="border-[3px] animate-[slide-in-from-left_500ms] border-fandago h-max p-half-distance max-xl:p-third-distance max-xl:border-2 max-lg:hidden"
             >
                <h3 class="aside-heading">Shop with confidence.</h3>
                <div class="aside-box">
@@ -290,6 +314,47 @@
                </div>
             </aside>
          </div>
+         <HomeSection
+            product
+            v-if="relatedItems"
+            heading="Related Items"
+            :items="relatedItems"
+         />
+         <HomeSection
+            product
+            v-if="associatedItems && associatedItems.length > 3"
+            heading="People Also Bought"
+            :items="associatedItems"
+         />
+         <div id="product-review-section" v-if="item.reviews.length > 0">
+            <h1
+               class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-fandago"
+            >
+               Product Rating
+            </h1>
+            <div class="flex">
+               <RatingCircle
+                  :value="4.5"
+                  :no-of-ratings="item.reviews.length"
+               />
+               <div>
+                  <h1
+                     class="pl-distance font-bold text-4xl font-oceanwide mb-distance"
+                  >
+                     Top Reviews
+                  </h1>
+                  <div
+                     class="pl-distance pr-[2vw] overflow-y-scroll h-[60vh] max-sm:pr-[3vw]"
+                  >
+                     <ProductReview
+                        v-for="(review, index) in item.reviews"
+                        :key="index"
+                        :review="review"
+                     />
+                  </div>
+               </div>
+            </div>
+         </div>
       </template>
    </main>
 </template>
@@ -298,7 +363,14 @@
 const { id } = useRoute().params as { id: string },
    { data: item, error, pending } = await useFetch(`/api/items/${id}`);
 
-const imageLoaded = ref(false);
+const currentVariant = ref(0);
+
+const variant = computed(() => item.value?.variants[currentVariant.value]);
+
+const { data: relatedItems } = await useFetch(`/api/items/${id}/related`),
+   { data: associatedItems } = await useFetch(`/api/items/${id}/associated`);
+
+const imageLoading = ref(true);
 
 useHead({
    title: item.value
@@ -315,7 +387,12 @@ const expressDelivery = useDateFromNow(3, 4);
 <style scoped>
 #product-image-container {
    box-shadow: 5px 5px 0 0;
+   transition-duration: 200ms;
    @apply max-sm:[box-shadow:none];
+}
+#product-image-container:hover {
+   box-shadow: none;
+   transform: scale(0.99);
 }
 .paragraph {
    line-height: 30px;
@@ -325,8 +402,16 @@ const expressDelivery = useDateFromNow(3, 4);
 #addtocartbtn,
 #wishlist-box,
 aside {
+   transition-duration: 200ms;
    box-shadow: 2px 2px 0 0;
    @apply max-xl:[box-shadow:1.5px_1.5px_0_0];
+}
+
+#quantity:hover,
+#addtocartbtn:hover,
+#wishlist-box:hover {
+   box-shadow: none;
+   transform: scale(0.95);
 }
 .aside-heading {
    @apply font-oceanwide text-[13pt] max-xl:text-[10pt];
@@ -353,5 +438,12 @@ aside {
 }
 .security-link {
    @apply underline text-[9pt] max-xl:text-[7pt] mr-half-distance text-dark-purple;
+}
+#product-review-section {
+   background-image: linear-gradient(
+      180deg,
+      rgba(239, 194, 200, 0) 0%,
+      #efc2c8 100%
+   );
 }
 </style>
