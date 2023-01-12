@@ -1,5 +1,4 @@
 const { readdir, readdirSync, appendFile, existsSync } = require("fs");
-const path = require("path");
 const sharp = require("sharp");
 const { terminal } = require("./utils");
 
@@ -11,9 +10,9 @@ async function compress(imageBuffer) {
    return sharp(imageBuffer)
       .metadata()
       .then((metadata) => {
-         return sharp(imageBuffer)
-            .resize(parseInt(metadata.width / 4), parseInt(metadata.height / 4))
-            .toBuffer();
+         const width = parseInt(metadata.width / 4.5),
+            height = parseInt(metadata.height / 4.5);
+         return sharp(imageBuffer).resize(width, height).toBuffer();
       })
       .catch((err) => {
          console.log(err);

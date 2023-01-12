@@ -81,7 +81,8 @@
 </template>
 
 <script setup lang="ts">
-const { item, wishlist, waitForLazyLoad } = defineProps<{
+console.log(process.env.NODE_ENV);
+const { item, wishlist } = defineProps<{
    item: Item.Unit;
    wishlist?: boolean;
    waitForLazyLoad?: boolean;
@@ -89,12 +90,12 @@ const { item, wishlist, waitForLazyLoad } = defineProps<{
 const productImage = ref<HTMLInputElement | null>(null);
 const imageLoaded = ref(false);
 const imageError = ref(false);
-const variant = computed(() => item.variants[0]);
+const variant = computed(() => item.variants[0]),
+   variantName = getVariantName(variant.value),
+   minimized = process.env.NODE_ENV === "production" ? ".min" : "";
 const image = (
    await import(
-      `~~/assets/images/items/${item.images}/${getVariantName(
-         variant.value
-      )}.min.png`
+      `~~/assets/images/items/${item.images}/${variantName}${minimized}.png`
    ).catch(() => {
       imageError.value = true;
       return { default: "" };

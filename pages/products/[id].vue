@@ -79,6 +79,7 @@
                   class="mb-quarter-distance max-sm:flex max-sm:justify-between max-sm:gap-half-distance font-oceanwide"
                >
                   <h1
+                     id="product-name"
                      class="text-[24pt] max-2xl:w-[90%] max-lg:w-full max-xl:text-[17pt] max-sm:text-[14pt] max-xs:text-[11pt]"
                   >
                      {{ item.name }}
@@ -108,6 +109,7 @@
                   class="max-sm:hidden my-half-distance max-xl:my-quarter-distance font-oceanwide flex items-center"
                >
                   <span
+                     id="product-price"
                      class="text-[37pt] max-xl:text-[30pt] max-lg:text-[27pt]"
                   >
                      {{ calculatePrice(item.price) }}
@@ -230,6 +232,7 @@
                </div>
                <!-- Tags -->
                <div
+                  id="tags"
                   class="overflow-x-scroll scroll-hidden h-max w-full max-sm:hidden"
                >
                   <div class="flex w-fit gap-half-distance">
@@ -316,6 +319,7 @@
          </div>
          <HomeSection
             product
+            id="related-items"
             v-if="relatedItems"
             heading="Related Items"
             :items="relatedItems"
