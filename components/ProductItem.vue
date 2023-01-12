@@ -1,6 +1,5 @@
 <template>
    <NuxtLink
-      target="__blank"
       :to="`/products/${item.id}`"
       :style="{
          backgroundColor: lightenColor(variant.color, 80),
@@ -95,7 +94,7 @@ const image = (
    await import(
       `~~/assets/images/items/${item.images}/${getVariantName(
          variant.value
-      )}.png`
+      )}.min.png`
    ).catch(() => {
       imageError.value = true;
       return { default: "" };
