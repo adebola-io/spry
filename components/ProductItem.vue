@@ -81,7 +81,6 @@
 </template>
 
 <script setup lang="ts">
-console.log(process.env.NODE_ENV);
 const { item, wishlist } = defineProps<{
    item: Item.Unit;
    wishlist?: boolean;
