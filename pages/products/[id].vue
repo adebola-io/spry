@@ -51,7 +51,7 @@
                />
                <!-- Variants -->
                <div
-                  class="h-0 w-0 flex justify-center items-center mt-double-distance max-sm:mt-quadruple-distance max-sm:scale-90"
+                  class="h-0 w-0 flex justify-center items-center mt-double-distance max-sm:mt-quadruple-distance max-md:scale-75 max-sm:scale-90"
                >
                   <div
                      class="flex gap-quarter-distance max-sm:gap-half-distance"
