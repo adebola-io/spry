@@ -33,7 +33,7 @@
                   color: darkenColor(variant.color, 60),
                   borderColor: darkenColor(variant.color, 65),
                }"
-               class="relative animate-[slide-in-from-right_500ms] aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
+               class="relative sm:animate-[slide-in-from-right_500ms] aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
             >
                <ProductImage
                   @load="imageLoading = false"
@@ -332,23 +332,25 @@
          />
          <div id="product-review-section" v-if="item.reviews.length > 0">
             <h1
-               class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-fandago"
+               class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-md:mt-distance max-sm:mb-distance font-bold font-oceanwide text-fandago"
             >
-               Product Rating
+               <span class="max-md:hidden">Product Rating</span>
+               <span class="md:hidden">Reviews</span>
             </h1>
             <div class="flex">
                <RatingCircle
+                  class="max-md:hidden"
                   :value="4.5"
                   :no-of-ratings="item.reviews.length"
                />
                <div>
                   <h1
-                     class="pl-distance font-bold text-4xl font-oceanwide mb-distance"
+                     class="pl-distance font-bold text-4xl max-md:hidden font-oceanwide mb-distance"
                   >
                      Top Reviews
                   </h1>
                   <div
-                     class="pl-distance pr-[2vw] overflow-y-scroll h-[60vh] max-sm:pr-[3vw]"
+                     class="pl-distance pr-[2vw] md:overflow-y-scroll md:h-[60vh] max-sm:pr-[3vw]"
                   >
                      <ProductReview
                         v-for="(review, index) in item.reviews"
@@ -396,7 +398,7 @@ const expressDelivery = useDateFromNow(3, 4);
 }
 #product-image-container:hover {
    box-shadow: none;
-   transform: scale(0.99);
+   @apply sm:scale-[0.99];
 }
 .paragraph {
    line-height: 30px;
@@ -443,11 +445,8 @@ aside {
 .security-link {
    @apply underline text-[9pt] max-xl:text-[7pt] mr-half-distance text-dark-purple;
 }
+
 #product-review-section {
-   background-image: linear-gradient(
-      180deg,
-      rgba(239, 194, 200, 0) 0%,
-      #efc2c8 100%
-   );
+   @apply md:[background-image:_linear-gradient(180deg,rgba(239_194_200_0)_0%,_#efc2c8_100%)];
 }
 </style>

@@ -9,7 +9,7 @@ defineProps<{
    <NuxtLink
       :to="`/featured/${data.id}`"
       :style="{ backgroundImage: `url(${data.banner})` }"
-      class="featured-collection relative duration-500 animate-[feature-expand_900ms] cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between"
+      class="featured-collection relative duration-500 sm:animate-[feature-expand_900ms] cursor-pointer [--arrow-opacity:0] hover:[--arrow-opacity:1] h-full w-full bg-center bg-cover border-dark-purple border-[4px] bg-fandago flex items-end justify-between"
    >
       <div
          class="w-full h-full text-white flex flex-col justify-end pl-[2vw] max-sm:pl-[3vw] pr-[20%] pb-distance"
