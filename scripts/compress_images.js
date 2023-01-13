@@ -10,8 +10,8 @@ async function compress(imageBuffer) {
    return sharp(imageBuffer)
       .metadata()
       .then((metadata) => {
-         const width = parseInt(metadata.width / 4.5),
-            height = parseInt(metadata.height / 4.5);
+         const width = parseInt(metadata.width / 5),
+            height = parseInt(metadata.height / 5);
          return sharp(imageBuffer).resize(width, height).toBuffer();
       })
       .catch((err) => {
