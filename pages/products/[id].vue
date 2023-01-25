@@ -43,7 +43,7 @@
                   :alt="item.name"
                   :class="[
                      { 'opacity-0': imageLoading },
-                     'duration-300 h-[55%]',
+                     'duration-300 h-[55%] sm:h-[40%] max-sm:h-[55%]',
                   ]"
                   use-loader
                   :loader-color="darkenColor(variant.color, 20)"
@@ -350,7 +350,7 @@
                      Top Reviews
                   </h1>
                   <div
-                     class="pl-distance pr-[2vw] md:overflow-y-scroll md:h-[60vh] max-sm:pr-[3vw]"
+                     class="pl-distance pr-[2vw] md:overflow-y-scroll scroll-hidden md:h-[60vh] max-sm:pr-[3vw]"
                   >
                      <ProductReview
                         v-for="(review, index) in item.reviews"
