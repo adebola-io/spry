@@ -22,7 +22,7 @@
             @load="imageLoaded = true"
             :class="[
                { 'opacity-0': !imageLoaded },
-               'h-[80%] duration-300 animate-[item-photo-fade-in_300ms] product-item-image',
+               'h-[60%] duration-300 animate-[item-photo-fade-in_300ms] product-item-image',
             ]"
             :data-src="image"
             :alt="item.name"

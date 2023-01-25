@@ -43,7 +43,7 @@
                   :alt="item.name"
                   :class="[
                      { 'opacity-0': imageLoading },
-                     'duration-300 h-[65%]',
+                     'duration-300 h-[55%]',
                   ]"
                   use-loader
                   :loader-color="darkenColor(variant.color, 20)"
@@ -340,7 +340,7 @@
             <div class="flex">
                <RatingCircle
                   class="max-md:hidden"
-                  :value="4.5"
+                  :value="calculateRating(item.reviews)"
                   :no-of-ratings="item.reviews.length"
                />
                <div>
