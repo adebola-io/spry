@@ -6,12 +6,18 @@ const itemsFolder = "assets/images/items";
 
 console.log("Compressing Product Images...");
 
+/**
+ *
+ * @param {Buffer} imageBuffer
+ * @returns {Promise<Buffer>}
+ */
 async function compress(imageBuffer) {
    return sharp(imageBuffer)
       .metadata()
       .then((metadata) => {
-         const width = parseInt(metadata.width / 5),
-            height = parseInt(metadata.height / 5);
+         const [width, height] = [metadata.width, metadata.height].map((dim) =>
+            parseInt(dim / 3.8)
+         );
          return sharp(imageBuffer).resize(width, height).toBuffer();
       })
       .catch((err) => {

@@ -1,248 +1,377 @@
 // Run with Deno.
 import { convertToRGB } from "../utils/index.ts";
+import { writeJsonSync } from "https://deno.land/std@0.50.0/fs/write_json.ts";
 
 const items: Item.Unit[] = [
    {
-      id: "16",
-      name: "Women's Drape Front Open Cardigan Long Sleeve",
-      added: "2022-01-13T09:00:00.000Z",
-      category: "jackets & hoodies",
-      images: "0000Q",
-      quantity: 13,
-      sales: 45,
-      description: `Made In USA
-Features long sleeve, open front. various color, lightweight, soft & stretchy material
-Basic and stylish outfit, shawl collar draped, asymmetrical hem
-Please be advised to see our size chart in the descriptions below for the most accurate fit.
-Color disclaimer: Due to monitor settings and monitor pixel definition, we cannot guarantee the color that you see will be exact from the actual color of the product.`,
-      tags: [
-         "women",
-         "drape",
-         "fur",
-         "cardigan",
-         "casual",
-         "stretchy",
-         "lightweight",
-      ],
+      id: "20",
+      name: "American Flag Trucker Hat - Snapback Hat, Baseball Cap for Men Women - Breathable Mesh Side, Adjustable Fit - for Casual Wear",
+      added: "2022-01-14T09:00:00.000Z",
+      category: "accessories",
+      images: "0000U",
+      quantity: 112,
+      sales: 458,
+      description: `SHOW OFF YOUR PATRIOTIC SIDE - Wear your love for country with pride with these American flag hats for men and women. The front of this USA hat features a printed blacked out American flag design.
+WELL-VENTILATED AMERICA HAT - Not a fan of closed caps that make your head all wet and sweaty? This American flag hat features mesh on its side and back panels to maximize airflow and ventilation.
+A SNUG, ADJUSTABLE FIT - A hat that fits too tight can feel uncomfortable to wear. Each of these USA hats for women and men has a snap adjustment feature at the back that can easily be adjusted.
+A DURABLE AMERICAN HAT - This American flag cap makes an excellent piece of headgear to wear daily. Made of 65% cotton and 35% polyester, it won't easily tear, fade, or rip with frequent use.
+AN EPIC GIFT - Know someone who always wears a cap or a hat? Make a friend or a loved one smile by giving them these American flag accessories as Christmas, Thanksgiving, or birthday presents!`,
+      tags: ["hat", "cap", "unisex", "casual", "mesh"],
       variants: [
          {
-            name: "Blush",
-            color: convertToRGB("#f4acaf"),
+            name: "Dark Gray",
+            color: convertToRGB("#242424"),
          },
          {
-            name: "Jade",
-            color: convertToRGB("#1b525b"),
+            name: "US",
+            color: convertToRGB("#d62e30"),
          },
          {
-            name: "Purple",
-            color: convertToRGB("#331838"),
+            name: "White",
+            color: convertToRGB("#101010"),
          },
       ],
       price: {
          currency: "USD",
          discount: null,
-         value: 23.99,
+         value: 16.99,
       },
       reviews: [
          {
             userId: "12345",
-            content:
-               "This product color is great the light weight material is thinner than expected!!! Flowy but yet clingy!!!",
+            content: "Bought this for my husbands birthday he loves it.",
             date: "2022-01-14T11:24:24.000Z",
             rating: 4,
          },
          {
             userId: "12345",
-            content: `For the price, this was a great buy. Very lightweight. Perfect for summer days when you just need a light cover. Stitching on the sleeves was a little out of alignment, but for the low price the quality of the sweater is not bad. I’ve worn and washed it many times now and it is standing up to all the wear. I get a lot of compliments on the soft coral color!`,
+            content: `The title says it all. It's adustable, so it fits very well. It has very firm look, which I like. Overall,, it's a very cap. It's a bit pricey, though.`,
             date: "2022-01-15T01:45:00.000Z",
             rating: 5,
          },
          {
             userId: "12345",
-            content: `This sweater jacket fits exactly as I hoped. Very flattering loose fit with just the right amount of stretch, sleeves not tight in the arms. Can easily be dressed up and long enough to cover all the right parts. Definitely recommend and will be buying other colors.`,
+            content: `My dad loved his gift for fathers day, sorry for so the late review. But he loved it`,
             date: "2022-01-17T05:06:26.000Z",
             rating: 5,
          },
       ],
    },
    {
-      id: "17",
-      name: "Women's Removable Hooded Faux Leather Jacket Moto Biker Coat",
-      added: "2022-01-04T09:00:00.000Z",
-      category: "jackets & hoodies",
-      images: "0000R",
-      quantity: 13,
-      sales: 45,
-      description: `A faux leather motocycle jacket with Panelled design body, with two zippered front pockets
-Collarless collar and zippered opening long sleeves / Fully lined and light weight
-HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON
-Please check the size chart below to ensure your order / Color Disclaimer : Due to monitor settings, monitor pixel definitions, we cannot guarantee that the color you see on your screen as an exact color of the product. We strive to make our colors as accurate as possible. however, colors are approximations of actual colors.`,
-      tags: ["women", "hood", "leather", "polyesther", "casual"],
+      id: "21",
+      name: "Classics Retro Trucker Cap",
+      added: "2022-01-10T09:00:00.000Z",
+      category: "accessories",
+      images: "0000V",
+      quantity: 2,
+      sales: 1000,
+      description: `Trucker cap with premium mesh panels
+Esteemed since 1974
+6-Panel, mid profile, structured. Matching plastic snapback closure
+Curved visor, Matching undervisor, 8-row stitching on visor
+Made in Vietnam or Bangladesh.`,
+      tags: ["hat", "cap", "retro", "unisex", "casual", "trucker", "mesh"],
       variants: [
          {
-            name: "Red",
-            color: convertToRGB("#eb4745"),
+            name: "Camo",
+            color: convertToRGB("#a5a18c"),
          },
          {
-            name: "Camel",
-            color: convertToRGB("#6d4835"),
+            name: "Brown/Khaki",
+            color: convertToRGB("#705d57"),
          },
          {
-            name: "Coffee Oatmeal",
-            color: convertToRGB("#6d4835"),
+            name: "Caramel",
+            color: convertToRGB("#d62e30"),
+         },
+         {
+            name: "Evergreen",
+            color: convertToRGB("#3c6251"),
          },
       ],
       price: {
          currency: "USD",
          discount: null,
-         value: 49.95,
+         value: 9.67,
       },
       reviews: [
          {
             userId: "12345",
             content:
-               "This jacket looks amazing in person. One of the best looking we have purchased in a long time. The only negative is that it runs small and I mean really small. There is not a coat in my wife’s closet that is larger than a size Large. And every one of those jackets are huge on her. We bought a large and couldn’t even get it to meet to even think of zipping it up. We returned it and got an XL, it can be zipped up but is VERY tight. First XL anything she has ever had to buy. Runs very small but man it looks good.",
-            date: "2022-01-10T11:24:24.000Z",
+               "Hat came exactly as I hoped for. What packaged securely so no there was no bends seams or damages when it arrived. I ordered the white hat and it was pure white with no stains! I would recommend if you are looking for a basic hat.",
+            date: "2022-01-14T11:24:24.000Z",
             rating: 5,
          },
          {
             userId: "12345",
-            content: `I’m 5’10” and 200 lbs. I bought the XL size initially. Looks very nice and the fabric/faux leather is beautiful. Five stars for the materials used. However, it was too small to even try to zip up. I can wear it as long as it’s not too cold. I then tried to buy a XXL thinking it would work for me. Still too small! Sad I have to return it and they don’t make anything bigger. For reference, I usually wear a L/XL. Gave the jacket 4 stars now. I would definitely suggest sizing up!`,
-            date: "2022-01-05T06:40:00.000Z",
-            rating: 4,
+            content: `I use these for my engraving business to make personalized hats & they are perfect. Plus for that price you really can’t beat it! They are durable and have the adjustable back to fit any size head.`,
+            date: "2022-01-15T01:45:00.000Z",
+            rating: 5,
          },
          {
             userId: "12345",
-            content: `I ordered an XX Large because reviews indicated that it ran a bit small. I have a larger chest but smaller waist so I was concerned that it wouldn’t zip up because I’ve had that problem before with other similar jackets. But it zipped up and I was able to breath. It’s very figure flattering and emphasizes my curves. Could be a bit warmer but that’s okay. With a long sleeve and a scarf I was warm enough.`,
+            content: `This item is nice, definitely a quality cap. Certainly worth the $10 you pay for it. That said, the fit is a little strange in a way I can't quite put my finger on, though this comes with the territory of buying hats on the internet. Decent item overall.`,
             date: "2022-01-17T05:06:26.000Z",
             rating: 4,
          },
       ],
    },
    {
-      id: "18",
-      name: "Womens Fashion Horn Button Fleece Thicken Coat with Hood Winter Warm Jacket",
-      added: "2022-01-01T09:00:00.000Z",
-      category: "jackets & hoodies",
-      images: "0000S",
-      quantity: 12,
-      sales: 123,
-      description: `Soft and comfy fabric, medium weight, it seems very warm, do not wrinkle, do not shrink. About Size: Small=US 2-4, Medium=US 5-6, Large=US 8-10, X-Large=US 12-14,XX-Large=US 16-18
-Zipper and button closure, double warmth, hooded collar and fleece lining keeps wind and warm
-Unique double-row horn buckle placket design and fit tailoring, fashionable and cute, highlighting your charming figure
-Two large square front pockets, you can put keys, mobile phones and other small objects, providing a warm place for your hands in the cold morning
-Women's winter leisure hooded horn buckle wool pea coat jacket can keep you warm and comfortable in the cold winter, suitable for all occasions.`,
-      tags: ["zipper", "hood", "fleece", "women", "lining", "pocket"],
+      id: "22",
+      name: "Security Fitall Soft Low Profile Men's Women's Baseball Cap Security Guard Equipment Trucker Cool California Snapback Cap",
+      added: "2022-01-10T09:00:00.000Z",
+      category: "accessories",
+      images: "0000W",
+      quantity: 120,
+      sales: 1000,
+      description: `Trucker cap with premium mesh panels
+Esteemed since 1974
+6-Panel, mid profile, structured. Matching plastic snapback closure
+Curved visor, Matching undervisor, 8-row stitching on visor
+Made in Vietnam or Bangladesh.`,
+      tags: ["hat", "cap", "low-profile", "sports", "unisex", "snapback"],
       variants: [
          {
-            name: "Light Gray",
-            color: convertToRGB("#8a8a8e"),
+            name: "Black",
+            color: convertToRGB("#514858"),
          },
          {
-            name: "Cream Yellow",
-            color: convertToRGB("#f4e6c4"),
+            name: "Brownish",
+            color: convertToRGB("#96918a"),
+         },
+      ],
+      price: {
+         currency: "USD",
+         discount: {
+            name: "Sale",
+            percent: 8.55,
+         },
+         value: 19.67,
+      },
+      reviews: [
+         {
+            userId: "12345",
+            content:
+               "The mesh too feels like hard plastic to touch. I haven’t wore it at work but in the house it didn’t feel comfortable. Might not be an issue for customers with hair.",
+            date: "2022-01-14T11:24:24.000Z",
+            rating: 3,
+         },
+         {
+            userId: "12345",
+            content: `want to strike fear into punk kids while you ride around the mall on your segway?! look no further than this trucker hat!`,
+            date: "2022-01-15T01:45:00.000Z",
+            rating: 5,
+         },
+         {
+            userId: "12345",
+            content: `Looks good. Nice looking cap.`,
+            date: "2022-01-17T05:06:26.000Z",
+            rating: 5,
+         },
+      ],
+   },
+   {
+      id: "23",
+      name: "Fitted Flat-Bill Preppy Hat Solid Colors Baseball Cap Flexfit Stretch Flat Brim Caps for Men or Women or Unisex",
+      added: "2022-01-10T09:00:00.000Z",
+      category: "accessories",
+      images: "0000X",
+      quantity: 120,
+      sales: 1000,
+      description: `🧢 MATERIAL: 97% Cotton 3% spandex round with foam at the back of the crown to ensure comfort. mesh back for ventilation. round top button. inner of cap is lined with sweatband for optimal wearing comfort
+🧢 ADJUSTABLE: One size fits Most, adjustable fit with easy-to-use Flex Fit closure, Great Fit Preppy Hat for All Head Sizes
+🧢 LIGHTWEIGHT: Durable, smooth, light weight suitable for both daily look and outdoor activities, perfect for traveling, daily life, hiking, climbing, camping, cycling, and other sports
+🧢 SUMMER SUN PROTECTION: Stop risking your health and safety by walking outdoors without adequate sun protection. Protect your skin from harmful UV rays and keep your hair out of your face and eyes by wearing this comfortable cap during all your outdoor activities. Made of breathable, it is the perfect companion for your active lifestyle.
+🧢 SATISFACTION GUARANTEE: Datoni was established in 1999, We focus on offering high quality products to our customers as well as bringing the latest trends and fashion to your daily life.100% money back if you are not satisfied with our Datoni Flexfit Cap Thinking Cap.`,
+      tags: [
+         "hat",
+         "cap",
+         "low-profile",
+         "sports",
+         "unisex",
+         "men",
+         "women",
+         "stretch",
+         "flat",
+      ],
+      variants: [
+         {
+            name: "Red",
+            color: convertToRGB("#e74857"),
+         },
+         {
+            name: "Sky Blue",
+            color: convertToRGB("#d3ecfa"),
+         },
+         {
+            name: "Pink",
+            color: convertToRGB("#f18ccf"),
+         },
+      ],
+      price: {
+         currency: "USD",
+         discount: {
+            name: "Sale",
+            percent: 23,
+         },
+         value: 15.99,
+      },
+      reviews: [
+         {
+            userId: "12345",
+            content:
+               "This is a one size all fitted baseball cap that is made of 97% cotton and 3% spandex. First thing I noticed after putting this cap on is its lightness. I'm used to wearing new era fitted caps and this is definitely lighter. The cotton fabric is on the thinner side but it looks and feels like it will hold up. The hat looks great with its two tone color scheme, all black and green on the underside of the bill. The bill feels firm yet flexible similar to a new era baseball fitted. So my only issue with this cap is the fact that it's on the taller side. I wear a 7 1/4 fitted and the dome on this thing is definitely on the taller side. I'm not exactly swimming in the hat, but I'd say its a relaxed fit and there is a lot of empty space at the top of the cap. There is a slight gap on the sides as well but I'm sure that will change as I break the cap in. I plan on running this thru the washer and dryer to see if I can get the cap to shrink a bit. Will update if anything changes.",
+            date: "2022-01-14T11:24:24.000Z",
+            rating: 4,
+         },
+         {
+            userId: "12345",
+            content: `I got this for a meme costume party where I'm going as the "how do you do, fellow kids?" meme. This hat is perfect for that because it's the correct color and it doesn't have a cutout on the back. It's pretty difficult to find a red hat nowadays (because, y'know) so I was glad to find one that matches the meme perfectly. It fits well so it doesn't ride up with my hair. Doesn't seem like it will move around too much. It also feels thick and well made. The bill is a bit flatter than I expected, but it does look like that in the picture so that one's on me. It still works great though and I'm happy!`,
+            date: "2022-01-15T01:45:00.000Z",
+            rating: 5,
+         },
+         {
+            userId: "12345",
+            content: `I was hesitant to order a hat at this price range but it turns out it is high quality, and a great fit! Plus very inexpensive for the quality of hat. I highly recommend it!`,
+            date: "2022-01-17T05:06:26.000Z",
+            rating: 5,
+         },
+      ],
+   },
+   {
+      id: "24",
+      name: "Snapback Hats for Men Flat Bill Hat Hip Hop Style Originales Print Adjustable Flat Brim Baseball Cap",
+      added: "2022-01-10T09:00:00.000Z",
+      category: "accessories",
+      images: "0000Y",
+      quantity: 120,
+      sales: 1000,
+      description: `🧢 MATERIAL: 97% Cotton 3% spandex round with foam at the back of the crown to ensure comfort. mesh back for ventilation. round top button. inner of cap is lined with sweatband for optimal wearing comfort
+🧢 ADJUSTABLE: One size fits Most, adjustable fit with easy-to-use Flex Fit closure, Great Fit Preppy Hat for All Head Sizes
+🧢 LIGHTWEIGHT: Durable, smooth, light weight suitable for both daily look and outdoor activities, perfect for traveling, daily life, hiking, climbing, camping, cycling, and other sports
+🧢 SUMMER SUN PROTECTION: Stop risking your health and safety by walking outdoors without adequate sun protection. Protect your skin from harmful UV rays and keep your hair out of your face and eyes by wearing this comfortable cap during all your outdoor activities. Made of breathable, it is the perfect companion for your active lifestyle.
+🧢 SATISFACTION GUARANTEE: Datoni was established in 1999, We focus on offering high quality products to our customers as well as bringing the latest trends and fashion to your daily life.100% money back if you are not satisfied with our Datoni Flexfit Cap Thinking Cap.`,
+      tags: [
+         "hat",
+         "cap",
+         "low-profile",
+         "flat",
+         "snapback",
+         "sports",
+         "unisex",
+         "cotton",
+         "spandex",
+      ],
+      variants: [
+         {
+            name: "Yellow",
+            color: convertToRGB("#fbee7c"),
+         },
+         {
+            name: "Beige",
+            color: convertToRGB("#cbd0d5"),
          },
          {
             name: "Blue",
-            color: convertToRGB("#7e95b6"),
+            color: convertToRGB("#4e7ea6"),
          },
       ],
       price: {
          currency: "USD",
          discount: {
             name: "Sale",
-            percent: 36,
+            percent: 23,
          },
-         value: 87.99,
+         value: 24.99,
       },
       reviews: [
          {
             userId: "12345",
-            content: `I wanted a jacket to replace a coat I have. My coat just doesn't fit properly anymore, but I haven't found anything of the same style to replace it. I needed a quick on/off jacket with a hood that would work for fall and spring when our weather is incredibly changeable.
-For the price, I expected this jacket to be on the lower side of quality, but I have been pleasantly surprised! It's also far warmer than I expected! I live in an area with mildly-hot (90°F or so) summers and potentially frigid (below 0°F is not uncommon) winters. I've discovered that I get too hot in this jacket, quickly, if the temp is above 50°F. It's very cute!
-I ordered my usual size, and it's a bit larger than expected. Thankfully, for jackets, I prefer to err on the side of "too big." I also love having long arms that cover part of my hand! That's uncommon for me as my arms are longer than average for my height.`,
-            date: "2022-01-10T11:24:24.000Z",
-            rating: 4,
-         },
-         {
-            userId: "12345",
-            content: `It’s a nice coat but not lightweight to me. I didn’t like the grey color, it’s a very light grey.`,
-            date: "2022-01-05T06:40:00.000Z",
-            rating: 4,
-         },
-         {
-            userId: "12345",
-            content: `I ordered the light gray jacket XXl. The outside material is a jersey knit and lined with a faux fleece. The jacket is very cute and the quality seems to be great. Yes, it was wrinkled when I removed it from the packaging. I just shook it out and missed the wrinkles, it was just fine. You could always wash it on a gentle cycle and then hang to dry if you chose to. I did order a size up for more room if I wore sweaters. It is just a jacket not a heavy winter coat. But should suffice just fine in 20 - 30 degree weather. I don't understand why the bad reviews. I think the jacket is just fine and exactly what was expected. I would certainly buy again and would recommend to anyone questioning whether to purchase. I love this little jacket.`,
-            date: "2022-01-17T05:06:26.000Z",
+            content:
+               "My son hasn’t taken this hat off since I gifted it to him. Looks and feels great. I was worried it was going to be a bit big but it wasn’t. Perfect fit.",
+            date: "2022-01-14T11:24:24.000Z",
             rating: 5,
+         },
+         {
+            userId: "12345",
+            content: `It’s a nice hat! Fits well and looks great`,
+            date: "2022-01-15T01:45:00.000Z",
+            rating: 5,
+         },
+         {
+            userId: "12345",
+            content: `I no longer have the one but want another !!`,
+            date: "2022-01-17T05:06:26.000Z",
+            rating: 4,
          },
       ],
    },
    {
-      id: "19",
-      name: "Women's Lightweight Full Zip Soft Polar Fleece Jacket Outdoor Recreation Coat With Zipper Pockets",
-      added: "2022-12-21T09:00:00.000Z",
-      category: "jackets & hoodies",
-      images: "0000T",
-      quantity: 5,
-      sales: 403,
-      description: `SOFT FABRIC: This polar fleece jacket is crafted of ultra-soft 100% polyester microfleece for the perfect amount of Comfort.
-ULTIMATE COMFORT: With a stand collar style designand full zippered closure,you'll maintain a full range of motion with this lightweight soft fleece jacket.
-VERSATILITY: Soft and warm, the microfleece material is the perfect outer or extra mid layer warmth for various occasions,it is the perfect layer for everyday casual wear and outdoor sports.
-CLASSIC FIT: A modern classic fit and with a soft, lightweight feel and two zippered hand pockets make this fleece jacket a staple for comfortable outdoor activity.
-DURABILITY: Gimecen’s attention to detail is what sets our apparel apart. Specifying only the highest quality materials, expert stitching and craftsmanship. This is a long-lasting garment you will enjoy for seasons to come.`,
+      id: "25",
+      name: "Cool Snapback Vintage Style Curved Brim Hat, One Size Fits Most Men",
+      added: "2022-01-10T09:00:00.000Z",
+      category: "accessories",
+      images: "0000Z",
+      quantity: 120,
+      sales: 1000,
+      description: `AUTHENTIC STREETWEAR: SHAMUNA Trucker Caps are designed to reflect your inner energy and love, with casual and creative styles that merge clothing, music, art, sports, and nature for an authentic and distinctive look that is truly your own
+FRESH ORIGINAL DESIGNS: Our imported snap closure hats represent our vision of creating original clothing for people that break the mold, with a wide range of colors and styles that upgrade your look and display your authenticity
+PREMIUM DURABLE MATERIALS: We fuse premium materials that are dirt and damage-resistant and detailed craftsmanship to create accessories that can keep up with your active lifestyle and daily wear; Please note, these hats are hand wash only
+EXPRESS YOURSELF: Our bold, curved bill hats are a fun, colorful, and unique way to celebrate who you are and what you stand for, and are versatile enough to wear as you skate, surf, mountain climb, mountain bike, cook, explore, golf and enjoy life’s simple pleasures.
+REPRESENTING THE PEOPLE: At SHAMUNA, we create flatbill, curved bill, 3-panel, and snapback hats that are inspired by concepts like the Amazonian & Andes Mountains cultures that still inhabit areas of the Ecuadorian territory, the extreme sports culture (skate, surf, mountain climbing, mountain biking) and the urban style of cosmopolitan cities of the world.   Our hats are made for people from all walks of life.`,
       tags: [
-         "zipper",
-         "hood",
-         "polyester",
-         "fleece",
-         "women",
-         "lining",
-         "pocket",
+         "hat",
+         "cap",
+         "vintage",
+         "curved-brim",
+         "snapback",
+         "trucker",
+         "unisex",
       ],
       variants: [
          {
-            name: "Rose",
-            color: convertToRGB("#e74e89"),
+            name: "Blue and Brown",
+            color: convertToRGB("#2e6285"),
          },
          {
-            name: "Denim Blue",
-            color: convertToRGB("#93b1ca"),
+            name: "Coastal",
+            color: convertToRGB("#b9ad55"),
          },
          {
-            name: "Green",
-            color: convertToRGB("#3b584f"),
+            name: "Floral Print",
+            color: convertToRGB("#b6eae5"),
          },
       ],
       price: {
          currency: "USD",
-         discount: {
-            name: "Sale",
-            percent: 8,
-         },
-         value: 45.99,
+         discount: null,
+         value: 29.99,
       },
       reviews: [
          {
             userId: "12345",
-            content: `This jacket is soft and comfortable. I got a large because I prefer bigger jackets on me even though I fit a medium. I feel like I should have gotten an XL just because I thought the large would have been as big as I wanted it to be but I still love it nonetheless. I had one similar years ago when I lost it and never saw it again. I’m so happy to have one again because it was my favorite. And now it still is.`,
-            date: "2022-12-30T11:24:24.000Z",
+            content:
+               "Fits wonderful, great design. Have never seen another like it, original!",
+            date: "2022-01-14T11:24:24.000Z",
             rating: 5,
          },
          {
             userId: "12345",
-            content: `I purchased multiple colors after receiving the first one. It washes well in cold water, dry for few minutes, hang to dry. I am wearing indoors over a long sleeve shirt due to conserving energy. I'm 5'4" 120 lbs and small fits perfectly. Very happy.`,
-            date: "2022-01-05T06:40:00.000Z",
-            rating: 5,
+            content: `I was surprised at how much this hat will need breaking in before it can be a daily driver for me. First wear and I had dents in my forehead from where the band dug in. I put a sweat-guard in it just to have some extra padding. The built in sweatband was creased and looks like it didn't fit the hat properly or something. Otherwise construction looks pretty solid, but it's just not super comfortable.`,
+            date: "2022-01-15T01:45:00.000Z",
+            rating: 3,
          },
          {
             userId: "12345",
-            content: `I love it, it’s warm and does the job. I work night shift as an RN and I can keep it on most of the night. Very comfortable and warm but not too warm.`,
+            content: `I’m a bit torn on how I feel about this hat. On the one hand, it’s incredibly made and stylish. I love the colors and the suede brim is nicely designed. However, the fit is an issue. As a woman with a normal sized head, this hat fits on the smaller side. I repeat, I do not have a large head. Then, on my husband who typically does have to get larger sized hats (US size 7 5/8), this one will not even remotely fit.
+This is very disappointing, because I initially ordered this so my husband could wear it, but it doesn’t fit. It’s not just the fact that it’s tight around the head but also the cap is rather shallow. I’m not sure if I somehow received a youth size, but this hat fits my five-year-old son pretty well (he’s got a slightly larger than average head for his age). I love the look of this hat, and it’s very nicely made. I just wish it fit better.`,
             date: "2022-01-17T05:06:26.000Z",
-            rating: 5,
+            rating: 4,
          },
       ],
    },
 ];
 
-console.log(JSON.stringify(items).slice(1, -1));
+// const json = JSON.stringify(items);
+
+await writeJsonSync("data/testing/items/hats.json", items);
