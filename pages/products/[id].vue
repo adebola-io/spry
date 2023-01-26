@@ -33,7 +33,7 @@
                   color: darkenColor(variant.color, 60),
                   borderColor: darkenColor(variant.color, 65),
                }"
-               class="relative animate-[slide-in-from-right_500ms] aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
+               class="relative sm:animate-[slide-in-from-right_500ms] aspect-[calc(543/626)] max-sm:aspect-auto max-sm:w-full border-4 max-sm:border-0 max-sm:border-b-4 max-sm:h-[38vh] max-sm:min-h-[350px] flex justify-center items-center flex-col"
             >
                <ProductImage
                   @load="imageLoading = false"
@@ -43,7 +43,7 @@
                   :alt="item.name"
                   :class="[
                      { 'opacity-0': imageLoading },
-                     'duration-300 h-[65%]',
+                     'duration-300 h-[55%] sm:h-[40%] max-sm:h-[55%]',
                   ]"
                   use-loader
                   :loader-color="darkenColor(variant.color, 20)"
@@ -51,7 +51,7 @@
                />
                <!-- Variants -->
                <div
-                  class="h-0 w-0 flex justify-center items-center mt-double-distance max-sm:mt-quadruple-distance max-sm:scale-90"
+                  class="h-0 w-0 flex justify-center items-center mt-double-distance max-sm:mt-quadruple-distance max-md:scale-75 max-sm:scale-90"
                >
                   <div
                      class="flex gap-quarter-distance max-sm:gap-half-distance"
@@ -79,6 +79,7 @@
                   class="mb-quarter-distance max-sm:flex max-sm:justify-between max-sm:gap-half-distance font-oceanwide"
                >
                   <h1
+                     id="product-name"
                      class="text-[24pt] max-2xl:w-[90%] max-lg:w-full max-xl:text-[17pt] max-sm:text-[14pt] max-xs:text-[11pt]"
                   >
                      {{ item.name }}
@@ -108,6 +109,7 @@
                   class="max-sm:hidden my-half-distance max-xl:my-quarter-distance font-oceanwide flex items-center"
                >
                   <span
+                     id="product-price"
                      class="text-[37pt] max-xl:text-[30pt] max-lg:text-[27pt]"
                   >
                      {{ calculatePrice(item.price) }}
@@ -230,6 +232,7 @@
                </div>
                <!-- Tags -->
                <div
+                  id="tags"
                   class="overflow-x-scroll scroll-hidden h-max w-full max-sm:hidden"
                >
                   <div class="flex w-fit gap-half-distance">
@@ -316,6 +319,7 @@
          </div>
          <HomeSection
             product
+            id="related-items"
             v-if="relatedItems"
             heading="Related Items"
             :items="relatedItems"
@@ -328,23 +332,25 @@
          />
          <div id="product-review-section" v-if="item.reviews.length > 0">
             <h1
-               class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-sm:mb-quarter-distance font-bold font-oceanwide text-fandago"
+               class="text-4xl max-md:text-xl ml-[2vw] max-sm:ml-[3vw] mb-half-distance max-md:mt-distance max-sm:mb-distance font-bold font-oceanwide text-fandago"
             >
-               Product Rating
+               <span class="max-md:hidden">Product Rating</span>
+               <span class="md:hidden">Reviews</span>
             </h1>
             <div class="flex">
                <RatingCircle
-                  :value="4.5"
+                  class="max-md:hidden"
+                  :value="calculateRating(item.reviews)"
                   :no-of-ratings="item.reviews.length"
                />
                <div>
                   <h1
-                     class="pl-distance font-bold text-4xl font-oceanwide mb-distance"
+                     class="pl-distance font-bold text-4xl max-md:hidden font-oceanwide mb-distance"
                   >
                      Top Reviews
                   </h1>
                   <div
-                     class="pl-distance pr-[2vw] overflow-y-scroll h-[60vh] max-sm:pr-[3vw]"
+                     class="pl-distance pr-[2vw] md:overflow-y-scroll scroll-hidden md:h-[60vh] max-sm:pr-[3vw]"
                   >
                      <ProductReview
                         v-for="(review, index) in item.reviews"
@@ -392,7 +398,7 @@ const expressDelivery = useDateFromNow(3, 4);
 }
 #product-image-container:hover {
    box-shadow: none;
-   transform: scale(0.99);
+   @apply sm:scale-[0.99];
 }
 .paragraph {
    line-height: 30px;
@@ -439,11 +445,8 @@ aside {
 .security-link {
    @apply underline text-[9pt] max-xl:text-[7pt] mr-half-distance text-dark-purple;
 }
+
 #product-review-section {
-   background-image: linear-gradient(
-      180deg,
-      rgba(239, 194, 200, 0) 0%,
-      #efc2c8 100%
-   );
+   @apply md:[background-image:_linear-gradient(180deg,rgba(239_194_200_0)_0%,_#efc2c8_100%)];
 }
 </style>

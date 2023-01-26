@@ -31,7 +31,7 @@ describe("Test Product Page", () => {
       });
 
       it("shows product name and price", () => {
-         cy.get("#product-name").should("be.viible");
+         cy.get("#product-name").should("be.visible");
          cy.get("#product-price").should("be.visible");
       });
 

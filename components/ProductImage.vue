@@ -42,6 +42,7 @@ onMounted(() => {
    />
    <img
       ref="reference"
+      id="product-image"
       @load="emit('load'), (success = true)"
       @error="emit('error'), (error = true)"
       :class="class"

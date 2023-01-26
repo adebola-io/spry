@@ -1,0 +1,128 @@
+{
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "type": "array",
+   "items": {
+      "type": "object",
+      "properties": {
+         "id": {
+            "type": "string"
+         },
+         "name": {
+            "type": "string"
+         },
+         "added": {
+            "type": "string",
+            "format": "date-time"
+         },
+         "category": {
+            "type": "string",
+            "enum": [
+               "shirts & trousers",
+               "shoes",
+               "accessories",
+               "formal wear",
+               "dresses & gowns",
+               "jackets & hoodies"
+            ]
+         },
+         "description": {
+            "type": "string"
+         },
+         "images": {
+            "type": "string"
+         },
+         "variants": {
+            "type": "array",
+            "items": {
+               "type": "object",
+               "properties": {
+                  "name": {
+                     "type": "string"
+                  },
+                  "color": {
+                     "type": "array",
+                     "items": {
+                        "type": "number"
+                     }
+                  }
+               },
+               "required": ["name", "color"]
+            }
+         },
+         "sales": {
+            "type": "number"
+         },
+         "quantity": {
+            "type": "number"
+         },
+         "tags": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "reviews": {
+            "type": "array",
+            "items": {
+               "type": "object",
+               "properties": {
+                  "userId": {
+                     "type": "string"
+                  },
+                  "content": {
+                     "type": ["string", "null"]
+                  },
+                  "rating": {
+                     "type": "integer",
+                     "enum": [1, 2, 3, 4, 5]
+                  },
+                  "date": {
+                     "type": "string",
+                     "format": "date-time"
+                  }
+               },
+               "required": ["userId", "content", "rating", "date"]
+            }
+         },
+         "price": {
+            "type": "object",
+            "properties": {
+               "value": {
+                  "type": "number"
+               },
+               "currency": {
+                  "type": "string",
+                  "enum": ["USD", "NGN", "CAD"]
+               },
+               "discount": {
+                  "type": ["object", "null"],
+                  "properties": {
+                     "name": {
+                        "type": "string"
+                     },
+                     "percent": {
+                        "type": "number"
+                     }
+                  },
+                  "required": ["name", "percent"]
+               }
+            },
+            "required": ["value", "currency", "discount"]
+         }
+      },
+      "required": [
+         "id",
+         "name",
+         "added",
+         "category",
+         "description",
+         "images",
+         "variants",
+         "sales",
+         "quantity",
+         "tags",
+         "reviews",
+         "price"
+      ]
+   }
+}

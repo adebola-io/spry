@@ -13,7 +13,7 @@ This file is subject to change whenever necessary.
 -  [ ] test: item search API
 -  [ ] test: user wishlist and cart API
 
--  [ ] test: home page loads
+-  [x] test: home page loads
 -  [ ] test: user can login in
 -  [ ] test: user can log out
 -  [ ] test: user can retrieve forgotten password
@@ -34,7 +34,7 @@ This file is subject to change whenever necessary.
 -  [ ] add: Search Results Page.
 -  [ ] add: Login Page
 -  [ ] add: Sign In page.
--  [ ] add: Item page.
+-  [x] add: Item page.
 -  [ ] add: Empty Wishlist View
 -  [ ] add: User Profile Page
 -  [ ] add: Wishlists Page.
@@ -45,7 +45,7 @@ This file is subject to change whenever necessary.
 -  [ ] add: User Profile pic upload process.
 -  [ ] add: Placeholder Item Loader.
 
--  [ ] add: Related items logic.
+-  [x] add: Related items logic.
 -  [ ] add: Item reviews
 -  [ ] add: Item Quantity counter.
 -  [ ] add: Bottom Alert.

@@ -3,5 +3,11 @@
    "editor.tabSize": 3,
    "prettier.tabWidth": 3,
    "css.lint.unknownAtRules": "ignore",
-   "githubPullRequests.ignoredPullRequestBranches": ["master"]
+   "githubPullRequests.ignoredPullRequestBranches": ["master"],
+   "json.schemas": [
+      {
+         "fileMatch": ["/data/testing/items/*.json"],
+         "url": "/schemas/item.schema.json"
+      }
+   ]
 }

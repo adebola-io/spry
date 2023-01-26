@@ -1,5 +1,4 @@
 const { readdir, readdirSync, appendFile, existsSync } = require("fs");
-const path = require("path");
 const sharp = require("sharp");
 const { terminal } = require("./utils");
 
@@ -7,13 +6,19 @@ const itemsFolder = "assets/images/items";
 
 console.log("Compressing Product Images...");
 
+/**
+ *
+ * @param {Buffer} imageBuffer
+ * @returns {Promise<Buffer>}
+ */
 async function compress(imageBuffer) {
    return sharp(imageBuffer)
       .metadata()
       .then((metadata) => {
-         return sharp(imageBuffer)
-            .resize(parseInt(metadata.width / 4), parseInt(metadata.height / 4))
-            .toBuffer();
+         const [width, height] = [metadata.width, metadata.height].map((dim) =>
+            parseInt(dim / 3.8)
+         );
+         return sharp(imageBuffer).resize(width, height).toBuffer();
       })
       .catch((err) => {
          console.log(err);

@@ -159,3 +159,7 @@ export function convertToRGB(hex: string): Item.RGBColor {
       parseInt(result[3], 16),
    ];
 }
+
+export function calculateRating(reviews: Item.Review[]): number {
+   return 4.5;
+}
