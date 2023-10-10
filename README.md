@@ -1,8 +1,8 @@
+> THIS PROJECT IS UNDERGOING A REWRITE. 
+
 <h1 align=center>
    <img src=public/logo.svg height=95/>
 </h1>
-
-<h5 align=center>Start Date: 11th November, 2022.</h5><br/>
 
 <p>
 Spry is an online clothing store located in Lagos, Nigera. We provide our customers with a distinct and enjoyable experience, selling them the most comfortable clothing for the most comfortable prices.
